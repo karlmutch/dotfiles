@@ -1,0 +1,44 @@
+#include:/etc/multitail.conf
+
+# Stupid mail check...
+check_mail:0
+
+# Possible colors: red, green, yellow, blue, magenta, cyan, white
+
+# Pick default screen 
+defaultcscheme:mysyslog
+
+colorscheme:mysyslog:kernel and unsorted messages
+# segfaults
+cs_re_s:red,,bold:kernel: ([^:]*): segfault at [^ ]* rip [^ ]* rsp [^ ]* error
+cs_re:yellow:kernel: .*: segfault at [^ ]* rip [^ ]* rsp [^ ]* error
+# misc
+cs_re:red,,inverse/underline:kernel
+cs_re:green:Detected.*$
+cs_re:cyan::
+cs_re:blue:^... .. ..:..:..
+# cs_re_s:,,bold:^... .. ..:..:.. [^ ]* ([A-z0-9]*)
+cs_re:red:scanlogd.*
+cs_re:yellow:Did.not
+cs_re_s:red:\[(ERROR|error)\]
+cs_re_s:yellow:\[(WARN|warn|WARNING|warning)\]
+cs_re_s:green:\[(INFO|info)\]
+cs_re_s:cyan:\[(DEBUG|debug)\]
+#
+
+# whether to abbreviate filesizes to xKB/MB/GB
+abbreviate_filesize:on
+
+# timestring format for statusline
+statusline_ts_format:%m/%d/%Y %H:%M
+
+statusline_attrs:green,black,reverse
+
+# enable things with the xterm title bar
+# %f  changed file
+# %h  hostname
+# %l  system load
+# %m  "New mail" or nothing
+# %u  username
+# %t  date + time
+titlebar:%u@%h %f (%t) [%l]

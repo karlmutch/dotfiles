@@ -1,0 +1,24 @@
+- clean: [~]
+
+- link:
+    ~/.dotfiles: ''
+    ~/.tmux.conf:   tmux.conf
+    ~/.zshrc:       zshrc
+    ~/.vim: vim/
+    ~/.vimrc: vimrc
+    ~/.multitailrc: multitailrc
+    ~/.multitailrc: multitailrc
+    ~/.dir_colors:  dir_colors
+    ~/.Xdefaults:   Xdefaults
+    ~/.gitconfig:   gitconfig
+    ~/.minttyrc:    minttyrc
+    ~/.config:      config/
+    ~/.mc:          mc/
+    ~/.urxvt:       urxvt/
+    ~/.fonts:       fonts/
+    ~/.fontconfig:  fontconfig/
+    ~/.oh-my-zsh:   oh-my-zsh/
+
+- shell:
+    - [git submodule update --init --recursive, Installing submodules]
+    

@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/home/kmutch/.vim/bundle/powerline/powerline/bindings/vim'
+let g:netrw_dirhist_2='/home/kmutch/views/IAP/LinuxServices/Common/OpenSource/cpp-netlib/config'
+let g:netrw_dirhist_3='/home/kmutch/.ssh'
+let g:netrw_dirhist_4='/home/kmutch/views/IAP/LinuxServices/VerticaImportServer/x64/src'

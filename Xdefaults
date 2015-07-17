@@ -1,0 +1,217 @@
+#ifdef COLOR
+*customization: -color
+#endif
+
+!! Cast a wide net, for any app supporting these
+! Blink instead of beeping
+*visualBell: True
+*scrollTtyOutput: False
+*scrollKey:       True
+
+XTerm*color0: #000000
+XTerm*color1: #b21818
+XTerm*color2: #18b218
+XTerm*color3: #BE5F00
+XTerm*color4: #6D85BA
+XTerm*color5: #b218b2
+XTerm*color6: #18b2b2
+XTerm*color7: #b2b2b2
+XTerm*color8: #686868
+XTerm*color9: #FF5454
+XTerm*color10: #54FF54
+XTerm*color11: #FFFF54
+XTerm*color12: #73A5FF
+XTerm*color13: #FF54FF
+XTerm*color14: #54FFFF
+XTerm*color15: #FFFFFF
+XTerm*background: #000000
+XTerm*foreground: #A8A8A8
+
+
+xterm*dynamicColors:    true
+xterm*utf8:             2
+xterm*eightBitInput:    true
+xterm*saveLines:        32767
+xterm*scrollTtyKeypress:       true
+xterm*scrollTtyOutput:  false
+xterm*scrollBar:        false
+xterm*loginShell:       true
+xterm*jumpScroll:       true
+xterm*multiScroll:      true
+xterm*toolBar:          true
+!xterm*font:             -bitstream-bitstream vera sans mono-medium-r-normal--12-*-*-*-*-*-*-*
+!xterm*fs:               11
+xterm*faceName: Bitstream Vera Sans Mono
+xterm.termName: xterm-256color
+
+Emacs.menuBar: on
+Emacs.verticalScrollBars: off
+Emacs.toolBar: on
+Emacs*foreground: lightgray
+Emacs*background: black
+Emacs*pointerColor: Orchid
+Emacs*cursorColor: Orchid
+Emacs.bitmapIcon: on
+Emacs.FontBackend: xft
+emacs.geometry: 128x68+360+215
+
+Emacs*font: \
+            xft:DejaVu Sans Mono for Powerline:size=14:style=Book,\
+            xft:FreeSerif:size=14:style=Regular, \
+            xft:FreeMono:size=14:style=Regular, \
+            xft:Unifont:size=14:style=Medium:antialias=false
+
+
+
+!urxvt*font: xft:DejaVu Sans Mono:size=12
+!urxvt*boldFont: xft:DejaVu Sans Mono:size=12:style=Bold
+!urxvt*font: xft:Liberation Mono:size=14,xft:Bitstream Vera Sans Mono:size=14,xft:Lucida ConsoleP,xft:DejaVu Sans Mono
+!urxvt*boldFont: xft:Liberation Mono:size=14:style=Bold,xft:Bitstream Vera Sans Mono:size=14:style=Bold,xft:Lucida ConsoleP,xft:DejaVu Sans Mono
+!urxvt*font: xft:DejaVu Sans Mono:size=14:style=Book
+!urxvt*boldFont: xft:DejaVu Sans Mono:size=14:style=Bold
+!urxvt*boldFont: xft:DejaVu Sans Mono for Powerline:size=14:style=Bold,xft:terminus:size=14:style=Bold
+!urxvt*font: xft:Lucida ConsoleP:size=13
+!urxvt*boldFont: xft:Lucida ConsoleP:size=13:style=Bold
+!urxvt*font: xft:DejaVu Sans Mono:pixelsize=15,xft:Bitstream Vera Sans Mono:pixelsize=15, xft:Terminus:pixelsize=12:antialias=false
+!urxvt*boldFont: xft:DejaVu Sans Mono:pixelsize=15:style=Bold,xft:Bitstream Vera Sans Mono:pixelsize=15:style=Bold, xft:Terminus:pixelsize=12:antialias=false:style=Bold
+
+urxvt*color0: #000000
+urxvt*color1: #b21818
+urxvt*color2: #18b218
+urxvt*color3: #BE5F00
+urxvt*color4: #6D85BA
+urxvt*color5: #b218b2
+urxvt*color6: #18b2b2
+urxvt*color7: #b2b2b2
+urxvt*color8: #686868
+urxvt*color9: #FF5454
+urxvt*color10: #54FF54
+urxvt*color11: #FFFF54
+urxvt*color12: #73A5FF
+urxvt*color13: #FF54FF
+urxvt*color14: #54FFFF
+urxvt*color15: #FFFFFF
+urxvt*background: #000000
+urxvt*foreground: #A8A8A8
+URxvt.termName: rxvt-unicode-256color
+URxvt.geometry: 128x64
+urxvt*scrollBar_right: true
+
+URxvt*skipBuiltinGlyphs: true
+
+urxvt*saveLines:        32767
+urxvt*scrollTtyKeypress:       true
+urxvt*scrollTtyOutput:  false
+urxvt*scrollBar:        false
+urxvt*loginShell:       true
+urxvt*jumpScroll:       true
+urxvt*multiScroll:      true
+urxvt*urgentOnBell:      true
+
+!rxvt*font: xft:DejaVu Sans Mono for Powerline:size=14:style=Book
+!rxvt*boldFont: xft:DejaVu Sans Mono for Powerline:size=14:style=Bold
+
+rxvt*color0: #000000
+rxvt*color1: #b21818
+rxvt*color2: #18b218
+rxvt*color3: #BE5F00
+rxvt*color4: #6D85BA
+rxvt*color5: #b218b2
+rxvt*color6: #18b2b2
+rxvt*color7: #b2b2b2
+rxvt*color8: #686868
+rxvt*color9: #FF5454
+rxvt*color10: #54FF54
+rxvt*color11: #FFFF54
+rxvt*color12: #73A5FF
+rxvt*color13: #FF54FF
+rxvt*color14: #54FFFF
+rxvt*color15: #FFFFFF
+rxvt*background: #000000
+rxvt*foreground: #A8A8A8
+rxvt.termName: rxvt-unicode-256color
+
+Eclipse*XmForm.background:black
+Eclipse*XmList.background:black
+Eclipse*XmTextField.background:black
+Eclipse*XmText.background:black
+Eclipse*background:black
+
+Eclipse*XmForm.foreground:white
+Eclipse*XmList.foreground:white
+Eclipse*XmTextField.foreground:white
+Eclipse*XmText.foreground:white
+Eclipse*foreground:white
+
+Eclipse*spacing:0
+
+!Eclipse*XmForm.background:#e8e7e3
+!Eclipse*XmList.background:#e8e7e3
+!Eclipse*XmTextField.background:#e8e7e3
+!Eclipse*XmText.background:#ffffff
+!Eclipse*background:#d6d3ce
+
+!Eclipse*fontList:-*-helvetica-medium-r-normal-*-12-*-100-100-*-*-*-*
+
+! xft:DejaVu Sans Mono for Powerline::size=14, \
+
+!urxvt*font: \
+!            xft:Fira Mono for Powerline:size=18:style=Regular, \
+!            xft:DejaVu Sans Mono for Powerline:size=18:style=Regular, \
+!            xft:Consolas for Powerline:size=18:style=Regular, \
+!            xft:Menlo for Powerline:size=18:style=RegularForPowerline, \
+!            xft:Source Code Pro for Powerline:size=18:style=Regular, \
+!            xft:FreeSerif:size=18:style=Regular, \
+!            xft:FreeMono:size=18:style=Regular, \
+!            xft:Unifont:size=18:style=Medium:antialias=false
+
+!urxvt*boldFont: \ 
+!            xft:Fira Mono for Powerline:size=18:style=Regular, \
+!            xft:DejaVu Sans Mono for Powerline:size=18:style=Regular, \
+!            xft:Consolas for Powerline:size=18:style=Regular, \
+!            xft:Menlo for Powerline:size=18:style=Regular, \
+!            xft:Source Code Pro for Powerline:size=18:style=Regular, \
+!            xft:FreeSerif:size=18:style=Regular, \
+!            xft:FreeMono:size=18:style=Regular, \
+!            xft:Unifont:size=18:style=Medium:antialias=false
+
+!            xft:WenQuanYi Bitmap Song:size=8, \
+
+! This fixes spacing when using Powerline inside tmux, this does not appear to be an issue
+! the shell
+URxvt*letterSpace: -1
+
+!urxvt*colorIT: rgb:e4/e4/e4
+!urxvt*colorBD: rgb:82/a4/d3
+!urxvt*colorUL: rgb:e4/e4/e4
+!urxvt*underlineColor: rgb:58/58/58
+
+URxvt.keysym.C-Up:     perl:font-size:increase
+URxvt.keysym.C-Down:   perl:font-size:decrease
+URxvt.keysym.C-S-Up:   perl:font-size:incglobal
+URxvt.keysym.C-S-Down: perl:font-size:decglobal
+
+URxvt.perl-ext-common: font-size
+
+! Fonts
+Xft.dpi:        72
+Xft.antialias:  true
+Xft.rgba:       rgb
+Xft.hinting:    true
+Xft.autohint:   true
+Xft.hintstyle:  hintfull  
+
+gm.font: 9x15
+
+!       xft:InputMono Medium:size=18:style=Regular:antialias=false:autohint=false, \
+!           xft:InputMono Medimum:size=18:style=Regular:antialias=false:autohint=false, \
+*font: \
+       xft:Fira Mono for Powerline:size=18:style=Regular, \
+       xft:DejaVu Sans Mono for Powerline:size=18:style=Regular, \
+       xft:Unifont:size=18:style=Medium:antialias=false
+
+*boldFont: \
+           xft:Fira Mono for Powerline:size=18:style=Regular, \
+           xft:DejaVu Sans Mono for Powerline:size=18:style=Regular, \
+           xft:Unifont:size=18:style=Medium:antialias=false
+
