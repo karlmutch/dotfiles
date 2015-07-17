@@ -18,7 +18,10 @@
     ~/.fonts:       fonts/
     ~/.fontconfig:  fontconfig/
     ~/.oh-my-zsh:   oh-my-zsh/
+    ~/.oh-my-zsh-custom:   oh-my-zsh-custom/
+    ~/.powerline:   powerline-develop/
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
+    - [fc-cache -fv ~/.fonts]
     

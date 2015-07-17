@@ -66,12 +66,22 @@ endif
 
 set mouse=a
 
-set rtp+=/home/kmutch/.vim/bundle/powerline/powerline/bindings/vim
+"set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 
 " Always show statusline
 set laststatus=2
 
 let g:airline_powerline_fonts=1
+let g:airline#extensions#tabline#enabled = 1
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 if ! has('gui_running')
     set ttimeoutlen=10
@@ -82,9 +92,9 @@ if ! has('gui_running')
     augroup END
 endif
 
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
-python del powerline_setup
+"python from powerline.vim import setup as powerline_setup
+"python powerline_setup()
+"python del powerline_setup
 
 " Check if NERDTree is open or active
 function! rc:isNERDTreeOpen()        
