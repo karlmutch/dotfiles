@@ -1,6 +1,9 @@
 #ifdef COLOR
 *customization: -color
 #endif
+#
+#Xcursor.theme: default
+#Xcursor.size: 96
 
 !! Cast a wide net, for any app supporting these
 ! Blink instead of beeping
@@ -27,6 +30,13 @@
 *background: #000000
 *foreground: #A8A8A8
 
+*pointerBlank: false
+*pointerColor: Yellow
+*pointerColorBackground: Yellow
+.pointerColor2: Yellow
+*pointerShape: double_arrow
+*cursorColor: Green
+*cursorColor2: black
 
 xterm*dynamicColors:    true
 xterm*utf8:             2
@@ -49,50 +59,10 @@ Emacs.verticalScrollBars: off
 Emacs.toolBar: on
 Emacs*foreground: lightgray
 Emacs*background: black
-Emacs*pointerColor: Orchid
 Emacs*cursorColor: Orchid
 Emacs.bitmapIcon: on
 Emacs.FontBackend: xft
 emacs.geometry: 128x68+360+215
-
-Emacs*font: \
-            xft:DejaVu Sans Mono for Powerline:size=14:style=Book,\
-            xft:FreeSerif:size=14:style=Regular, \
-            xft:FreeMono:size=14:style=Regular, \
-            xft:Unifont:size=14:style=Medium:antialias=false
-
-
-
-!urxvt*font: xft:DejaVu Sans Mono:size=12
-!urxvt*boldFont: xft:DejaVu Sans Mono:size=12:style=Bold
-!urxvt*font: xft:Liberation Mono:size=14,xft:Bitstream Vera Sans Mono:size=14,xft:Lucida ConsoleP,xft:DejaVu Sans Mono
-!urxvt*boldFont: xft:Liberation Mono:size=14:style=Bold,xft:Bitstream Vera Sans Mono:size=14:style=Bold,xft:Lucida ConsoleP,xft:DejaVu Sans Mono
-!urxvt*font: xft:DejaVu Sans Mono:size=14:style=Book
-!urxvt*boldFont: xft:DejaVu Sans Mono:size=14:style=Bold
-!urxvt*boldFont: xft:DejaVu Sans Mono for Powerline:size=14:style=Bold,xft:terminus:size=14:style=Bold
-!urxvt*font: xft:Lucida ConsoleP:size=13
-!urxvt*boldFont: xft:Lucida ConsoleP:size=13:style=Bold
-!urxvt*font: xft:DejaVu Sans Mono:pixelsize=15,xft:Bitstream Vera Sans Mono:pixelsize=15, xft:Terminus:pixelsize=12:antialias=false
-!urxvt*boldFont: xft:DejaVu Sans Mono:pixelsize=15:style=Bold,xft:Bitstream Vera Sans Mono:pixelsize=15:style=Bold, xft:Terminus:pixelsize=12:antialias=false:style=Bold
-
-URxvt*dynamicColors:    true
-URxvt*cursorBlink:      true
-URxvt.termName: rxvt-unicode-256color
-URxvt.geometry: 128x48
-URxvt*scrollBar_right: false
-
-URxvt*skipBuiltinGlyphs: true
-
-URxvt*saveLines:        32767
-URxvt*scrollTtyKeypress:       true
-URxvt*scrollTtyOutput:  false
-URxvt*scrollBar:        false
-URxvt*loginShell:       true
-URxvt*jumpScroll:       true
-URxvt*multiScroll:      true
-URxvt*urgentOnBell:      true
-
-rxvt.termName: rxvt-unicode-256color
 
 Eclipse*XmForm.background:black
 Eclipse*XmList.background:black
@@ -138,6 +108,37 @@ Eclipse*spacing:0
 
 !            xft:WenQuanYi Bitmap Song:size=8, \
 
+!urxvt*font: xft:DejaVu Sans Mono:size=12
+!urxvt*boldFont: xft:DejaVu Sans Mono:size=12:style=Bold
+!urxvt*font: xft:Liberation Mono:size=14,xft:Bitstream Vera Sans Mono:size=14,xft:Lucida ConsoleP,xft:DejaVu Sans Mono
+!urxvt*boldFont: xft:Liberation Mono:size=14:style=Bold,xft:Bitstream Vera Sans Mono:size=14:style=Bold,xft:Lucida ConsoleP,xft:DejaVu Sans Mono
+!urxvt*font: xft:DejaVu Sans Mono:size=14:style=Book
+!urxvt*boldFont: xft:DejaVu Sans Mono:size=14:style=Bold
+!urxvt*boldFont: xft:DejaVu Sans Mono for Powerline:size=14:style=Bold,xft:terminus:size=14:style=Bold
+!urxvt*font: xft:Lucida ConsoleP:size=13
+!urxvt*boldFont: xft:Lucida ConsoleP:size=13:style=Bold
+!urxvt*font: xft:DejaVu Sans Mono:pixelsize=15,xft:Bitstream Vera Sans Mono:pixelsize=15, xft:Terminus:pixelsize=12:antialias=false
+!urxvt*boldFont: xft:DejaVu Sans Mono:pixelsize=15:style=Bold,xft:Bitstream Vera Sans Mono:pixelsize=15:style=Bold, xft:Terminus:pixelsize=12:antialias=false:style=Bold
+
+URxvt*dynamicColors:    true
+URxvt*cursorBlink:      true
+URxvt.termName: rxvt-unicode-256color
+URxvt.geometry: 172x42
+URxvt*scrollBar_right: false
+
+URxvt*skipBuiltinGlyphs: true
+
+URxvt*saveLines:        32767
+URxvt*scrollTtyKeypress:       true
+URxvt*scrollTtyOutput:  false
+URxvt*scrollBar:        false
+URxvt*loginShell:       true
+URxvt*jumpScroll:       true
+URxvt*multiScroll:      true
+URxvt*urgentOnBell:      true
+
+rxvt.termName: rxvt-unicode-256color
+
 ! This fixes spacing when using Powerline inside tmux, this does not appear to be an issue
 ! the shell
 URxvt*letterSpace: -1
@@ -156,7 +157,7 @@ URxvt.perl-ext-common: font-size,default,clipboard,matcher,keyboard-select
 URxvt.keysym.M-u:     perl:url-select:select_next
 URxvt.url-launcher:   /usr/bin/firefox
 URxvt.underlineURLs:  True
-URxvt.matcher.button: 1 
+URxvt.matcher.button: 1
 URxvt.keysym.M-Escape:perl:keyboard-select:activate
 URxvt.keysym.M-c:     perl:clipboard:copy
 URxvt.keysym.M-v:     perl:clipboard:paste
@@ -169,7 +170,7 @@ Xft.rgba:       rgb
 Xft.lcdfilter:  lcddefault
 Xft.hinting:    1
 Xft.autohint:   0
-Xft.hintstyle:  hintfull  
+Xft.hintstyle:  hintfull
 
 gm.font: 9x15
 

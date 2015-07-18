@@ -37,6 +37,8 @@ hi clear VertSplit
 highlight link VertSplit NONE
 hi VertSplit  guifg=#c2bfa5 guibg=#c2bfa5 gui=NONE ctermfg=yellow ctermbg=black cterm=NONE
 
+highlight ExtraWhitespace ctermbg=blue
+
 " For regular expressions turn magic on
 set magic
 
@@ -79,7 +81,18 @@ set laststatus=2
 let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled = 1
 
-set statusline+=%#warningmsg#
+let g:indentLine_char = '︙'
+
+" Vim
+let g:indentLine_color_term = 239
+"
+"GVim
+let g:indentLine_color_gui = '#A4E57E'
+"
+" none X terminal
+"let g:indentLine_color_tty_light = 7 " (default: 4)
+"let g:indentLine_color_dark = 1 " (default: 2)
+
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
@@ -108,14 +121,40 @@ endfunction
 
 " Call NERDTreeFind iff NERDTree is active, current window contains a modifiable
 " file, and we're not in vimdiff
-" function! rc:syncTree()
-"  if &modifiable && rc:isNERDTreeOpen() && strlen(expand('%')) > 0 && !&diff
-"    NERDTreeFind
-"    wincmd p
-"  endif
-"endfunction
+function! rc:syncTree()
+  if &modifiable && rc:isNERDTreeOpen() && strlen(expand('%')) > 0 && !&diff
+    NERDTreeFind
+    wincmd p
+  endif
+endfunction
+
+" NERDTress File highlighting
+function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
+  exec 'autocmd filetype nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
+  exec 'autocmd filetype nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
+endfunction
+
+call NERDTreeHighlightFile('go', 'green', 'none', 'green', '#151515')
+call NERDTreeHighlightFile('ini', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('md', 'blue', 'none', '#3366FF', '#151515')
+call NERDTreeHighlightFile('yml', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('config', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('conf', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('json', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('html', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('styl', 'cyan', 'none', 'cyan', '#151515')
+call NERDTreeHighlightFile('css', 'cyan', 'none', 'cyan', '#151515')
+call NERDTreeHighlightFile('coffee', 'Red', 'none', 'red', '#151515')
+call NERDTreeHighlightFile('js', 'Red', 'none', '#ffa500', '#151515')
+call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#151515')
 
 let NERDTreeQuitOnOpen = 1
 
 " Highlight currently open buffer in NERDTree
 "autocmd BufEnter * call rc:syncTree()
+
+autocmd VimEnter * TagbarToggle
+"autocmd VimEnter * NERDTreeFocusToggle
+"autocmd VimEnter * NERDTreeFocusToggle
+let g:nerdtree_tabs_open_on_console_startup=1
+let g:nerdtree_tabs_smart_startup_focus=2
