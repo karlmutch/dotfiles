@@ -32,6 +32,10 @@ set showmatch           " highlight matching [{()}]
 set nowrap
 set sidescroll=5
 set listchars+=precedes:▶,extends:◀
+set fillchars+=vert:│
+hi clear VertSplit
+highlight link VertSplit NONE
+hi VertSplit  guifg=#c2bfa5 guibg=#c2bfa5 gui=NONE ctermfg=yellow ctermbg=black cterm=NONE
 
 " For regular expressions turn magic on
 set magic
@@ -40,6 +44,7 @@ set magic
 set mat=2
 
 filetype plugin indent on
+filetype plugin on
 
 " Set extra options when running in GUI mode
 if has("gui_running")
@@ -50,7 +55,7 @@ if has("gui_running")
 endif
 
 " Set utf8 as standard encoding and en_US as the standard language
-set encoding=utf8
+set encoding=utf-8
 
 
 " Ignore compiled files
@@ -97,10 +102,10 @@ endif
 "python del powerline_setup
 
 " Check if NERDTree is open or active
-function! rc:isNERDTreeOpen()        
+function! rc:isNERDTreeOpen()
   return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
 endfunction
- 
+
 " Call NERDTreeFind iff NERDTree is active, current window contains a modifiable
 " file, and we're not in vimdiff
 " function! rc:syncTree()

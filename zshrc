@@ -2,6 +2,10 @@
 export ZSH=$HOME/.oh-my-zsh
 export ZSH_CUSTOM=$HOME/.oh-my-zsh-custom
 
+export GOROOT="/usr/lib/golang"
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
