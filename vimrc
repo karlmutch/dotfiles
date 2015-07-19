@@ -59,17 +59,8 @@ endif
 " Set utf8 as standard encoding and en_US as the standard language
 set encoding=utf-8
 
-
 " Ignore compiled files
 set wildignore=*.o,*~,*.pyc
-" allows cursor change in tmux mode
-if exists('$TMUX')
-    let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
-    let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
-else
-    let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-    let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-endif
 
 set mouse=a
 
@@ -81,7 +72,33 @@ set laststatus=2
 let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled = 1
 
-let g:indentLine_char = '︙'
+hi Cursor               ctermfg=green         ctermbg=green
+hi iCursor              ctermfg=red         ctermbg=red
+
+set guicursor=n-v-c:block-Cursor
+set guicursor+=i-ci:ver25-iCursor
+
+if &term == 'xterm-256color' || &term == 'screen-256color' || &term == 'rxvt-unicode-256color'
+    let &t_SI = "\<Esc>[5 q"
+    let &t_EI = "\<Esc>[1 q"
+    if exists('$TMUX')
+        let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>[1 q\<Esc>\\"
+        let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>[5 q\<Esc>\\"
+    endif
+endif
+
+if $TERM_PROGRAM =~ "iTerm"
+" allows cursor change in tmux mode
+if exists('$TMUX')
+    let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+    let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+else
+    let &t_SI = "\<Esc>]50;CursorShape=1\x7" " Vertical bar in insert mode
+    let &t_EI = "\<Esc>]50;CursorShape=0\x7" " Block in normal mode
+endif
+endif
+
+let g:indentLine_char = ' '
 
 " Vim
 let g:indentLine_color_term = 239
@@ -92,6 +109,7 @@ let g:indentLine_color_gui = '#A4E57E'
 " none X terminal
 "let g:indentLine_color_tty_light = 7 " (default: 4)
 "let g:indentLine_color_dark = 1 " (default: 2)
+let g:indentLine_enabled = 0
 
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
