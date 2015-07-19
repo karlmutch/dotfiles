@@ -15,6 +15,7 @@ set tabstop=4        " Sets the tab size to 4
                      " (tabs are usually 8 spaces)
 set expandtab        " Tab key inserts spaces instead of tabs
 set shiftwidth=4     " Sets spaces used for (auto)indent
+set softtabstop=4    " 4 space tab
 set shiftround       " Indent to nearest tabstop
 set autoindent       " Carries over previous indent to the next line
 
@@ -31,11 +32,22 @@ set showmatch           " highlight matching [{()}]
 
 set nowrap
 set sidescroll=5
-set listchars+=precedes:▶,extends:◀
+set list listchars=precedes:▶,extends:◀,tab:»·,trail:·,eol:¶
+
+hi NonText  guifg=#c2bfa5 guibg=#c2bfa5 gui=NONE ctermfg=236 ctermbg=black cterm=NONE
+hi SpecialKey  guifg=#c2bfa5 guibg=#c2bfa5 gui=NONE ctermfg=240 ctermbg=black cterm=NONE
+
+hi VertSplit  guifg=#c2bfa5 guibg=#c2bfa5 gui=NONE ctermfg=yellow ctermbg=black cterm=NONE
 set fillchars+=vert:│
 hi clear VertSplit
 highlight link VertSplit NONE
 hi VertSplit  guifg=#c2bfa5 guibg=#c2bfa5 gui=NONE ctermfg=yellow ctermbg=black cterm=NONE
+
+set cursorline
+hi cursorline cterm=none term=none
+autocmd WinEnter * setlocal cursorline
+autocmd WinLeave * setlocal nocursorline
+highlight CursorLine guibg=#303000 ctermbg=234
 
 highlight ExtraWhitespace ctermbg=blue
 
@@ -98,19 +110,6 @@ else
 endif
 endif
 
-let g:indentLine_char = ' '
-
-" Vim
-let g:indentLine_color_term = 239
-"
-"GVim
-let g:indentLine_color_gui = '#A4E57E'
-"
-" none X terminal
-"let g:indentLine_color_tty_light = 7 " (default: 4)
-"let g:indentLine_color_dark = 1 " (default: 2)
-let g:indentLine_enabled = 0
-
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
@@ -118,6 +117,8 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+let g:colortuner_enabled = 1
 
 if ! has('gui_running')
     set ttimeoutlen=10
@@ -172,7 +173,26 @@ let NERDTreeQuitOnOpen = 1
 "autocmd BufEnter * call rc:syncTree()
 
 autocmd VimEnter * TagbarToggle
+autocmd VimEnter * call DWM_AutoEnter()
 "autocmd VimEnter * NERDTreeFocusToggle
 "autocmd VimEnter * NERDTreeFocusToggle
-let g:nerdtree_tabs_open_on_console_startup=1
-let g:nerdtree_tabs_smart_startup_focus=2
+let g:nerdtree_tabs_open_on_console_startup=0
+let g:NERDTreeHijackNetrw=1
+"let g:nerdtree_tabs_smart_startup_focus=2
+
+" 1. split to tiled windows
+"nmap <silent> <C-L>  <Plug>GoldenViewSplit
+
+" 2. quickly switch current window with the main pane
+" and toggle back
+"nmap <silent> <F8>   <Plug>GoldenViewSwitchMain
+"nmap <silent> <S-F8> <Plug>GoldenViewSwitchToggle
+
+" 3. jump to next and previous window
+"nmap <silent> <C-N>  <Plug>GoldenViewNext
+"nmap <silent> <C-P>  <Plug>GoldenViewPrevious
+
+let g:goldenview__enable_default_mapping = 0
+let g:goldenview__enable_at_startup = 0
+let g:dwm_map_keys = 1
+let g:dwm_master_pane_width=128

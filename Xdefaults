@@ -137,6 +137,9 @@ URxvt*jumpScroll:       true
 URxvt*multiScroll:      true
 URxvt*urgentOnBell:      true
 
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+
 rxvt.termName: rxvt-unicode-256color
 
 ! This fixes spacing when using Powerline inside tmux, this does not appear to be an issue

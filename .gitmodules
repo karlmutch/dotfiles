@@ -73,3 +73,18 @@
 [submodule "vim/bundle/nerdtree"]
 	path = vim/bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
+[submodule "vim/bundle/vim-colortuner"]
+	path = vim/bundle/vim-colortuner
+	url = https://github.com/zefei/vim-colortuner
+[submodule "vim/bundle/vim-obsession"]
+	path = vim/bundle/vim-obsession
+	url = git://github.com/tpope/vim-obsession.git
+[submodule "vim/bundle/vim-prosession"]
+	path = vim/bundle/vim-prosession
+	url = git://github.com/dhruvasagar/vim-prosession.git
+[submodule "vim/bundle/GoldenView"]
+	path = vim/bundle/GoldenView
+	url = https://github.com/zhaocai/GoldenView.Vim
+[submodule "vim/bundle/vim-vinegar"]
+	path = vim/bundle/vim-vinegar
+	url = git://github.com/tpope/vim-vinegar.git
