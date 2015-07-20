@@ -33,6 +33,7 @@ set showmatch           " highlight matching [{()}]
 set nowrap
 set sidescroll=5
 set list listchars=precedes:▶,extends:◀,tab:»·,trail:·,eol:¶
+set showbreak=↪
 
 hi NonText  guifg=#c2bfa5 guibg=#c2bfa5 gui=NONE ctermfg=236 ctermbg=black cterm=NONE
 hi SpecialKey  guifg=#c2bfa5 guibg=#c2bfa5 gui=NONE ctermfg=240 ctermbg=black cterm=NONE
@@ -59,6 +60,11 @@ set mat=2
 
 filetype plugin indent on
 filetype plugin on
+
+augroup reload_vimrc " {
+        autocmd!
+        autocmd BufWritePost $MYVIMRC source $MYVIMRC
+augroup END " }"
 
 " Set extra options when running in GUI mode
 if has("gui_running")
@@ -173,7 +179,7 @@ let NERDTreeQuitOnOpen = 1
 "autocmd BufEnter * call rc:syncTree()
 
 autocmd VimEnter * TagbarToggle
-autocmd VimEnter * call DWM_AutoEnter()
+"autocmd VimEnter * call DWM_AutoEnter()
 "autocmd VimEnter * NERDTreeFocusToggle
 "autocmd VimEnter * NERDTreeFocusToggle
 let g:nerdtree_tabs_open_on_console_startup=0
@@ -181,18 +187,89 @@ let g:NERDTreeHijackNetrw=1
 "let g:nerdtree_tabs_smart_startup_focus=2
 
 " 1. split to tiled windows
-"nmap <silent> <C-L>  <Plug>GoldenViewSplit
+nmap <silent> <C-L>  <Plug>GoldenViewSplit
 
 " 2. quickly switch current window with the main pane
 " and toggle back
-"nmap <silent> <F8>   <Plug>GoldenViewSwitchMain
-"nmap <silent> <S-F8> <Plug>GoldenViewSwitchToggle
+nmap <silent> <F8>   <Plug>GoldenViewSwitchMain
+nmap <silent> <S-F8> <Plug>GoldenViewSwitchToggle
 
 " 3. jump to next and previous window
-"nmap <silent> <C-N>  <Plug>GoldenViewNext
-"nmap <silent> <C-P>  <Plug>GoldenViewPrevious
+"nmap <silent> <C-'>  <Plug>GoldenViewNext
+"nmap <silent> <C-;>  <Plug>GoldenViewPrevious
 
 let g:goldenview__enable_default_mapping = 0
-let g:goldenview__enable_at_startup = 0
-let g:dwm_map_keys = 1
-let g:dwm_master_pane_width=128
+let g:goldenview__enable_at_startup = 1
+
+nmap <F3> :NERDTreeToggle<CR>
+au Filetype go set makeprg=go\ build\ ./...
+nmap <F5> :make<CR>:copen<CR>
+
+nnoremap <silent> <F2>m :Unite -buffer-name=recent -winheight=10 file_mru<cr>
+nnoremap <F2>b :Unite -buffer-name=buffers -winheight=10 buffer<cr>
+
+
+" Go Specific Stuff
+
+au BufRead,BufNewFile *.go set filetype=go                                     
+autocmd FileType go setlocal softtabstop=4
+autocmd FileType go setlocal shiftwidth=4
+autocmd FileType go setlocal tabstop=4
+" Go keyboard mappings
+au FileType go nmap <Leader>s <Plug>(go-implements)
+au FileType go nmap <Leader>i <Plug>(go-info)
+au FileType go nmap <Leader>gd <Plug>(go-doc)
+au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
+au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
+au FileType go nmap <leader>r <Plug>(go-run)
+au FileType go nmap <leader>b <Plug>(go-build)
+au FileType go nmap <leader>t <Plug>(go-test)
+au FileType go nmap <leader>c <Plug>(go-coverage)
+au FileType go nmap <Leader>ds <Plug>(go-def-split)
+au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
+au FileType go nmap <Leader>dt <Plug>(go-def-tab)
+
+"
+" go-vim settings
+let g:go_fmt_command = "goimports"
+" " Enable syntax highting on everything
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+
+
+" go-def settings
+let g:godef_split=2
+let g:godef_same_file_in_same_window=1
+
+
+" tagbar settings                                                                  
+let g:tagbar_type_go = {
+    \ 'ctagstype' : 'go',
+    \ 'kinds'     : [
+        \ 'p:package',
+        \ 'i:imports:1',
+        \ 'c:constants',
+        \ 'v:variables',
+        \ 't:types',
+        \ 'n:interfaces',
+        \ 'w:fields',
+        \ 'e:embedded',
+        \ 'm:methods',
+        \ 'r:constructor',
+        \ 'f:functions'
+    \ ],
+    \ 'sro' : '.',
+    \ 'kind2scope' : {
+        \ 't' : 'ctype',
+        \ 'n' : 'ntype'
+    \ },
+    \ 'scope2kind' : {
+        \ 'ctype' : 't',
+        \ 'ntype' : 'n'
+    \ },
+    \ 'ctagsbin'  : 'gotags',
+    \ 'ctagsargs' : '-sort -silent'
+\ } 

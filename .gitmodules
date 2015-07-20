@@ -88,3 +88,21 @@
 [submodule "vim/bundle/vim-vinegar"]
 	path = vim/bundle/vim-vinegar
 	url = git://github.com/tpope/vim-vinegar.git
+[submodule "vim/bundle/vim-sauce"]
+	path = vim/bundle/vim-sauce
+	url = git://github.com/joonty/vim-sauce.git
+[submodule "vim/bundle/supertab"]
+	path = vim/bundle/supertab
+	url = https://github.com/ervandew/supertab
+[submodule "vim/bundle/unite"]
+	path = vim/bundle/unite
+	url = https://github.com/Shougo/unite.vim
+[submodule "vim/bundle/neomru"]
+	path = vim/bundle/neomru
+	url = https://github.com/Shougo/neomru.vim
+[submodule "bufexplorer"]
+	path = bufexplorer
+	url = https://github.com/jlanzarotta/bufexplorer
+[submodule "vim/bundle/bufexplorer"]
+	path = vim/bundle/bufexplorer
+	url = https://github.com/jlanzarotta/bufexplorer
