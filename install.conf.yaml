@@ -12,7 +12,6 @@
     ~/.Xdefaults:   Xdefaults
     ~/.gitconfig:   gitconfig
     ~/.minttyrc:    minttyrc
-    ~/.config:      config/
     ~/.mc:          mc/
     ~/.urxvt:       urxvt/
     ~/.fonts:       fonts/
@@ -20,6 +19,22 @@
     ~/.oh-my-zsh-custom:   oh-my-zsh-custom/
     ~/.powerline:   powerline-develop/
     ~/.icons:       icons/
+    ~/.config/fish:      
+        create: true
+        path: config/fish
+    ~/.config/fontconfig:
+        create: true
+        path: config/fontconfig
+    ~/.config/powerline:
+        create: true
+        path: config/powerline
+    ~/.config/htop:
+        create: true
+        path: config/htop
+    ~/.config/Trolltech.conf:      config/Trolltech.conf
+    ~/.config/Doxygen.org:
+        create: true
+        path: config/Doxygen.org
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
