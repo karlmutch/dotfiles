@@ -37,6 +37,9 @@
         path: config/Doxygen.org
 
 - shell:
+    - [mkdir ~/.vim_temp]
+    - [mkdir ~/.vim_temp/backup]
+    - [mkdir ~/.vim_temp/swap]
     - [git submodule update --init --recursive, Installing submodules]
     - [fc-cache -fv ~/.fonts]
     - [ln -sfnT ~/.icons/PolarCursorTheme/ ~/.icons/default]
