@@ -220,7 +220,7 @@ nnoremap <F2>b :Unite -buffer-name=buffers -winheight=10 buffer<cr>
 
 " Go Specific Stuff
 
-au BufRead,BufNewFile *.go set filetype=go                                     
+au BufRead,BufNewFile *.go set filetype=go
 autocmd FileType go setlocal softtabstop=4
 autocmd FileType go setlocal shiftwidth=4
 autocmd FileType go setlocal tabstop=4
