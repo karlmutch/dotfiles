@@ -284,3 +284,6 @@ let g:tagbar_type_go = {
 \ } 
 
 let g:netrw_liststyle = 3
+autocmd BufReadPost,FileReadPost,BufNewFile * call system("tmux rename-window % " . expand("%:t"))
+autocmd BufEnter * let &titlestring = ' ' . expand("%:t")
+set title
