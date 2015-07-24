@@ -5,6 +5,9 @@ export ZSH_CUSTOM=$HOME/.oh-my-zsh-custom
 export GOROOT=$HOME/go
 export GOPATH=$HOME/dc3.0
 export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/dc3.0
+export PATH=$PATH:$GOPATH/bin:$GOROOT/bin
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
