@@ -141,6 +141,10 @@ URxvt*cutchars:           BACKSLASH '"'&()*,;<=>?@[]^{|}'"'
 URxvt.iso14755: false
 URxvt.iso14755_52: false
 
+URxvt*borderLess: false
+URxvt*externalBorder:     2
+URxvt*borderColor:     #333333
+
 rxvt.termName: rxvt-unicode-256color
 
 ! This fixes spacing when using Powerline inside tmux, this does not appear to be an issue
@@ -162,13 +166,16 @@ URxvt.keysym.M-u:     perl:url-select:select_next
 URxvt.url-launcher:   /usr/bin/firefox
 URxvt.underlineURLs:  True
 URxvt.matcher.button: 1
+
 URxvt.keysym.M-Escape:perl:keyboard-select:activate
 URxvt.keysym.M-c:     perl:clipboard:copy
 URxvt.keysym.M-v:     perl:clipboard:paste
 URxvt.keysym.M-C-v:   perl:clipboard:paste_escaped
-URxvt*borderLess: false
-URxvt*externalBorder:     2
-URxvt*borderColor:     #333333
+URxvt.keysym.Shift-Control-C:     perl:clipboard:copy
+URxvt.keysym.Shift-Control-V:     perl:clipboard:paste
+
+URxvt.clipboard.copycmd: xsel -ib
+URxvt.clipboard.pastecmd: xsel -ob
 
 ! Fonts
 Xft.dpi:        96

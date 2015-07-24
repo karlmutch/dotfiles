@@ -100,3 +100,4 @@ export GOROOT=/home/kmutch/go
 export PATH=$PATH:/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
 
 alias dtree='tree -Chd --du'
+pcurl () { curl $1  2> /dev/null |  python -m json.tool | pygmentize -l json }
