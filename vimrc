@@ -19,6 +19,10 @@ set softtabstop=4    " 4 space tab
 set shiftround       " Indent to nearest tabstop
 set autoindent       " Carries over previous indent to the next line
 
+set backup                      " file backup
+set backupdir=~/.vim_temp/backup     " directory for backup files
+set directory=~/.vim_temp/swap       " directory for swap files
+
 set nocompatible
 set vb t_vb=
 set ruler
@@ -114,9 +118,6 @@ else
     let &t_SI = "\<Esc>]50;CursorShape=1\x7" " Vertical bar in insert mode
     let &t_EI = "\<Esc>]50;CursorShape=0\x7" " Block in normal mode
 endif
-endif
-
-eval "$(boot2docker shellinit)"
 
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -187,7 +188,13 @@ autocmd VimEnter * TagbarToggle
 let g:nerdtree_tabs_open_on_console_startup=0
 let g:NERDTreeHijackNetrw=1
 "let g:nerdtree_tabs_smart_startup_focus=2
+let g:NERDTreeWinPos = "right"
 
+" Store the bookmarks file
+let NERDTreeBookmarksFile=expand("$HOME/.vim-NERDTreeBookmarks")
+" Show the bookmarks table on startup
+let NERDTreeShowBookmarks=1
+"
 " 1. split to tiled windows
 nmap <silent> <C-L>  <Plug>GoldenViewSplit
 
@@ -275,3 +282,5 @@ let g:tagbar_type_go = {
     \ 'ctagsbin'  : 'gotags',
     \ 'ctagsargs' : '-sort -silent'
 \ } 
+
+let g:netrw_liststyle = 3

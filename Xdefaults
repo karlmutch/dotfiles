@@ -136,6 +136,7 @@ URxvt*loginShell:       true
 URxvt*jumpScroll:       true
 URxvt*multiScroll:      true
 URxvt*urgentOnBell:      true
+URxvt*cutchars:           BACKSLASH '"'&()*,;<=>?@[]^{|}'"'
 
 URxvt.iso14755: false
 URxvt.iso14755_52: false
@@ -165,15 +166,18 @@ URxvt.keysym.M-Escape:perl:keyboard-select:activate
 URxvt.keysym.M-c:     perl:clipboard:copy
 URxvt.keysym.M-v:     perl:clipboard:paste
 URxvt.keysym.M-C-v:   perl:clipboard:paste_escaped
+URxvt*borderLess: false
+URxvt*externalBorder:     2
+URxvt*borderColor:     #333333
 
 ! Fonts
 Xft.dpi:        96
 Xft.antialias:  1
 Xft.rgba:       rgb
 Xft.lcdfilter:  lcddefault
-Xft.hinting:    1
+Xft.hinting:    true
 Xft.autohint:   0
-Xft.hintstyle:  hintfull
+Xft.hintstyle:  hintslight
 
 gm.font: 9x15
 

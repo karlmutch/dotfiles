@@ -2,6 +2,9 @@
 export ZSH=$HOME/.oh-my-zsh
 export ZSH_CUSTOM=$HOME/.oh-my-zsh-custom
 
+export GOROOT=$HOME/go
+export GOPATH=$HOME/dc3.0
+export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 export GOROOT=/usr/local/go
 export GOPATH=$HOME/dc3.0
 export PATH=$PATH:$GOPATH/bin:$GOROOT/bin
@@ -96,6 +99,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #. /usr/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
-#
-#
-eval "$(boot2docker shellinit)"
+export GOROOT=/home/kmutch/go
+export PATH=$PATH:/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
+
+alias dtree='tree -Chd --du'
