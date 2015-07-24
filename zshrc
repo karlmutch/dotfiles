@@ -2,8 +2,8 @@
 export ZSH=$HOME/.oh-my-zsh
 export ZSH_CUSTOM=$HOME/.oh-my-zsh-custom
 
-export GOROOT=/usr/lib/golang
-export GOPATH=$HOME/go
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/dc3.0
 export PATH=$PATH:$GOPATH/bin:$GOROOT/bin
 
 # Set name of the theme to load.
@@ -96,3 +96,6 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #. /usr/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
+#
+#
+eval "$(boot2docker shellinit)"

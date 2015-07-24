@@ -105,7 +105,7 @@ if &term == 'xterm-256color' || &term == 'screen-256color' || &term == 'rxvt-uni
     endif
 endif
 
-if $TERM_PROGRAM =~ "iTerm"
+
 " allows cursor change in tmux mode
 if exists('$TMUX')
     let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
@@ -115,6 +115,8 @@ else
     let &t_EI = "\<Esc>]50;CursorShape=0\x7" " Block in normal mode
 endif
 endif
+
+eval "$(boot2docker shellinit)"
 
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
