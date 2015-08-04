@@ -123,7 +123,7 @@ Eclipse*spacing:0
 URxvt*dynamicColors:    true
 URxvt*cursorBlink:      true
 URxvt.termName: rxvt-unicode-256color
-URxvt.geometry: 172x42
+URxvt.geometry: 172x16
 URxvt*scrollBar_right: false
 
 URxvt*skipBuiltinGlyphs: true
