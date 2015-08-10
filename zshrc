@@ -65,12 +65,13 @@ POWERLEVEL9K_SHOW_CHANGESET=false
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git git-flow golang colored-man history docker docker-compose zsh-syntax-highlighting)
+autoload -U compinit && compinit
 
 # User configuration
 
 export PATH=$PATH:"/usr/local/bin:/usr/bin:$HOME/bin:/usr/local/sbin:/usr/sbin"
-# export MANPATH="/usr/local/man:$MANPATH"
+export MANPATH="/usr/local/man:$MANPATH:$HOME/man"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -79,7 +80,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
+export EDITOR='vim'
 # else
 #   export EDITOR='mvim'
 # fi

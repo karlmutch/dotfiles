@@ -4,6 +4,8 @@
     ~/.dotfiles: ''
     ~/.tmux.conf:   tmux.conf
     ~/.zshrc:       zshrc
+    ~/.zsh-configuration: zsh-configuration
+    ~/.zsh-completions: zsh-completions
     ~/.vim: vim/
     ~/.vimrc: vimrc
     ~/.multitailrc: multitailrc
@@ -19,6 +21,7 @@
     ~/.oh-my-zsh-custom:   oh-my-zsh-custom/
     ~/.powerline:   powerline-develop/
     ~/.icons:       icons/
+    ~/.tmux:        tmux/
     ~/.config/gocode:
         create: true
         path: config/gocode
@@ -45,4 +48,5 @@
     - [mkdir ~/.vim_temp/swap]
     - [git submodule update --init --recursive, Installing submodules]
     - [fc-cache -fv ~/.fonts]
+    - [rm -f ~/.zcompdump; compinit]
     - [ln -sfnT ~/.icons/PolarCursorTheme/ ~/.icons/default]

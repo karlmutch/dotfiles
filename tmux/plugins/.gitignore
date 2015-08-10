@@ -1,0 +1,4 @@
+tmux-resurrect
+tmux-continuum
+tmux-server*.log
+tmux-client*.log

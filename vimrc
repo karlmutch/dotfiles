@@ -283,6 +283,12 @@ let g:tagbar_type_go = {
     \ 'ctagsargs' : '-sort -silent'
 \ } 
 
+" folding
+set foldmethod=indent
+set nofoldenable
+set foldlevel=1
+set foldnestmax=10
+
 let g:netrw_liststyle = 3
 autocmd BufReadPost,FileReadPost,BufNewFile * call system("tmux rename-window % " . expand("%:t"))
 autocmd BufEnter * let &titlestring = ' ' . expand("%:t")
