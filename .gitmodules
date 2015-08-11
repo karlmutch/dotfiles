@@ -115,3 +115,6 @@
 [submodule "vim/bundle/Recover.vim"]
 	path = vim/bundle/Recover.vim
 	url = https://github.com/chrisbra/Recover.vim
+[submodule "oh-my-zsh-custom/plugins/zsh-syntax-highlighting"]
+	path = oh-my-zsh-custom/plugins/zsh-syntax-highlighting
+	url = https://github.com/zsh-users/zsh-syntax-highlighting
