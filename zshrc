@@ -2,13 +2,6 @@
 export ZSH=$HOME/.oh-my-zsh
 export ZSH_CUSTOM=$HOME/.oh-my-zsh-custom
 
-export GOROOT=$HOME/go
-export GOPATH=$HOME/dc3.0
-export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
-export GOROOT=/usr/local/go
-export GOPATH=$HOME/dc3.0
-export PATH=$PATH:$GOPATH/bin:$GOROOT/bin
-
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -59,7 +52,7 @@ POWERLEVEL9K_SHOW_CHANGESET=false
 # HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
-ZSH_CUSTOM=~/.oh-my-zsh-custom
+#ZSH_CUSTOM=~/.oh-my-zsh-custom
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -101,7 +94,13 @@ export EDITOR='vim'
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #. /usr/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
 export GOROOT=/home/kmutch/go
-export PATH=$PATH:/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
+export GOPATH=$HOME/dc3.0
+export PATH=$GOPATH/bin:$GOROOT/bin:$PATH:/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin
 
 alias dtree='tree -Chd --du'
 pcurl () { curl $1  2> /dev/null |  python -m json.tool | pygmentize -l json }
+
+if [[ -n $TMUX_PANE ]]; then
+else
+tmux attach -t base || tmux new -s base
+fi
