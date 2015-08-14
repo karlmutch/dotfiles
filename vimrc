@@ -1,4 +1,4 @@
-call pathogen#infect()                      " use pathogen
+call pathogen#infect('~/.vim/bundle-0/{}', '~/.vim/bundle/{}')                      " use pathogen
 call pathogen#helptags()
 
 syntax on            " Turn on syntax highlighting
