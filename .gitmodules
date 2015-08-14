@@ -127,3 +127,18 @@
 [submodule "vim/bundle/thrift.vim"]
 	path = vim/bundle/thrift.vim
 	url = https://github.com/solarnz/thrift.vim
+[submodule "vim/bundle/rainbow"]
+	path = vim/bundle/rainbow
+	url = https://github.com/luochen1990/rainbow
+[submodule "vim/bundle/sexy_scroller.vim"]
+	path = vim/bundle/sexy_scroller.vim
+	url = https://github.com/joeytwiddle/sexy_scroller.vim
+[submodule "vim/bundle/git_shade.vim"]
+	path = vim/bundle/git_shade.vim
+	url = https://github.com/joeytwiddle/git_shade.vim
+[submodule "vim/bundle/smeargle"]
+	path = vim/bundle/smeargle
+	url = https://github.com/FriedSock/smeargle
+[submodule "vim/bundle/grep.vim"]
+	path = vim/bundle/grep.vim
+	url = https://github.com/joeytwiddle/grep.vim

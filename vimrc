@@ -56,6 +56,12 @@ highlight CursorLine guibg=#303000 ctermbg=234
 
 highlight ExtraWhitespace ctermbg=blue
 
+" Use grays instead of blues in 256-color terminal:
+let g:GitShade_ColorGradient = "black_to_grey"
+let g:GitShade_ColorWhat = "bg"
+let g:GitShade_Colors_For_CTerm_256 = [ 0, 232, 233, 234, 235, 236, 237, 238, 239 ]
+let g:GitShade_Linear = 1
+
 " For regular expressions turn magic on
 set magic
 
@@ -128,6 +134,7 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 let g:colortuner_enabled = 1
+let g:rainbow_active = 1
 
 if ! has('gui_running')
     set ttimeoutlen=10
@@ -195,17 +202,6 @@ let NERDTreeBookmarksFile=expand("$HOME/.vim-NERDTreeBookmarks")
 " Show the bookmarks table on startup
 let NERDTreeShowBookmarks=1
 "
-" 1. split to tiled windows
-nmap <silent> <C-L>  <Plug>GoldenViewSplit
-
-" 2. quickly switch current window with the main pane
-" and toggle back
-nmap <silent> <F8>   <Plug>GoldenViewSwitchMain
-nmap <silent> <S-F8> <Plug>GoldenViewSwitchToggle
-
-" 3. jump to next and previous window
-"nmap <silent> <C-'>  <Plug>GoldenViewNext
-"nmap <silent> <C-;>  <Plug>GoldenViewPrevious
 
 let g:goldenview__enable_default_mapping = 0
 let g:goldenview__enable_at_startup = 1
@@ -224,19 +220,6 @@ au BufRead,BufNewFile *.go set filetype=go
 autocmd FileType go setlocal softtabstop=4
 autocmd FileType go setlocal shiftwidth=4
 autocmd FileType go setlocal tabstop=4
-" Go keyboard mappings
-au FileType go nmap <Leader>s <Plug>(go-implements)
-au FileType go nmap <Leader>i <Plug>(go-info)
-au FileType go nmap <Leader>gd <Plug>(go-doc)
-au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
-au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
-au FileType go nmap <leader>r <Plug>(go-run)
-au FileType go nmap <leader>b <Plug>(go-build)
-au FileType go nmap <leader>t <Plug>(go-test)
-au FileType go nmap <leader>c <Plug>(go-coverage)
-au FileType go nmap <Leader>ds <Plug>(go-def-split)
-au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
-au FileType go nmap <Leader>dt <Plug>(go-def-tab)
 
 "
 " go-vim settings
@@ -293,3 +276,31 @@ let g:netrw_liststyle = 3
 autocmd BufReadPost,FileReadPost,BufNewFile * call system("tmux rename-window % " . expand("%:t"))
 autocmd BufEnter * let &titlestring = ' ' . expand("%:t")
 set title
+
+
+
+" Go keyboard mappings
+au FileType go nmap <Leader>s <Plug>(go-implements)
+au FileType go nmap <Leader>i <Plug>(go-info)
+au FileType go nmap <Leader>gd <Plug>(go-doc)
+au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
+au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
+au FileType go nmap <leader>r <Plug>(go-run)
+au FileType go nmap <leader>b <Plug>(go-build)
+au FileType go nmap <leader>t <Plug>(go-test)
+au FileType go nmap <leader>c <Plug>(go-coverage)
+au FileType go nmap <Leader>ds <Plug>(go-def-split)
+au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
+au FileType go nmap <Leader>dt <Plug>(go-def-tab)
+
+" 1. split to tiled windows
+nmap <silent> <C-L>  <Plug>GoldenViewSplit
+
+" 2. quickly switch current window with the main pane
+" and toggle back
+nmap <silent> <F8>   <Plug>GoldenViewSwitchMain
+nmap <silent> <S-F8> <Plug>GoldenViewSwitchToggle
+
+" 3. jump to next and previous window
+"nmap <silent> <C-'>  <Plug>GoldenViewNext
+"nmap <silent> <C-;>  <Plug>GoldenViewPrevious
