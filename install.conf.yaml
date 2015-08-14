@@ -4,6 +4,7 @@
     ~/.dotfiles: ''
     ~/.tmux.conf:   tmux.conf
     ~/.zshrc:       zshrc
+    ~/.zsh.rc: zsh.rc
     ~/.zsh-configuration: zsh-configuration
     ~/.zsh-completions: zsh-completions
     ~/.vim: vim/

@@ -1,0 +1,7 @@
+if [[ "$OSX" = "1" ]]
+then
+    if [[ "$TERM" = "rxvt-unicode-256color" ]]
+    then
+      export TERM=rxvt-256color
+    fi
+fi

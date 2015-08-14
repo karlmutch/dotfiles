@@ -1,0 +1,4 @@
+
+export GOROOT=/home/$USER/go
+export GOPATH=$HOME/dc3.0
+export PATH=$GOPATH/bin:$GOROOT/bin:$PATH

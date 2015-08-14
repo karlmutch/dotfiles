@@ -1,0 +1,15 @@
+# Place any aliases into this file
+#
+
+function _run_pager {
+    ${=PAGER} "$@"
+}
+
+export PAGER='less +g -RSC'
+READNULLCMD='_run_pager'
+
+alias dtree='tree -Chd --
+
+pcurl () { curl $1  2> /dev/null |  python -m json.tool | pygmentize -l json }
+u'
+

@@ -71,9 +71,27 @@ source $ZSH/oh-my-zsh.sh
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-export EDITOR='vim'
+
+LOCALRC=~/.zsh.rc.local
+GLOBALRC=~/.zsh.rc
+
+startfiles=`\ls -1 $GLOBALRC/* | xargs -n 1 basename | sort | uniq`
+if [[ -d "$LOCALRC" ]]
+then
+startfiles=${startfiles}`\ls -1 $LOCALRC/* $GLOBALRC/* | xargs -n 1 basename | sort | uniq`
+fi
+
+for i in `echo $startfiles`
+do
+        if [[ -e $LOCALRC/$i ]]
+        then
+                source $LOCALRC/$i
+        else
+                source $GLOBALRC/$i
+        fi
+done
+
+
 # else
 #   export EDITOR='mvim'
 # fi
@@ -93,12 +111,6 @@ export EDITOR='vim'
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #. /usr/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
-export GOROOT=/home/kmutch/go
-export GOPATH=$HOME/dc3.0
-export PATH=$GOPATH/bin:$GOROOT/bin:$PATH:/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin
-
-alias dtree='tree -Chd --du'
-pcurl () { curl $1  2> /dev/null |  python -m json.tool | pygmentize -l json }
 
 if [[ -n $TMUX_PANE ]]; then
 else
