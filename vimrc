@@ -90,7 +90,11 @@ set encoding=utf-8
 " Ignore compiled files
 set wildignore=*.o,*~,*.pyc
 
-set mouse=a
+set mouse+=a
+if &term =~ '^screen' || &term =~ '^rxvt'
+    " tmux knows the extended mouse mode
+    set ttymouse=xterm2
+endif
 
 "set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 
@@ -124,6 +128,11 @@ else
     let &t_SI = "\<Esc>]50;CursorShape=1\x7" " Vertical bar in insert mode
     let &t_EI = "\<Esc>]50;CursorShape=0\x7" " Block in normal mode
 endif
+
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
 
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*

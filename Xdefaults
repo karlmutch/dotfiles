@@ -49,9 +49,6 @@ xterm*loginShell:       true
 xterm*jumpScroll:       true
 xterm*multiScroll:      true
 xterm*toolBar:          true
-!xterm*font:             -bitstream-bitstream vera sans mono-medium-r-normal--12-*-*-*-*-*-*-*
-!xterm*fs:               11
-xterm*faceName: Bitstream Vera Sans Mono
 xterm.termName: xterm-256color
 
 Emacs.menuBar: on
@@ -85,40 +82,6 @@ Eclipse*spacing:0
 !Eclipse*background:#d6d3ce
 
 !Eclipse*fontList:-*-helvetica-medium-r-normal-*-12-*-100-100-*-*-*-*
-
-!urxvt*font: \
-!            xft:Fira Mono for Powerline:size=18:style=Regular, \
-!            xft:DejaVu Sans Mono for Powerline:size=18:style=Regular, \
-!            xft:Consolas for Powerline:size=18:style=Regular, \
-!            xft:Menlo for Powerline:size=18:style=RegularForPowerline, \
-!            xft:Source Code Pro for Powerline:size=18:style=Regular, \
-!            xft:FreeSerif:size=18:style=Regular, \
-!            xft:FreeMono:size=18:style=Regular, \
-!            xft:Unifont:size=18:style=Medium:antialias=false
-
-!urxvt*boldFont: \ 
-!            xft:Fira Mono for Powerline:size=18:style=Regular, \
-!            xft:DejaVu Sans Mono for Powerline:size=18:style=Regular, \
-!            xft:Consolas for Powerline:size=18:style=Regular, \
-!            xft:Menlo for Powerline:size=18:style=Regular, \
-!            xft:Source Code Pro for Powerline:size=18:style=Regular, \
-!            xft:FreeSerif:size=18:style=Regular, \
-!            xft:FreeMono:size=18:style=Regular, \
-!            xft:Unifont:size=18:style=Medium:antialias=false
-
-!            xft:WenQuanYi Bitmap Song:size=8, \
-
-!urxvt*font: xft:DejaVu Sans Mono:size=12
-!urxvt*boldFont: xft:DejaVu Sans Mono:size=12:style=Bold
-!urxvt*font: xft:Liberation Mono:size=14,xft:Bitstream Vera Sans Mono:size=14,xft:Lucida ConsoleP,xft:DejaVu Sans Mono
-!urxvt*boldFont: xft:Liberation Mono:size=14:style=Bold,xft:Bitstream Vera Sans Mono:size=14:style=Bold,xft:Lucida ConsoleP,xft:DejaVu Sans Mono
-!urxvt*font: xft:DejaVu Sans Mono:size=14:style=Book
-!urxvt*boldFont: xft:DejaVu Sans Mono:size=14:style=Bold
-!urxvt*boldFont: xft:DejaVu Sans Mono for Powerline:size=14:style=Bold,xft:terminus:size=14:style=Bold
-!urxvt*font: xft:Lucida ConsoleP:size=13
-!urxvt*boldFont: xft:Lucida ConsoleP:size=13:style=Bold
-!urxvt*font: xft:DejaVu Sans Mono:pixelsize=15,xft:Bitstream Vera Sans Mono:pixelsize=15, xft:Terminus:pixelsize=12:antialias=false
-!urxvt*boldFont: xft:DejaVu Sans Mono:pixelsize=15:style=Bold,xft:Bitstream Vera Sans Mono:pixelsize=15:style=Bold, xft:Terminus:pixelsize=12:antialias=false:style=Bold
 
 URxvt*dynamicColors:    true
 URxvt*cursorBlink:      true
@@ -190,17 +153,16 @@ gm.font: 9x15
 
 !       xft:InputMono Medium:size=18:style=Regular:antialias=false:autohint=false, \
 !           xft:InputMono Medimum:size=18:style=Regular:antialias=false:autohint=false, \
+!       xft:FontAwesome:style=Regular, \
 *font: \
-       xft:DejaVu Sans Mono for Powerline:style=Regular, \
-       xft:DejaVu Sans Mono for Powerline Plus Nerd File Types Mono Plus Font Awesome Plus Octicons Plus Pomicons: DejaVu Sans Mono for Powerline Plus Nerd File Types Mono Plus Font Awesome Plus Octicons Plus Pomicons:style=Regular, \
-       xft:FontAwesome:style=Regular, \
+       xft:DejaVu Sans Mono for Powerline:style=Book, \
+       xft:DejaVu Sans Mono for Powerline Plus Nerd File Types Mono Plus Font Awesome Plus Octicons Plus Pomicons: DejaVu Sans Mono for Powerline Plus Nerd File Types Mono Plus Font Awesome Plus Octicons Plus Pomicons:style=Book, \
        xft:Fira Mono for Powerline:style=Regular, \
        xft:Unifont:style=Medium:antialias=false
 
 *boldFont: \
-       xft:DejaVu Sans Mono for Powerline:style=Regular, \
-       xft:DejaVu Sans Mono for Powerline Plus Nerd File Types Mono Plus Font Awesome Plus Octicons Plus Pomicons: DejaVu Sans Mono for Powerline Plus Nerd File Types Mono Plus Font Awesome Plus Octicons Plus Pomicons:style=Regular, \
-       xft:FontAwesome:style=Regular, \
+       xft:DejaVu Sans Mono for Powerline:style=Book, \
+       xft:DejaVu Sans Mono for Powerline Plus Nerd File Types Mono Plus Font Awesome Plus Octicons Plus Pomicons: DejaVu Sans Mono for Powerline Plus Nerd File Types Mono Plus Font Awesome Plus Octicons Plus Pomicons:style=Book, \
        xft:Fira Mono for Powerline:style=Regular, \
        xft:Unifont:style=Medium:antialias=false
 
