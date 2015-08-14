@@ -198,9 +198,9 @@ gm.font: 9x15
        xft:Unifont:style=Medium:antialias=false
 
 *boldFont: \
-           xft:DejaVu Sans Mono for Powerline:style=Regular, \
+       xft:DejaVu Sans Mono for Powerline:style=Regular, \
        xft:DejaVu Sans Mono for Powerline Plus Nerd File Types Mono Plus Font Awesome Plus Octicons Plus Pomicons: DejaVu Sans Mono for Powerline Plus Nerd File Types Mono Plus Font Awesome Plus Octicons Plus Pomicons:style=Regular, \
-           xft:FontAwesome:style=Regular, \
-           xft:Fira Mono for Powerline:style=Regular, \
-           xft:Unifont:style=Medium:antialias=false
+       xft:FontAwesome:style=Regular, \
+       xft:Fira Mono for Powerline:style=Regular, \
+       xft:Unifont:style=Medium:antialias=false
 
