@@ -204,10 +204,9 @@ let NERDTreeShowBookmarks=1
 "
 
 let g:goldenview__enable_default_mapping = 0
-let g:goldenview__enable_at_startup = 1
+let g:goldenview__enable_at_startup = 0
 
 nmap <F3> :NERDTreeToggle<CR>
-au Filetype go set makeprg=go\ build\ ./...
 nmap <F5> :make<CR>:copen<CR>
 
 nnoremap <silent> <F2>m :Unite -buffer-name=recent -winheight=10 file_mru<cr>
@@ -292,6 +291,9 @@ au FileType go nmap <leader>c <Plug>(go-coverage)
 au FileType go nmap <Leader>ds <Plug>(go-def-split)
 au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
 au FileType go nmap <Leader>dt <Plug>(go-def-tab)
+
+au Filetype go set makeprg=go\ build\ ./...
+au FileType go let b:delimitMate_autoclose = 0
 
 " 1. split to tiled windows
 nmap <silent> <C-L>  <Plug>GoldenViewSplit

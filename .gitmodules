@@ -142,3 +142,12 @@
 [submodule "vim/bundle/grep.vim"]
 	path = vim/bundle/grep.vim
 	url = https://github.com/joeytwiddle/grep.vim
+[submodule "vim/bundle/csapprox"]
+	path = vim/bundle/csapprox
+	url = https://github.com/godlygeek/csapprox
+[submodule "vim/bundle/YankRing.vim"]
+	path = vim/bundle/YankRing.vim
+	url = https://github.com/vim-scripts/YankRing.vim
+[submodule "vim/bundle/vim-devicons"]
+	path = vim/bundle/vim-devicons
+	url = https://github.com/ryanoasis/vim-devicons
