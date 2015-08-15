@@ -158,11 +158,16 @@ gm.font: 9x15
 !       xft:DejaVu Sans Mono:style=Book, \
 !       xft:Fira Mono for Powerline:style=Regular, \
 !       xft:Unifont:style=Medium:antialias=false
+!       xft:DejaVu Sans Mono for Powerline Plus Nerd File Types Mono Plus Font Awesome Plus Octicons Plus Pomicons:size=14"
+!       xft:icomoon:style=Book:size=14, \
+!       xft:octicons:style=Book:size=14, \
+!       xft:FontAwesome:style=Regular:size=14
+!
 *font: \
-       xft:DejaVu Sans Mono for Powerline:style=Book, \
-       xft:DejaVu Sans Mono for Powerline Plus Nerd File Types Mono Plus Font Awesome Plus Octicons Plus Pomicons:size=14"
+       xft:DejaVu Sans Mono for Powerline:style=Book:size=14, \
+       xft:DejaVu Sans Mono for Powerline Plus Nerd File Types Mono Plus Font Awesome Plus Octicons Plus Pomicons:size=14
 
 *boldFont: \
-       xft:DejaVu Sans Mono for Powerline:style=Book, \
-       xft:DejaVu Sans Mono for Powerline Plus Nerd File Types Mono Plus Font Awesome Plus Octicons Plus Pomicons:size=14"
+       xft:DejaVu Sans Mono for Powerline:style=Book:size=14, \
+       xft:DejaVu Sans Mono for Powerline Plus Nerd File Types Mono Plus Font Awesome Plus Octicons Plus Pomicons:size=14
 
