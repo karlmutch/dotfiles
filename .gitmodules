@@ -154,3 +154,12 @@
 [submodule "fzf"]
 	path = fzf
 	url = https://github.com/junegunn/fzf.git
+[submodule "vim/bundle/vim-lastplace"]
+	path = vim/bundle/vim-lastplace
+	url = git://github.com/dietsche/vim-lastplace.git
+[submodule "vim/bundle/TagHighlight"]
+	path = vim/bundle/TagHighlight
+	url = https://github.com/vim-scripts/TagHighlight
+[submodule "vim/bundle/git-flow-format"]
+	path = vim/bundle/git-flow-format
+	url = https://github.com/vim-scripts/git-flow-format

@@ -58,7 +58,7 @@ POWERLEVEL9K_SHOW_CHANGESET=false
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git git-flow golang colored-man history docker docker-compose zsh-syntax-highlighting)
+plugins=(git git-flow golang colored-man history docker docker-compose zsh-syntax-highlighting sudo)
 autoload -U compinit && compinit
 
 # User configuration
