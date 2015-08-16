@@ -116,3 +116,5 @@ if [[ -n $TMUX_PANE ]]; then
 else
 tmux attach -t base || tmux new -s base
 fi
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

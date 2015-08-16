@@ -3,6 +3,7 @@
 - link:
     ~/.dotfiles: ''
     ~/.tmux.conf:   tmux.conf
+    ~/.fzf:         fzf
     ~/.zshrc:       zshrc
     ~/.zsh.rc: zsh.rc
     ~/.zsh-configuration: zsh-configuration

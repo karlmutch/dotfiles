@@ -8,8 +8,7 @@ function _run_pager {
 export PAGER='less +g -RSC'
 READNULLCMD='_run_pager'
 
-alias dtree='tree -Chd --
+alias dtree='tree -sChd --du'
 
 pcurl () { curl $1  2> /dev/null |  python -m json.tool | pygmentize -l json }
-u'
 

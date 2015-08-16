@@ -97,6 +97,7 @@ if &term =~ '^screen' || &term =~ '^rxvt'
 endif
 
 "set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+set rtp+=~/.fzf
 
 " Always show statusline
 set laststatus=2
@@ -289,6 +290,23 @@ autocmd BufEnter * let &titlestring = ' ' . expand("%:t")
 set title
 
 
+function! s:buflist()
+  redir => ls
+  silent ls
+  redir END
+  return split(ls, '\n')
+endfunction
+
+function! s:bufopen(e)
+  execute 'buffer' matchstr(a:e, '^[ 0-9]*')
+endfunction
+
+nnoremap <silent> <Leader><Enter> :call fzf#run({
+\   'source':  reverse(<sid>buflist()),
+\   'sink':    function('<sid>bufopen'),
+\   'options': '+m',
+\   'down':    len(<sid>buflist()) + 2
+\ })<CR>
 
 " Go keyboard mappings
 au FileType go nmap <Leader>s <Plug>(go-implements)
