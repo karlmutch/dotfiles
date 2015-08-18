@@ -114,7 +114,9 @@ done
 
 if [[ -n $TMUX_PANE ]]; then
 else
-tmux attach -t base || tmux new -s base
+    if [[ "$OSX" == "1" ]]; then
+        tmux attach -t base || tmux new -s base
+    fi
 fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
