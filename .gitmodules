@@ -163,3 +163,24 @@
 [submodule "vim/bundle/git-flow-format"]
 	path = vim/bundle/git-flow-format
 	url = https://github.com/vim-scripts/git-flow-format
+[submodule "zsh-autoenv"]
+	path = zsh-autoenv
+	url = https://github.com/Tarrasch/zsh-autoenv
+[submodule "vim/bundle/vim-diminactive"]
+	path = vim/bundle/vim-diminactive
+	url = https://github.com/blueyed/vim-diminactive
+[submodule "vim/bundle/vim-peekaboo"]
+	path = vim/bundle/vim-peekaboo
+	url = https://github.com/junegunn/vim-peekaboo
+[submodule "fzf-fs"]
+	path = fzf-fs
+	url = https://github.com/D630/fzf-fs
+[submodule "vim/bundle/vim-gtfo"]
+	path = vim/bundle/vim-gtfo
+	url = https://github.com/justinmk/vim-gtfo
+[submodule "vim/bundle/unicode.vim"]
+	path = vim/bundle/unicode.vim
+	url = https://github.com/chrisbra/unicode.vim
+[submodule "vim/bundle/splitjoin.vim"]
+	path = vim/bundle/splitjoin.vim
+	url = https://github.com/AndrewRadev/splitjoin.vim

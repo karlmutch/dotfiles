@@ -9,6 +9,7 @@
     algorithm = patience
 [core]
     editor = /usr/bin/vim
+    pager = less -r
 [push]
     default = simple
 [merge]

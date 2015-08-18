@@ -6,6 +6,7 @@
     ~/.fzf:         fzf
     ~/.zshrc:       zshrc
     ~/.zsh.rc: zsh.rc
+    ~/.zsh-autoenv: zsh-autoenv
     ~/.zsh-configuration: zsh-configuration
     ~/.zsh-completions: zsh-completions
     ~/.vim: vim/
@@ -48,7 +49,9 @@
     - [mkdir ~/.vim_temp]
     - [mkdir ~/.vim_temp/backup]
     - [mkdir ~/.vim_temp/swap]
+    - [touch ~/.vim/viminfo]
     - [git submodule update --init --recursive, Installing submodules]
     - [fc-cache -fv ~/.fonts]
+    - [~/.fzf/install]
     - [rm -f ~/.zcompdump; compinit]
     - [ln -sfnT ~/.icons/PolarCursorTheme/ ~/.icons/default]

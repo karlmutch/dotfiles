@@ -111,10 +111,10 @@ done
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #. /usr/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
+#
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 if [[ -n $TMUX_PANE ]]; then
 else
 tmux attach -t base || tmux new -s base
 fi
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

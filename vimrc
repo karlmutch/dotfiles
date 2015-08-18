@@ -53,6 +53,8 @@ hi cursorline cterm=none term=none
 autocmd WinEnter * setlocal cursorline
 autocmd WinLeave * setlocal nocursorline
 highlight CursorLine guibg=#303000 ctermbg=234
+" Inactive window background
+hi ColorColumn ctermbg=234 guibg=#eee8d5
 
 highlight ExtraWhitespace ctermbg=blue
 
@@ -80,7 +82,6 @@ augroup END " }"
 if has("gui_running")
     set guioptions-=T
     set guioptions+=e
-    set t_Co=256
     set guitablabel=%M\ %t
 endif
 
@@ -336,3 +337,5 @@ nmap <silent> <S-F8> <Plug>GoldenViewSwitchToggle
 " 3. jump to next and previous window
 "nmap <silent> <C-'>  <Plug>GoldenViewNext
 "nmap <silent> <C-;>  <Plug>GoldenViewPrevious
+
+set viminfo+='1000,f1,\"512,:32,%
