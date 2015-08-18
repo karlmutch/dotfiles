@@ -114,7 +114,7 @@ done
 
 if [[ -n $TMUX_PANE ]]; then
 else
-    if [[ "$OSX" == "1" ]]; then
+    if [[ "$OSX" != "1" ]]; then
         tmux attach -t base || tmux new -s base
     fi
 fi
