@@ -5,25 +5,16 @@ check_mail:0
 
 # Possible colors: red, green, yellow, blue, magenta, cyan, white
 
-# Pick default screen 
-defaultcscheme:mysyslog
-
-colorscheme:mysyslog:kernel and unsorted messages
-# segfaults
-cs_re_s:red,,bold:kernel: ([^:]*): segfault at [^ ]* rip [^ ]* rsp [^ ]* error
-cs_re:yellow:kernel: .*: segfault at [^ ]* rip [^ ]* rsp [^ ]* error
-# misc
-cs_re:red,,inverse/underline:kernel
-cs_re:green:Detected.*$
-cs_re:cyan::
-cs_re:blue:^... .. ..:..:..
-# cs_re_s:,,bold:^... .. ..:..:.. [^ ]* ([A-z0-9]*)
-cs_re:red:scanlogd.*
-cs_re:yellow:Did.not
-cs_re_s:red:\[(ERROR|error)\]
-cs_re_s:yellow:\[(WARN|warn|WARNING|warning)\]
-cs_re_s:green:\[(INFO|info)\]
-cs_re_s:cyan:\[(DEBUG|debug)\]
+colorscheme:mydefault:General Logging
+cs_re:red:WARN
+cs_re:green:INFO
+#cs_re_s:red:.*\[(ERROR|error|EROR|FATL)\].*
+#cs_re_s:yellow:.*\[(WARN|warn|WARNING|warning)\].*
+#cs_re_s:green:.*\[(INFO|info)\].*
+#cs_re_s:cyan:.*\[(DEBUG|debug|DBUG)\].*
+#cs_re:green:|.*$
+#cs_re:cyan::
+#cs_re:blue:.. ..:..:......
 #
 
 # whether to abbreviate filesizes to xKB/MB/GB
@@ -42,3 +33,7 @@ statusline_attrs:green,black,reverse
 # %u  username
 # %t  date + time
 titlebar:%u@%h %f (%t) [%l]
+
+# Pick default screen 
+defaultcscheme:mydefault
+

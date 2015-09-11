@@ -55,4 +55,6 @@
     - [fc-cache -fv ~/.fonts]
     - [~/.fzf/install]
     - [rm -f ~/.zcompdump; compinit]
-    - [ln -sfnT ~/.icons/PolarCursorTheme/ ~/.icons/default]
+    - [mkdir ~/.lnav ]
+    - [mkdir ~/.lnav/formats]
+    - [ln ./lnav/formats/installed ~/.lnav/formats/installed]

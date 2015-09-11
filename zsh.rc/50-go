@@ -1,4 +1,2 @@
-#export GOBIN=$HOME/.go/bin
 export GOROOT=$HOME/go
-export GOPATH=$HOME/dc
-export PATH=$HOME/dc/bin:$HOME/.go/bin:$GOROOT/bin:$PATH
+export PATH=$HOME/.go/bin:$GOROOT/bin:$PATH
