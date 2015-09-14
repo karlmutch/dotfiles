@@ -164,18 +164,18 @@ endif
 "python del powerline_setup
 
 " Check if NERDTree is open or active
-function! rc:isNERDTreeOpen()
-  return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
-endfunction
+"function! rc:isNERDTreeOpen()
+"  return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
+"endfunction
 
 " Call NERDTreeFind iff NERDTree is active, current window contains a modifiable
 " file, and we're not in vimdiff
-function! rc:syncTree()
-  if &modifiable && rc:isNERDTreeOpen() && strlen(expand('%')) > 0 && !&diff
-    NERDTreeFind
-    wincmd p
-  endif
-endfunction
+"function! rc:syncTree()
+"  if &modifiable && rc:isNERDTreeOpen() && strlen(expand('%')) > 0 && !&diff
+"    NERDTreeFind
+"   wincmd p
+"  endif
+"endfunction
 
 " NERDTress File highlighting
 function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
