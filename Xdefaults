@@ -147,7 +147,7 @@ Xft.hintstyle:  hintfull
 !
 ! This fixes spacing when using Powerline inside tmux, this does not appear to be an issue
 ! the shell
-URxvt*letterSpace: -1
+URxvt*letterSpace: 0
 
 !gm.font: 9x15
 
@@ -165,7 +165,7 @@ URxvt*letterSpace: -1
 !       xft:Hack:style=Regular:size=14, \
 !
 *font: \
-       xft:DejaVu Sans Mono for Powerline Plus Nerd File Types Mono Plus Font Awesome Plus Octicons Plus Pomicons:size=14 
+       xft:DejaVu Sans Mono for Powerline Plus Nerd File Types Mono Plus Font Awesome Plus Octicons Plus Pomicons:size=12
 
 *boldFont: \
-       xft:DejaVu Sans Mono for Powerline Plus Nerd File Types Mono Plus Font Awesome Plus Octicons Plus Pomicons:size=14 
+       xft:DejaVu Sans Mono for Powerline Plus Nerd File Types Mono Plus Font Awesome Plus Octicons Plus Pomicons:size=12
