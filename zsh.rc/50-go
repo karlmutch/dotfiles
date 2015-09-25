@@ -1,2 +1,7 @@
 export GOROOT=$HOME/go
 export PATH=$HOME/.go/bin:$GOROOT/bin:$PATH
+
+alias gotools='go get golang.org/x/tools/cmd/vet github.com/kisielk/errcheck \
+github.com/opennota/check/cmd/structcheck github.com/opennota/check/cmd/varcheck \
+github.com/opennota/check/cmd/defercheck \
+github.com/fzipp/gocyclo'

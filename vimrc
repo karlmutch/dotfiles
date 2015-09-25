@@ -28,9 +28,9 @@ set vb t_vb=
 set ruler
 set incsearch
 set t_Co=256
-"set number              " show line numbers
+set cursorline
+set number              " show line numbers
 set showcmd             " show command in bottom bar
-"set cursorline          " highlight current line
 set wildmenu            " Turn on the WiLd menu
 set showmatch           " highlight matching [{()}]
 
@@ -48,8 +48,11 @@ hi clear VertSplit
 highlight link VertSplit NONE
 hi VertSplit  guifg=#c2bfa5 guibg=#c2bfa5 gui=NONE ctermfg=yellow ctermbg=black cterm=NONE
 
-set cursorline
+highlight LineNr ctermfg=237
+highlight CursorLineNr ctermfg=242
+
 hi cursorline cterm=none term=none
+
 autocmd WinEnter * setlocal cursorline
 autocmd WinLeave * setlocal nocursorline
 highlight CursorLine guibg=#303000 ctermbg=234
@@ -144,8 +147,20 @@ set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
+let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+
+" Set a dark color for syntastic sign background
+highlight SyntasticErrorSign ctermbg=NONE ctermfg=red guibg=#2a343a guifg=red
+highlight SyntasticWarningSign ctermbg=NONE ctermfg=red guibg=#2a343a guifg=red
+highlight SyntasticStyleWarningSign ctermbg=NONE ctermfg=142 guibg=#2a343a guifg=#ad9909
+highlight SyntasticStyleErrorSign ctermbg=NONE ctermfg=142 guibg=#2a343a guifg=#ad9909
+
+let g:syntastic_error_symbol='✗'
+let g:syntastic_warning_symbol='✗'
+let g:syntastic_style_error_symbol='✗'
+let g:syntastic_style_warning_symbol='!'
 
 let g:colortuner_enabled = 1
 let g:rainbow_active = 1
@@ -309,6 +324,18 @@ nnoremap <silent> <Leader><Enter> :call fzf#run({
 \   'down':    len(<sid>buflist()) + 2
 \ })<CR>
 
+" 1. split to tiled windows
+nmap <silent> <C-L>  <Plug>GoldenViewSplit
+
+" 2. quickly switch current window with the main pane
+" and toggle back
+nmap <silent> <F8>   <Plug>GoldenViewSwitchMain
+nmap <silent> <S-F8> <Plug>GoldenViewSwitchToggle
+
+" 3. jump to next and previous window
+"nmap <silent> <C-'>  <Plug>GoldenViewNext
+"nmap <silent> <C-;>  <Plug>GoldenViewPrevious
+
 " Go keyboard mappings
 au FileType go nmap <Leader>s <Plug>(go-implements)
 au FileType go nmap <Leader>i <Plug>(go-info)
@@ -323,19 +350,7 @@ au FileType go nmap <Leader>ds <Plug>(go-def-split)
 au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
 au FileType go nmap <Leader>dt <Plug>(go-def-tab)
 
-au Filetype go set makeprg=go\ build\ ./...
+au Filetype go set makeprg=go\ install\ ./...
 au FileType go let b:delimitMate_autoclose = 0
-
-" 1. split to tiled windows
-nmap <silent> <C-L>  <Plug>GoldenViewSplit
-
-" 2. quickly switch current window with the main pane
-" and toggle back
-nmap <silent> <F8>   <Plug>GoldenViewSwitchMain
-nmap <silent> <S-F8> <Plug>GoldenViewSwitchToggle
-
-" 3. jump to next and previous window
-"nmap <silent> <C-'>  <Plug>GoldenViewNext
-"nmap <silent> <C-;>  <Plug>GoldenViewPrevious
 
 set viminfo+='1000,f1,\"512,:32,%
