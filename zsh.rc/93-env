@@ -1,2 +1,3 @@
 export LESS=-Xr
+export LESSOPEN='|~/.lessfilter %s'
 export PATH=$HOME/bin:$PATH
