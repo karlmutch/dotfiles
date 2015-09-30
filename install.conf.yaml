@@ -4,6 +4,7 @@
     ~/.dotfiles: ''
     ~/.tmux.conf:   tmux.conf
     ~/.fzf:         fzf
+    ~/.lessfilter:  lessfilter
     ~/.zshrc:       zshrc
     ~/.zsh.rc: zsh.rc
     ~/.zsh-autoenv: zsh-autoenv
@@ -54,7 +55,9 @@
     - [git submodule update --init --recursive, Installing submodules]
     - [fc-cache -fv ~/.fonts]
     - [~/.fzf/install]
-    - [rm -f ~/.zcompdump; compinit]
-    - [mkdir ~/.lnav ]
-    - [mkdir ~/.lnav/formats]
-    - [ln ./lnav/formats/installed ~/.lnav/formats/installed]
+    - [rm -f ~/.zcompdump || true; compinit || true]
+    - [mkdir ~/.lnav || true]
+    - [mkdir ~/.lnav/formats || true]
+    - [mkdir ~/.lnav/formats/installed || true]
+    - [ln ~/.lnav/formats/installed/generic_log.json ./lnav/formats/installed/generic_log.json || true]
+    - [chmod +x ~/.lessfilter]
