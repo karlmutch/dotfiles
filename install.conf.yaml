@@ -47,6 +47,8 @@
         path: config/Doxygen.org
 
 - shell:
+    - [mkdir ~/.local]
+    - [mkdir ~/.local/share]
     - [mkdir ~/.go]
     - [mkdir ~/.vim_temp]
     - [mkdir ~/.vim_temp/backup]
