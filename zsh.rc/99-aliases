@@ -17,3 +17,14 @@ alias ls='ls -h --color'
 alias vim='vim -i ~/.vim/viminfo'
 
 pcurl () { curl $1  2> /dev/null |  python -m json.tool | pygmentize -l json }
+
+
+# dfc (sudo apt-get install dfc)
+if hash dfc 2>/dev/null; then
+   alias df="dfc -f"
+fi
+
+# exa from https://github.com/ogham/exa/releases/download/v0.3.0/exa-linux-x86_64.zip
+if hash exa 2>/dev/null; then
+   alias ls="exa --long -T "
+fi

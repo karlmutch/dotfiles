@@ -5,3 +5,5 @@ then
       export TERM=rxvt-256color
     fi
 fi
+
+eval $( dircolors -b ~/.ls_colors )

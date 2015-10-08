@@ -2,6 +2,7 @@
 
 - link:
     ~/.dotfiles: ''
+    ~/.ls_colors:   LS_COLORS/LS_COLORS
     ~/.tmux.conf:   tmux.conf
     ~/.fzf:         fzf
     ~/.lessfilter:  lessfilter
@@ -63,3 +64,4 @@
     - [mkdir ~/.lnav/formats/installed || true]
     - [ln ~/.lnav/formats/installed/generic_log.json ./lnav/formats/installed/generic_log.json || true]
     - [chmod +x ~/.lessfilter]
+    - [eval $( dircolors -b ~/.ls_colors )]
