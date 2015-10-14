@@ -26,5 +26,5 @@ fi
 
 # exa from https://github.com/ogham/exa/releases/download/v0.3.0/exa-linux-x86_64.zip
 if hash exa 2>/dev/null; then
-   alias ls="exa --long -T "
+   alias exa="exa --long -T "
 fi

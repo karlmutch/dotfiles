@@ -187,3 +187,6 @@
 [submodule "LS_COLORS"]
 	path = LS_COLORS
 	url = https://github.com/trapd00r/LS_COLORS
+[submodule "LS_COLORS_FORK"]
+	path = LS_COLORS_FORK
+	url = https://github.com/karlmutch/LS_COLORS
