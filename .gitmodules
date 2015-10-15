@@ -190,3 +190,6 @@
 [submodule "LS_COLORS_FORK"]
 	path = LS_COLORS_FORK
 	url = https://github.com/karlmutch/LS_COLORS
+[submodule "vim/bundle/Dockerfile.vim"]
+	path = vim/bundle/Dockerfile.vim
+	url = https://github.com/ekalinin/Dockerfile.vim.git

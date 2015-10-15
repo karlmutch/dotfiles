@@ -145,23 +145,24 @@ let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['go'] = ''
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
+let g:syntastic_loc_list_height = 5
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-"let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
-let g:syntastic_go_checkers = ['gometalint']
+let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+"let g:syntastic_go_checkers = ['gometalint']
+
+let g:syntastic_error_symbol='✗'
+let g:syntastic_warning_symbol='✗'
+let g:syntastic_style_error_symbol='✗'
+let g:syntastic_style_warning_symbol='!'
 
 " Set a dark color for syntastic sign background
 highlight SyntasticErrorSign ctermbg=NONE ctermfg=red guibg=#2a343a guifg=red
 highlight SyntasticWarningSign ctermbg=NONE ctermfg=red guibg=#2a343a guifg=red
 highlight SyntasticStyleWarningSign ctermbg=NONE ctermfg=142 guibg=#2a343a guifg=#ad9909
 highlight SyntasticStyleErrorSign ctermbg=NONE ctermfg=142 guibg=#2a343a guifg=#ad9909
-
-let g:syntastic_error_symbol='✗'
-let g:syntastic_warning_symbol='✗'
-let g:syntastic_style_error_symbol='✗'
-let g:syntastic_style_warning_symbol='!'
 
 let g:colortuner_enabled = 1
 let g:rainbow_active = 1
@@ -352,7 +353,6 @@ au FileType go nmap <Leader>ds <Plug>(go-def-split)
 au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
 au FileType go nmap <Leader>dt <Plug>(go-def-tab)
 
-au Filetype go set makeprg=go\ install\ ./...
-au FileType go let b:delimitMate_autoclose = 0
+"au Filetype go set makeprg=go\ install\ ./...
 
 set viminfo+='1000,f1,\"512,:32,%
