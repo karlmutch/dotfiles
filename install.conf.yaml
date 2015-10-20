@@ -62,6 +62,6 @@
     - [mkdir ~/.lnav || true]
     - [mkdir ~/.lnav/formats || true]
     - [mkdir ~/.lnav/formats/installed || true]
-    - [ln ~/.lnav/formats/installed/generic_log.json ./lnav/formats/installed/generic_log.json || true]
+    - [ln ./lnav/formats/installed/generic_log.json ~/.lnav/formats/installed/generic_log.json || true]
     - [chmod +x ~/.lessfilter]
     - [eval $( dircolors -b ~/.ls_colors )]

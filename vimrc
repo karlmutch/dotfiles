@@ -36,6 +36,8 @@ set showmatch           " highlight matching [{()}]
 
 set nowrap
 set sidescroll=5
+set scrolloff=3               " keep at least 3 lines above/below
+
 set list listchars=precedes:▶,extends:◀,tab:»·,trail:·,eol:¶
 set showbreak=↪
 
@@ -153,10 +155,10 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 "let g:syntastic_go_checkers = ['gometalint']
 
-let g:syntastic_error_symbol='✗'
-let g:syntastic_warning_symbol='✗'
-let g:syntastic_style_error_symbol='✗'
 let g:syntastic_style_warning_symbol='!'
+let g:syntastic_style_error_symbol = '⚡'
+let g:syntastic_error_symbol = '✗'
+let g:syntastic_warning_symbol = '⚠'
 
 " Set a dark color for syntastic sign background
 highlight SyntasticErrorSign ctermbg=NONE ctermfg=red guibg=#2a343a guifg=red
@@ -339,6 +341,16 @@ nmap <silent> <S-F8> <Plug>GoldenViewSwitchToggle
 "nmap <silent> <C-'>  <Plug>GoldenViewNext
 "nmap <silent> <C-;>  <Plug>GoldenViewPrevious
 
+"  Accidentally hitting unwanted keys in normal mode:
+nnoremap <F1> <nop>
+" lets do the same for insert mode!!!
+inoremap <F1> <nop>
+
+" Allow more uses of backspace key:
+"  Can't backspace past start of operation:
+set backspace=indent,eol,start
+
+"
 " Go keyboard mappings
 au FileType go nmap <Leader>s <Plug>(go-implements)
 au FileType go nmap <Leader>i <Plug>(go-info)

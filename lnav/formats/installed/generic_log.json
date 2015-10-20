@@ -1,13 +1,14 @@
 {
     "generic_log" : {
         "title" : "Generic Log Format",
-        "description" : "Log format used in several generic areas.",
+        "description" : "Log format used in several generic tools",
         "regex" : {
             "basic" : {
-                "pattern" : "^\\[(?<level>\\w+)\\]\\s+(?<timestamp>\\d{2} \\d{2}:\\d{2}:\\d{2}\\.\\d{3})\\s+(?<func>[^ ]+)\\s+\\((?<src_file>[^:]+):(?<src_line>\\d+)\\) \\| (?<body>.*)$"
+                "pattern" : "^(?<facility>\\w+)\\s+\\[(?<level>\\w+)\\]\\s+(?<timestamp>\\d{2} \\d{2}:\\d{2}:\\d{2}\\.\\d{3})\\s+(?<func>[^ ]+)\\s+\\((?<src_file>[^:]+):(?<src_line>\\d+)\\) \\| (?<body>.*)$"
             }
         },
         "timestamp-format" : ["%d %H:%M:%S.%L"],
+        "module-field" : "facility",
         "level-field" : "level",
         "level" : {
             "fatal" : "FATL",
@@ -18,7 +19,7 @@
         },
         "sample" : [
             {
-                "line" : "[DBUG] 10 13:01:41.619      main.initProjectDB (db.go:374) | Connecting to database - postgres://dc:********@127.0.0.1:5432/projectdb?sslmode=disable"
+                "line" : "MM9ce7d [DBUG] 10 13:01:41.619      main.initProjectDB (db.go:374) | Connecting to database - postgres://dc:********@127.0.0.1:5432/projectdb?sslmode=disable"
             }
         ]
     }
