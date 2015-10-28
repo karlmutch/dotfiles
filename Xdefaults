@@ -2,8 +2,8 @@
 *customization: -color
 #endif
 #
-#Xcursor.theme: default
-#Xcursor.size: 96
+Xcursor.theme: default
+Xcursor.size: 96
 
 !! Cast a wide net, for any app supporting these
 ! Blink instead of beeping
@@ -165,7 +165,7 @@ URxvt*letterSpace: 0
 !       xft:Hack:style=Regular:size=14, \
 !
 *font: \
-       xft:DejaVu Sans Mono for Powerline Plus Nerd File Types Mono Plus Font Awesome Plus Octicons Plus Pomicons:size=12
+       xft:DejaVu Sans Mono for Powerline Plus Nerd File Types Mono Plus Font Awesome Plus Octicons Plus Pomicons:size=12 
 
 *boldFont: \
-       xft:DejaVu Sans Mono for Powerline Plus Nerd File Types Mono Plus Font Awesome Plus Octicons Plus Pomicons:size=12
+       xft:DejaVu Sans Mono for Powerline Plus Nerd File Types Mono Plus Font Awesome Plus Octicons Plus Pomicons:size=12 
