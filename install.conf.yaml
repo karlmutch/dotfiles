@@ -42,10 +42,18 @@
     ~/.config/htop:
         create: true
         path: config/htop
-    ~/.config/Trolltech.conf:      config/Trolltech.conf
     ~/.config/Doxygen.org:
         create: true
         path: config/Doxygen.org
+    ~/.atom/snippets.cson:
+        create: true
+        path: atom/snippets.cson
+    ~/.atom/config.cson:
+        create: true
+        path: atom/config.cson
+    ~/.atom/styles.less:
+        create: true
+        path: atom/styles.less
 
 - shell:
     - [mkdir ~/.local]
@@ -57,11 +65,12 @@
     - [touch ~/.vim/viminfo]
     - [git submodule update --init --recursive, Installing submodules]
     - [fc-cache -fv ~/.fonts]
-    - [~/.fzf/install]
-    - [rm -f ~/.zcompdump || true; compinit || true]
+    - [apm install git-control merge-conflicts clipboard-history minimap minimap-git-diff script linter file-icons flashy-syntax fonts go-oracle go-plus go-runtime language-ansible language-docker language-thrift last-cursor-position]
     - [mkdir ~/.lnav || true]
     - [mkdir ~/.lnav/formats || true]
     - [mkdir ~/.lnav/formats/installed || true]
     - [ln ./lnav/formats/installed/generic_log.json ~/.lnav/formats/installed/generic_log.json || true]
     - [chmod +x ~/.lessfilter]
     - [eval $( dircolors -b ~/.ls_colors )]
+    - [~/.fzf/install]
+    - [rm -f ~/.zcompdump || true; compinit || true]

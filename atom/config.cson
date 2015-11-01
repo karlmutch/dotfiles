@@ -1,0 +1,24 @@
+"*":
+  "exception-reporting":
+    userId: "83e8345b-8564-b75f-e984-a12afc4ad022"
+  welcome:
+    showOnStartup: false
+  core:
+    themes: [
+      "atom-dark-ui"
+      "flashy-syntax"
+    ]
+  editor:
+    invisibles: {}
+    tabLength: 4
+    fontFamily: "Monoisome"
+  fonts:
+    fontFamily: "FiraCode"
+  "autocomplete-plus": {}
+  "go-plus":
+    goInstallation: "~/go"
+  "one-dark-ui": {}
+  "block-cursor":
+    global:
+      blinkOff: {}
+      blinkOn: {}
