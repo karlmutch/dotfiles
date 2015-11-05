@@ -37,3 +37,39 @@
       color: rgba(200, 200, 10, 0.8) !important;
   }
 }
+
+.editor {
+  background: #000000;
+}
+
+.workspace {
+    /* enable kerning and ligatures to improve legibility */
+    text-rendering: optimizeLegibility;
+
+    /* antialiased fonts are easier to read in small sizes */
+    -webkit-font-smoothing: antialiased;
+}
+.bracket-matcher {
+
+  border-bottom: 0;
+  border-left  : 1px solid lightblue;
+  border-right : 1px solid lightblue;
+  position     : absolute;
+
+}
+
+.linter-statusbar {
+  max-height: 30;
+  height: 30;
+}
+
+atom-text-editor atom-text-editor-minimap,
+atom-text-editor::shadow atom-text-editor-minimap {
+  background: black;
+}
+
+atom-text-editor .vertical-scrollbar,
+atom-text-editor::shadow .vertical-scrollbar {
+  opacity: 0;
+  width: 0;
+}

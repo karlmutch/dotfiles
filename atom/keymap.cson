@@ -1,0 +1,5 @@
+'atom-text-editor.vim-mode:not(.insert-mode)':
+  '~': 'ex-mode:open'
+
+'atom-text-editor[data-grammar="source go"]:not(.mini)':
+  'ctrl-alt-g': 'golang:godef'

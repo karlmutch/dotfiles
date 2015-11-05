@@ -5,13 +5,25 @@
     showOnStartup: false
   core:
     themes: [
-      "atom-dark-ui"
-      "flashy-syntax"
+      "seti-ui"
+      "seti-syntax"
+    ]
+    ignoredNames: [
+      ".atocker"
+      ".git*"
+      ".gradle"
+      ".hg"
+      ".svn"
+      ".DS_Store"
+      "._*"
+      "Thumbs.db"
+      ".Trash-*"
     ]
   editor:
     invisibles: {}
     tabLength: 4
     fontFamily: "Monoisome"
+    preferredLineLength: 122
   fonts:
     fontFamily: "FiraCode"
   "autocomplete-plus": {}
@@ -22,3 +34,16 @@
     global:
       blinkOff: {}
       blinkOn: {}
+  minimap:
+    plugins:
+      "git-diff": true
+  "tree-view":
+    hideIgnoredNames: true
+    hideVcsIgnoredFiles: true
+  "terminal-plus":
+    core: {}
+    style:
+      fontFamily: "FiraCode"
+  "file-icons":
+    forceShow: true
+  "go-oracle": {}

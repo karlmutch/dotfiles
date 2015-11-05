@@ -1,4 +1,4 @@
-- clean: [~]
+- clean: ['~']
 
 - link:
     ~/.dotfiles: ''
@@ -48,6 +48,9 @@
     ~/.atom/snippets.cson:
         create: true
         path: atom/snippets.cson
+    ~/.atom/keymap.cson:
+        create: true
+        path: atom/keymap.cson
     ~/.atom/config.cson:
         create: true
         path: atom/config.cson
@@ -65,12 +68,12 @@
     - [touch ~/.vim/viminfo]
     - [git submodule update --init --recursive, Installing submodules]
     - [fc-cache -fv ~/.fonts]
-    - [apm install git-control merge-conflicts clipboard-history minimap minimap-git-diff script linter file-icons flashy-syntax fonts go-oracle go-plus go-runtime language-ansible language-docker language-thrift last-cursor-position]
-    - [mkdir ~/.lnav || true]
-    - [mkdir ~/.lnav/formats || true]
-    - [mkdir ~/.lnav/formats/installed || true]
-    - [ln ./lnav/formats/installed/generic_log.json ~/.lnav/formats/installed/generic_log.json || true]
+    - [apm install vim-mode ex-mode pigments project-manager git-control merge-conflicts clipboard-history minimap minimap-git-diff script linter file-icons flashy-syntax fonts go-oracle go-plus go-runtime language-ansible language-docker language-thrift last-cursor-position]
+    - [mkdir ~/.lnav && : ]
+    - [mkdir ~/.lnav/formats && : ]
+    - [mkdir ~/.lnav/formats/installed && : ]
+    - [ln ./lnav/formats/installed/generic_log.json ~/.lnav/formats/installed/generic_log.json && : ]
     - [chmod +x ~/.lessfilter]
     - [eval $( dircolors -b ~/.ls_colors )]
     - [~/.fzf/install]
-    - [rm -f ~/.zcompdump || true; compinit || true]
+    - [ ( rm -f ~/.zcompdump && : ) ; compinit]
