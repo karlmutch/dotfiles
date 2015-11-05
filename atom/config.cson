@@ -1,0 +1,49 @@
+"*":
+  "exception-reporting":
+    userId: "83e8345b-8564-b75f-e984-a12afc4ad022"
+  welcome:
+    showOnStartup: false
+  core:
+    themes: [
+      "seti-ui"
+      "seti-syntax"
+    ]
+    ignoredNames: [
+      ".atocker"
+      ".git*"
+      ".gradle"
+      ".hg"
+      ".svn"
+      ".DS_Store"
+      "._*"
+      "Thumbs.db"
+      ".Trash-*"
+    ]
+  editor:
+    invisibles: {}
+    tabLength: 4
+    fontFamily: "Monoisome"
+    preferredLineLength: 122
+  fonts:
+    fontFamily: "FiraCode"
+  "autocomplete-plus": {}
+  "go-plus":
+    goInstallation: "~/go"
+  "one-dark-ui": {}
+  "block-cursor":
+    global:
+      blinkOff: {}
+      blinkOn: {}
+  minimap:
+    plugins:
+      "git-diff": true
+  "tree-view":
+    hideIgnoredNames: true
+    hideVcsIgnoredFiles: true
+  "terminal-plus":
+    core: {}
+    style:
+      fontFamily: "FiraCode"
+  "file-icons":
+    forceShow: true
+  "go-oracle": {}

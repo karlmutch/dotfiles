@@ -1,0 +1,3 @@
+# Ignore completions for specified commands
+
+zstyle ':completion:*:*:vim:*:*files' ignored-patterns '*gradle'

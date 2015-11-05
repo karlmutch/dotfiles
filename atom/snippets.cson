@@ -1,0 +1,32 @@
+'.source.go':
+    'return nil and error':
+      'prefix': 'rne'
+      'body': 'return nil, err'
+
+    'return false and error':
+      'prefix': 'rfe'
+      'body': 'return false, err'
+
+    'Return True and Nil':
+      'prefix': 'rte'
+      'body': 'return true, nil'
+
+    'On Error Warning':
+      'prefix': 'iewr'
+      'body' : """if err != nil {
+          logW.Warning(err)
+          return err
+      }
+      """
+
+    'Log Debug':
+      'prefix': 'lgd'
+      'body' : 'logW.Debug()'
+
+    'Log Info':
+      'prefix': 'lgi'
+      'body' : 'logW.Info()'
+
+    'Log Warning':
+      'prefix': 'lgw'
+      'body' : 'logW.Warning()'
