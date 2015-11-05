@@ -57,7 +57,7 @@
     - [touch ~/.vim/viminfo]
     - [git submodule update --init --recursive, Installing submodules]
     - [fc-cache -fv ~/.fonts]
-    - [~/.fzf/install]
+    - [~/.fzf/install || true]
     - [rm -f ~/.zcompdump || true; compinit || true]
     - [mkdir ~/.lnav || true]
     - [mkdir ~/.lnav/formats || true]
