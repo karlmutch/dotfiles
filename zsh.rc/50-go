@@ -1,4 +1,10 @@
-export GOROOT=$HOME/go
+if [[ "$OS" == "Windows_NT" ]]
+then
+    export GOROOT="C:\Program Files (x86)\Go"
+else
+    export GOROOT=$HOME/go
+fi
+
 export PATH=$HOME/.go/bin:$GOROOT/bin:$PATH
 
 alias gotools='go get golang.org/x/tools/cmd/vet github.com/kisielk/errcheck \
