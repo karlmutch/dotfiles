@@ -30,10 +30,6 @@
   "go-plus":
     goInstallation: "~/go"
   "one-dark-ui": {}
-  "block-cursor":
-    global:
-      blinkOff: {}
-      blinkOn: {}
   minimap:
     plugins:
       "git-diff": true
@@ -43,7 +39,8 @@
   "terminal-plus":
     core: {}
     style:
-      fontFamily: "FiraCode"
+      fontFamily: "Monoisome"
   "file-icons":
     forceShow: true
   "go-oracle": {}
+  "vim-mode": {}

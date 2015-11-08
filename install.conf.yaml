@@ -1,5 +1,10 @@
 - clean: ['~']
 
+- shell:
+    - ["mkdir -p ~/.local/share ~/.go ~/.vim_temp/backup ~/.vim_temp/swap ~/.lnav/formats/installed"]
+    - [touch ~/.vim/viminfo]
+    - [git submodule update --init --recursive, Installing submodules]
+
 - link:
     ~/.dotfiles: ''
     ~/.ls_colors:   LS_COLORS/LS_COLORS
@@ -57,23 +62,14 @@
     ~/.atom/styles.less:
         create: true
         path: atom/styles.less
+    ~/.lnav/formats/installed/generic_log.json:
+        create: true
+        path: lnav/formats/installed/generic_log.json
 
 - shell:
-    - [mkdir ~/.local]
-    - [mkdir ~/.local/share]
-    - [mkdir ~/.go]
-    - [mkdir ~/.vim_temp]
-    - [mkdir ~/.vim_temp/backup]
-    - [mkdir ~/.vim_temp/swap]
-    - [touch ~/.vim/viminfo]
-    - [git submodule update --init --recursive, Installing submodules]
     - [fc-cache -fv ~/.fonts]
-    - [apm install vim-mode ex-mode pigments project-manager git-control merge-conflicts clipboard-history minimap minimap-git-diff script linter file-icons flashy-syntax fonts go-oracle go-plus go-runtime language-ansible language-docker language-thrift last-cursor-position]
-    - [mkdir ~/.lnav && : ]
-    - [mkdir ~/.lnav/formats && : ]
-    - [mkdir ~/.lnav/formats/installed && : ]
-    - [ln ./lnav/formats/installed/generic_log.json ~/.lnav/formats/installed/generic_log.json && : ]
+    - [apm install vim-mode ex-mode pigments project-manager git-control merge-conflicts clipboard-history minimap minimap-git-diff script linter file-icons flashy-syntax fonts go-oracle go-plus go-runtime language-ansible language-docker language-thrift last-cursor-position block-travel block-cursor]
     - [chmod +x ~/.lessfilter]
     - [eval $( dircolors -b ~/.ls_colors )]
     - [~/.fzf/install]
-    - [ ( rm -f ~/.zcompdump && : ) ; compinit]
+    - ["rm -f ~/.zcompdump"]

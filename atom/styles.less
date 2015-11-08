@@ -73,3 +73,18 @@ atom-text-editor::shadow .vertical-scrollbar {
   opacity: 0;
   width: 0;
 }
+
+/* fix for https://github.com/atom/atom/issues/3622 */
+atom-text-editor:not(.mini)::shadow,
+atom-text-editor:not(.mini)::shadow .blink-off,
+atom-text-editor.vim-mode.command-mode,
+atom-text-editor.vim-mode.operator-pending-mode,
+atom-text-editor.vim-mode.visual-mode,
+.editor.is-focused,
+.editor:not(.is-focused),
+{
+  .cursor, .cursor.blink-off, .cursor.blink-on {
+    visibility: visible !important;
+/*    opacity: 33 !important; */
+  }
+}
