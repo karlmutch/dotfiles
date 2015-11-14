@@ -202,3 +202,6 @@
 [submodule "vim/bundle/syntax"]
 	path = vim/bundle/syntax
 	url = https://github.com/octol/vim-cpp-enhanced-highlight.git
+[submodule "oh-my-zsh-custom/themes/powerlevel9k"]
+	path = oh-my-zsh-custom/themes/powerlevel9k
+	url = https://github.com/bhilburn/powerlevel9k.git
