@@ -23,6 +23,8 @@ set backup                      " file backup
 set backupdir=~/.vim_temp/backup     " directory for backup files
 set directory=~/.vim_temp/swap       " directory for swap files
 
+set path+=~/darkcycle-sdk/cpp
+
 set nocompatible
 set vb t_vb=
 set ruler
@@ -37,9 +39,14 @@ set showmatch           " highlight matching [{()}]
 set nowrap
 set sidescroll=5
 set scrolloff=3               " keep at least 3 lines above/below
-
 set list listchars=precedes:▶,extends:◀,tab:»·,trail:·,eol:¶
 set showbreak=↪
+
+" folding
+set foldmethod=indent
+set nofoldenable
+set foldlevel=1
+set foldnestmax=10
 
 hi NonText  guifg=#c2bfa5 guibg=#c2bfa5 gui=NONE ctermfg=236 ctermbg=black cterm=NONE
 hi SpecialKey  guifg=#c2bfa5 guibg=#c2bfa5 gui=NONE ctermfg=240 ctermbg=black cterm=NONE
@@ -62,6 +69,28 @@ highlight CursorLine guibg=#303000 ctermbg=234
 hi ColorColumn ctermbg=234 guibg=#eee8d5
 
 highlight ExtraWhitespace ctermbg=blue
+
+hi Comment ctermfg=DarkGrey guifg=DarkGrey
+hi Search ctermbg=LightBlue guibg=LightBlue
+hi ErrorMsg ctermfg=Red guibg=White guifg=Red
+hi Statement ctermfg=Green guifg=LightGreen
+hi Type ctermfg=yellow guifg=LightGreen
+hi Keyword ctermfg=yellow guifg=LightGreen
+hi Identifier ctermfg=LightBlue guifg=LightGreen
+hi Label ctermfg=LightGreen guifg=LightGreen
+hi goNiceOperator ctermfg=Green guifg=LightGreen
+hi cBlock ctermfg=Green guifg=LightGreen
+
+hi rainbow_r0 ctermfg=Green guifg=LightGreen
+hi rainbow_r1 ctermfg=Green guifg=LightGreen
+hi rainbow_r2 ctermfg=Green guifg=LightGreen
+hi rainbow_r3 ctermfg=Green guifg=LightGreen
+hi rainbow_r4 ctermfg=Green guifg=LightGreen
+hi rainbow_r5 ctermfg=Green guifg=LightGreen
+
+map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
 " Use grays instead of blues in 256-color terminal:
 let g:GitShade_ColorGradient = "black_to_grey"
@@ -146,6 +175,9 @@ let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['go'] = ''
 
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
+
+let g:syntastic_c_include_dirs = ['/home/kmutch/darkcycle-sdk/cpp']
+let g:syntastic_c_check_header = 1
 
 let g:syntastic_loc_list_height = 5
 let g:syntastic_always_populate_loc_list = 1
@@ -252,7 +284,7 @@ au BufRead,BufNewFile *.go set filetype=go
 autocmd FileType go setlocal softtabstop=4
 autocmd FileType go setlocal shiftwidth=4
 autocmd FileType go setlocal tabstop=4
-autocmd FileType qf wincmd J
+" autocmd FileType qf wincmd J
 
 "
 " go-vim settings
@@ -299,11 +331,6 @@ let g:tagbar_type_go = {
     \ 'ctagsargs' : '-sort -silent'
 \ } 
 
-" folding
-set foldmethod=indent
-set nofoldenable
-set foldlevel=1
-set foldnestmax=10
 
 let g:netrw_liststyle = 3
 autocmd BufReadPost,FileReadPost,BufNewFile * call system("tmux rename-window % " . expand("%:t"))
@@ -340,6 +367,15 @@ nmap <silent> <S-F8> <Plug>GoldenViewSwitchToggle
 " 3. jump to next and previous window
 "nmap <silent> <C-'>  <Plug>GoldenViewNext
 "nmap <silent> <C-;>  <Plug>GoldenViewPrevious
+
+let g:clang_format#detect_style_file = 1
+" map to <Leader>cf in C++ code
+autocmd FileType c,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
+autocmd FileType c,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
+" if you install vim-operator-user
+"autocmd FileType c,cpp,objc map <buffer><Leader>x <Plug>(operator-clang-format)
+" Toggle auto formatting:
+nmap <Leader>C :ClangFormatAutoToggle<CR>
 
 "  Accidentally hitting unwanted keys in normal mode:
 nnoremap <F1> <nop>

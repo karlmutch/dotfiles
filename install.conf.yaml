@@ -65,6 +65,7 @@
     ~/.lnav/formats/installed/generic_log.json:
         create: true
         path: lnav/formats/installed/generic_log.json
+    ~/.clang-format:   clang-format
 
 - shell:
     - [fc-cache -fv ~/.fonts]

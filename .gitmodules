@@ -190,3 +190,15 @@
 [submodule "LS_COLORS"]
 	path = LS_COLORS
 	url = https://github.com/trapd00r/LS_COLORS
+[submodule "vim/bundle/vim-haskellConcealPlus"]
+	path = vim/bundle/vim-haskellConcealPlus
+	url = https://github.com/enomsg/vim-haskellConcealPlus
+[submodule "vim/bundle/haskellConcealPlus"]
+	path = vim/bundle/haskellConcealPlus
+	url = https://github.com/enomsg/vim-haskellConcealPlus
+[submodule "vim/bundle/vim-clang-format"]
+	path = vim/bundle/vim-clang-format
+	url = https://github.com/rhysd/vim-clang-format
+[submodule "vim/bundle/syntax"]
+	path = vim/bundle/syntax
+	url = https://github.com/octol/vim-cpp-enhanced-highlight.git
