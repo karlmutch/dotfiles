@@ -205,6 +205,3 @@
 [submodule "oh-my-zsh-custom/themes/powerlevel9k"]
 	path = oh-my-zsh-custom/themes/powerlevel9k
 	url = https://github.com/bhilburn/powerlevel9k.git
-[submodule "config/sublime-text-2/Packages/Colorsublime-Plugin"]
-	path = config/sublime-text-2/Packages/Colorsublime-Plugin
-	url = https://github.com/Colorsublime/Colorsublime-Plugin.git
