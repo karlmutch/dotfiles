@@ -16,6 +16,8 @@ alias ls='ls -h --color'
 # by autoenv .env files if so desired
 alias vim='vim -i ~/.vim/viminfo'
 
+alias sublime='/opt/sublime_text/sublime_text'
+
 pcurl () { curl $1  2> /dev/null |  python -m json.tool | pygmentize -l json }
 
 

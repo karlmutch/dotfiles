@@ -9,8 +9,8 @@ export ZSH_CUSTOM=$HOME/.oh-my-zsh-custom
 #ZSH_THEME="robbyrussell"
 ZSH_THEME="powerlevel9k/powerlevel9k"
 #POWERLEVEL9K_MODE='awesome-patched'
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir rbenv vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status history time)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context vcs dir)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status history)
 
 # Limit to the last two folders
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
@@ -20,6 +20,31 @@ POWERLEVEL9K_SHOW_CHANGESET=false
 # # just show the 6 first characters of changeset
 # POWERLEVEL9K_CHANGESET_HASH_LENGTH=6
 
+#POWERLEVEL9K_VCS_BACKGROUND='147'
+POWERLEVEL9K_VCS_BACKGROUND='022'
+#POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='028'
+POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='106'
+
+POWERLEVEL9K_RIGHT_SEGMENT_SEPARATOR=$''
+#
+# VI-Mode
+# general activation
+#bindkey -v
+#
+# set some nice hotkeys
+#bindkey '^P' up-history
+#bindkey '^N' down-history
+#bindkey '^?' backward-delete-char
+#bindkey '^h' backward-delete-char
+#bindkey '^w' backward-kill-word
+#bindkey '^r' history-incremental-search-backward
+#
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
+ZSH_HIGHLIGHT_PATTERNS=('rm -rf *' 'fg=white,bold,bg=red')
+#
+export HISTCONTROL=ignoredups;
+export HISTIGNORE="ls:cd:cd -:pwd:exit:date::"
+#
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 

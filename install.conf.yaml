@@ -2,6 +2,7 @@
 
 - shell:
     - ["mkdir -p ~/.local/share ~/.go ~/.vim_temp/backup ~/.vim_temp/swap ~/.lnav/formats/installed"]
+    - ["mkdir -p ~/.config/sublime-text-2/Packages/User"]
     - [touch ~/.vim/viminfo]
     - [git submodule update --init --recursive, Installing submodules]
 
@@ -18,6 +19,9 @@
     ~/.zsh-completions: zsh-completions
     ~/.vim: vim/
     ~/.vimrc: vimrc
+    ~/.config/sublime-text-2/Packages/User/Preferences.sublime-settings: config/sublime-text-2/Packages/User/Preferences.sublime-settings
+    ~/.config/sublime-text-2/Installed Packages/Package Control.sublime-package: config/sublime-text-2/Installed Packages/Package Control.sublime-package
+    ~/.config/sublime-text-2/Packages/Colorsublime-Plugin: config/sublime-text-2/Packages/Colorsublime-Plugin
     ~/.multitailrc: multitailrc
     ~/.multitailrc: multitailrc
     ~/.dir_colors:  dir_colors
