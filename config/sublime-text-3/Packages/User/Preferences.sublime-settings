@@ -1,5 +1,9 @@
 {
-	"color_scheme": "Packages/Color Scheme - Default/All Hallow's Eve.tmTheme",
+	"color_scheme": "Packages/Colorsublime - Themes/Sunburst.tmTheme",
 	"font_face": "DejaVu Sans Mono for Powerline Plus Nerd File Types Mono Plus Font Awesome Plus Octicons Plus Pomicons",
-	"font_size": 10
+	"font_size": 11,
+	"ignored_packages":
+	[
+		"Vintage"
+	]
 }

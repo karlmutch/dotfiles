@@ -22,6 +22,8 @@
     ~/.config/sublime-text-3/Packages/User/Preferences.sublime-settings: config/sublime-text-3/Packages/User/Preferences.sublime-settings
     ~/.config/sublime-text-3/Installed Packages/Package Control.sublime-package: config/sublime-text-3/Installed Packages/Package Control.sublime-package
     ~/.config/sublime-text-3/Packages/Colorsublime-Plugin: config/sublime-text-3/Packages/Colorsublime-Plugin
+    ~/.config/sublime-text-3/Packages/Colorsublime - Themes/Sunburst.tmTheme: config/sublime-text-3/Packages/Colorsublime - Themes/Sunburst.tmTheme
+    ~/.config/sublime-text-3/Packages/GitGutter: config/sublime-text-3/Packages/GitGutter
     ~/.multitailrc: multitailrc
     ~/.multitailrc: multitailrc
     ~/.dir_colors:  dir_colors
