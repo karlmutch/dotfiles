@@ -39,6 +39,7 @@ set showmatch           " highlight matching [{()}]
 set nowrap
 set sidescroll=5
 set scrolloff=3               " keep at least 3 lines above/below
+"set list listchars=precedes:▶,extends:◀,tab:»·,trail:·,eol:¶
 set list listchars=precedes:▶,extends:◀,tab:»·,trail:·,eol:¶
 set showbreak=↪
 
@@ -48,8 +49,13 @@ set nofoldenable
 set foldlevel=1
 set foldnestmax=10
 
-hi NonText  guifg=#c2bfa5 guibg=#c2bfa5 gui=NONE ctermfg=236 ctermbg=black cterm=NONE
-hi SpecialKey  guifg=#c2bfa5 guibg=#c2bfa5 gui=NONE ctermfg=240 ctermbg=black cterm=NONE
+match NonText '^[	 ]\+'
+hi NonText  guifg=#c2bfa5 guibg=#c2bfa5 gui=NONE ctermfg=234 ctermbg=black cterm=NONE
+hi clear SpecialKey
+hi link SpecialKey NonText
+    
+autocmd FileType go hi NonText guifg=#c2bfa5 guibg=#c2bfa5 gui=NONE ctermfg=234 ctermbg=black cterm=NONE
+autocmd FileType go match NonText '^[	 ]\+'
 
 hi VertSplit  guifg=#c2bfa5 guibg=#c2bfa5 gui=NONE ctermfg=yellow ctermbg=black cterm=NONE
 set fillchars+=vert:│
@@ -60,11 +66,11 @@ hi VertSplit  guifg=#c2bfa5 guibg=#c2bfa5 gui=NONE ctermfg=yellow ctermbg=black 
 highlight LineNr ctermfg=237
 highlight CursorLineNr ctermfg=242
 
-hi cursorline cterm=none term=none
 
 autocmd WinEnter * setlocal cursorline
 autocmd WinLeave * setlocal nocursorline
-highlight CursorLine guibg=#303000 ctermbg=234
+highlight CursorLine guibg=#303000 ctermbg=234 ctermfg=NONE cterm=none term=none
+
 " Inactive window background
 hi ColorColumn ctermbg=234 guibg=#eee8d5
 
@@ -300,6 +306,23 @@ let g:go_highlight_build_constraints = 1
 " go-def settings
 let g:godef_split=2
 let g:godef_same_file_in_same_window=1
+
+if !exists("g:go_conceal")
+  let g:go_conceal = 1
+endif
+
+" UTF-8 Based concealment of common operators
+if g:go_conceal != 0
+    syn match goNiceOperator "<-" conceal cchar=←
+    syn match goNiceOperator "->" conceal cchar=→
+    syn match goNiceOperator "!=" conceal cchar=≠
+    syn match goNiceOperator ":=" conceal cchar=≔
+endif
+
+hi link goNiceOperator goOperator
+hi! link Conceal Operator
+setlocal conceallevel=2
+
 
 
 " tagbar settings                                                                  

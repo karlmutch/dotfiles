@@ -143,7 +143,8 @@ Xft.rgba:       rgb
 Xft.lcdfilter:  lcddefault
 Xft.hinting:    true
 Xft.autohint:   true
-Xft.hintstyle:  hintfull
+!Xft.hintstyle:  hintfull
+Xft.hintstyle:  hintslight
 !
 ! This fixes spacing when using Powerline inside tmux, this does not appear to be an issue
 ! the shell
@@ -157,18 +158,29 @@ URxvt*letterSpace: 0
 !       xft:Menlo for Powerline:size=12, \
 !       xft:Fira Mono for Powerline:style=Regular, \
 !       xft:Unifont:style=Medium:antialias=false
-!       xft:DejaVu Sans Mono for Powerline Plus Nerd File Types Mono Plus Font Awesome Plus Octicons Plus Pomicons:size=14
 !       xft:Fira Code:style=Regular:size=14
-!       xft:DejaVu Sans Mono for Powerline Plus Nerd File Types Mono Plus Font Awesome Plus Octicons Plus Pomicons:size=12
+!       xft:DejaVu Sans Mono for Powerline:size=12
 !       xft:SourceCodePro+Powerline+Awesome:size=14
+!       xft:SourceCodePro+Powerline+Awesome Regular:style=Regular:size=12
 !       xft:Droid Sans Mono for Powerline Plus Nerd File Types Mono:antialias=true:hinting=true:pixelsize=18 
 !       xft:icomoon:style=Book:size=14, \
 !       xft:octicons:style=Book:size=14, \
 !       xft:FontAwesome:style=Regular:size=14, \
 !       xft:Hack:style=Regular:size=14, \
 !
+!URxvt.font:URxvtxft:PragmataPro:size=9
+!URxvt.boldFont:URxvtxft:PragmataPro:size=9:bold
+!URxvt.italicFont:italicFontxft:PragmataPro:size=9:italic
+!URxvt.boldItalicFont:boldItalicFontxft:PragmataPro:size=9:bold:italic
 *font: \
-       xft:DejaVu Sans Mono for Powerline Plus Nerd File Types Mono Plus Font Awesome Plus Octicons Plus Pomicons:size=12
+       xft:PragmataPro:size=14:antialias=true
 
 *boldFont: \
-       xft:DejaVu Sans Mono for Powerline Plus Nerd File Types Mono Plus Font Awesome Plus Octicons Plus Pomicons:size=12
+       xft:PragmataPro:size=14:antialias=true
+!       xft:DejaVu Sans Mono for Powerline:size=12
+
+*italicFont: \
+       xft:PragmataPro:size=14:italic:antialias=true
+
+*boldItalicFont: \
+       xft:PragmataPro:size=14:italic:antialias=true
