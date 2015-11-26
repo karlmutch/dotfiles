@@ -22,7 +22,17 @@
     lg1 = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
     lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n'          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
     lg = !"git lg1"
+    ls-fstatus = "! cd \"$PWD/$GIT_PREFIX\"; git ls-files -cdmoskt --abbrev=8 | while read -r line; do fn=$(echo \"$line\" | sed \"s/.*\\s\\([[:print:]]\\+\\)/\\1/\"); st=.$(git status -s "$fn" | printf \"%-02s \" $(sed \"s/\\([[:print:]]\\+\\)\\s.*/\\1/\")); echo. \"$st- $line\"; done "
+
 [filter "lfs"]
     required = true
     clean = git-lfs clean %f
     smudge = git-lfs smudge %f
+[github]
+    user = karlmutch
+    token = f904796a2a7bf7c63596501db3ae27ff28b3857a
+
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+[fetch]
+	prune = true

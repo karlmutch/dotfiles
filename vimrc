@@ -49,6 +49,25 @@ set nofoldenable
 set foldlevel=1
 set foldnestmax=10
 
+set wildignore+=*.o,*.out,*.obj,*.git,*.rbc,*.rbo,*.class,.svn,*.gem
+set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz
+set wildignore+=*.swp,*~,._*
+
+" Filetypes {
+
+        filetype plugin indent on                       " Turn on plugins
+
+        if has ("autocmd")
+                au Filetype make setlocal noexpandtab   " In makefiles, use real tabs, not tabs expanded to spaces
+
+                au BufRead,BufNewFile {Gemfile,Rakefile,*.rake} setf ruby
+
+                au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdb,txt} setf markdown
+
+                au BufRead,BufNewFile *.json setf javascript
+        endif
+" }
+
 match NonText '^[	 ]\+'
 hi NonText  guifg=#c2bfa5 guibg=#c2bfa5 gui=NONE ctermfg=234 ctermbg=black cterm=NONE
 hi clear SpecialKey
@@ -191,6 +210,7 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 "let g:syntastic_go_checkers = ['gometalint']
 
 let g:syntastic_style_warning_symbol='!'
@@ -283,7 +303,6 @@ nmap <F5> :make<CR>:copen<CR>
 nnoremap <silent> <F2>m :Unite -buffer-name=recent -winheight=10 file_mru<cr>
 nnoremap <F2>b :Unite -buffer-name=buffers -winheight=10 buffer<cr>
 
-
 " Go Specific Stuff
 
 au BufRead,BufNewFile *.go set filetype=go
@@ -292,16 +311,17 @@ autocmd FileType go setlocal shiftwidth=4
 autocmd FileType go setlocal tabstop=4
 " autocmd FileType qf wincmd J
 
-"
+let g:go_bin_path = expand("~/.go")
+
 " go-vim settings
 let g:go_fmt_command = "goimports"
-" " Enable syntax highting on everything
+
+" Enable syntax highting on everything
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
-
 
 " go-def settings
 let g:godef_split=2
