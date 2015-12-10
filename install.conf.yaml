@@ -42,6 +42,12 @@
     ~/.powerline:   powerline-develop/
     ~/.icons:       icons/
     ~/.tmux:        tmux/
+    ~/.config/gtk-3.0:
+        create: true
+        path: config/gtk-3.0
+    ~/.config/termite:
+        create: true
+        path: config/termite
     ~/.config/gocode:
         create: true
         path: config/gocode
