@@ -11,6 +11,7 @@
     ~/.dotfiles: ''
     ~/.ls_colors:   LS_COLORS/LS_COLORS
     ~/.tmux.conf:   tmux.conf
+    ~/.psqlrc:      psqlrc
     ~/.fzf:         fzf
     ~/.lessfilter:  lessfilter
     ~/.zshrc:       zshrc

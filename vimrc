@@ -49,9 +49,10 @@ set nofoldenable
 set foldlevel=1
 set foldnestmax=10
 
-set wildignore+=*.o,*.out,*.obj,*.git,*.rbc,*.rbo,*.class,.svn,*.gem
+set wildignore+=*.o,*.out,*.obj,*.git,*.rbc,*.rbo,*.class,.svn,*.gem,*.pyc
 set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz
 set wildignore+=*.swp,*~,._*
+
 
 " Filetypes {
 
@@ -67,6 +68,22 @@ set wildignore+=*.swp,*~,._*
                 au BufRead,BufNewFile *.json setf javascript
         endif
 " }
+
+
+" Tab completion
+" will insert tab at beginning of line,
+" will use completion if not at beginning
+set wildmode=list:longest,list:full
+function! InsertTabWrapper()
+    let col = col('.') - 1
+    if !col || getline('.')[col - 1] !~ '\k'
+        return "\<tab>"
+    else
+        return "\<c-p>"
+    endif
+endfunction
+inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
+inoremap <S-Tab> <c-n>
 
 match NonText '^[	 ]\+'
 hi NonText  guifg=#c2bfa5 guibg=#c2bfa5 gui=NONE ctermfg=234 ctermbg=black cterm=NONE
@@ -146,9 +163,6 @@ endif
 
 " Set utf8 as standard encoding and en_US as the standard language
 set encoding=utf-8
-
-" Ignore compiled files
-set wildignore=*.o,*~,*.pyc
 
 set mouse+=a
 if &term =~ '^screen' || &term =~ '^rxvt'
@@ -445,5 +459,10 @@ au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
 au FileType go nmap <Leader>dt <Plug>(go-def-tab)
 
 "au Filetype go set makeprg=go\ install\ ./...
+
+" Local config
+if filereadable($HOME . "/.vimrc.local")
+    source ~/.vimrc.local
+endif
 
 set viminfo+='1000,f1,\"512,:32,%
