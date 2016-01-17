@@ -42,8 +42,9 @@ POWERLEVEL9K_RIGHT_SEGMENT_SEPARATOR=$''
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 ZSH_HIGHLIGHT_PATTERNS=('rm -rf *' 'fg=white,bold,bg=red')
 #
-export HISTCONTROL=ignoredups;
+export HISTCONTROL="ignoredups;ignorespace"
 export HISTIGNORE="ls:cd:cd -:pwd:exit:date::"
+export HISTTIMEFORMAT='%F %T  '
 #
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
