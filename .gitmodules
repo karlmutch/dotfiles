@@ -46,9 +46,6 @@
 [submodule "vim/bundle/nerdtree-git-plugin"]
 	path = vim/bundle/nerdtree-git-plugin
 	url = https://github.com/Xuyuanp/nerdtree-git-plugin
-[submodule "vim/bundle/ctrlp.vim"]
-	path = vim/bundle/ctrlp.vim
-	url = https://github.com/kien/ctrlp.vim.git
 [submodule "vim/bundle/go-explorer"]
 	path = vim/bundle/go-explorer
 	url = https://github.com/garyburd/go-explorer.git
