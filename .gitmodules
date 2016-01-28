@@ -208,3 +208,6 @@
 [submodule "config/sublime-text-3/Packages/GitGutter"]
 	path = config/sublime-text-3/Packages/GitGutter
 	url = git://github.com/jisaacks/GitGutter.git
+[submodule "vim/bundle/ctrlp.vim"]
+	path = vim/bundle/ctrlp.vim
+	url = https://github.com/ctrlpvim/ctrlp.vim
