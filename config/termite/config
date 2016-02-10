@@ -12,7 +12,7 @@ urgent_on_bell = true
 scrollback_lines = 1000
 search_wrap = true
 #icon_name = terminal
-geometry = 800x600
+geometry = 1024x800
 
 # "system", "on" or "off"
 cursor_blink = system
