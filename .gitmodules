@@ -214,3 +214,6 @@
 [submodule "vim/bundle/vim-airline-themes"]
 	path = vim/bundle/vim-airline-themes
 	url = https://github.com/vim-airline/vim-airline-themes
+[submodule "diff-so-fancy"]
+	path = diff-so-fancy
+	url = https://github.com/so-fancy/diff-so-fancy.git

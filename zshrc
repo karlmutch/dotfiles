@@ -100,7 +100,7 @@ autoload -U compinit && compinit
 
 # User configuration
 
-export PATH=$PATH:"/usr/local/bin:/usr/bin:$HOME/bin:/usr/local/sbin:/usr/sbin"
+export PATH="$HOME/bin:/usr/local/bin":$PATH:"/usr/bin:/usr/local/sbin:/usr/sbin"
 export MANPATH="/usr/local/man:$MANPATH:$HOME/man"
 
 source $ZSH/oh-my-zsh.sh

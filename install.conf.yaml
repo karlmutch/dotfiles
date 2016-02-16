@@ -4,6 +4,7 @@
     - ["mkdir -p ~/.local/share ~/.go ~/.vim_temp/backup ~/.vim_temp/swap ~/.lnav/formats/installed"]
     - ["mkdir -p ~/.config/sublime-text-2/Packages/User"]
     - ["mkdir -p ~/.config"]
+    - ["mkdir -p ~/bin"]
     - [touch ~/.vim/viminfo]
     - [git submodule update --init --recursive, Installing submodules]
 
@@ -83,6 +84,8 @@
         create: true
         path: lnav/formats/installed/generic_log.json
     ~/.clang-format:   clang-format
+    ~/bin/diff-so-fancy:   diff-so-fancy/diff-so-fancy
+    ~/bin/diff-highlight:   diff-so-fancy/third_party/diff-highlight/diff-highlight
 
 - shell:
     - [fc-cache -fv ~/.fonts]
@@ -91,3 +94,6 @@
     - [eval $( dircolors -b ~/.ls_colors )]
     - [~/.fzf/install]
     - ["rm -f ~/.zcompdump"]
+    - ["chmod +x ~/bin/diff-so-fancy"]
+    - ["chmod +x ~/bin/diff-highlight"]
+
