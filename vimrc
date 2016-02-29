@@ -43,12 +43,6 @@ set scrolloff=3               " keep at least 3 lines above/below
 set list listchars=precedes:▶,extends:◀,tab:»·,trail:·,eol:¶
 set showbreak=↪
 
-" folding
-set foldmethod=indent
-set nofoldenable
-set foldlevel=1
-set foldnestmax=10
-
 set wildignore+=*.o,*.out,*.obj,*.git,*.rbc,*.rbo,*.class,.svn,*.gem,*.pyc
 set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz
 set wildignore+=*.swp,*~,._*
@@ -84,6 +78,10 @@ function! InsertTabWrapper()
 endfunction
 inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
 inoremap <S-Tab> <c-n>
+
+
+" Colors and scheme changes
+"
 
 match NonText '^[	 ]\+'
 hi NonText  guifg=#c2bfa5 guibg=#c2bfa5 gui=NONE ctermfg=234 ctermbg=black cterm=NONE
@@ -317,6 +315,9 @@ nmap <F5> :make<CR>:copen<CR>
 nnoremap <silent> <F2>m :Unite -buffer-name=recent -winheight=10 file_mru<cr>
 nnoremap <F2>b :Unite -buffer-name=buffers -winheight=10 buffer<cr>
 
+" SQL Related items
+au BufNewFile,BufRead *.sql setf pgsql
+
 " Go Specific Stuff
 
 au BufRead,BufNewFile *.go set filetype=go
@@ -465,5 +466,12 @@ au FileType go nmap <Leader>dt <Plug>(go-def-tab)
 if filereadable($HOME . "/.vimrc.local")
     source ~/.vimrc.local
 endif
+
+" Hostname configurations
+let hostfile=$HOME.'/.vim/machine/' . hostname() . '.vim'
+if filereadable(hostfile)
+        exe 'source ' . hostfile
+    endif
+
 
 set viminfo+='1000,f1,\"512,:32,%
