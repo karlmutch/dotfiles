@@ -4,7 +4,7 @@ scroll_on_output    = false
 scroll_on_keystroke = true
 audible_bell        = false
 allow_bold          = false
-mouse_autohide      = true
+#mouse_autohide      = true
 dynamic_title       = true
 clickable_url       = true
 
