@@ -1,5 +1,5 @@
 [options]
-font                = PragmataPro 13
+font                = PragmataPro Mono 13
 scroll_on_output    = false
 scroll_on_keystroke = true
 audible_bell        = false

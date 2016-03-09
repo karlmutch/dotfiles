@@ -9,7 +9,7 @@
     algorithm = patience
 [core]
     editor = /usr/bin/vim
-    pager = less -r
+    pager = less -RFX -z-3
 [push]
     default = simple
 [merge]
@@ -23,6 +23,7 @@
     lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
     lg = !"git lg1"
     branches = for-each-ref --format='%(refname:short) <- %(upstream:short)' refs/heads
+    up = !git pull --rebase --prune $@ && git submodule update --init --recursive
     st = status -sb
     rank = shortlog -sn --no-merges
     ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
@@ -32,6 +33,7 @@
     h = !git --no-pager log origin/dev..HEAD --abbrev-commit --pretty=oneline
     dbs = diff --stat --color dev...HEAD
     db = diff --color dev...HEAD
+    bclean = "!f() { git branch --merged ${1-dev} | grep -v " ${1-dev}$" | xargs -r git branch -d; }; f"
 
 [filter "lfs"]
     required = true
@@ -50,6 +52,7 @@
 	oldHighlight = red bold 52
 	newNormal = green bold
 	newHighlight = green bold 22
+
 [pager]
-	diff = diff-so-fancy | less --tabs=1,5 -RFX
-	show = diff-so-fancy | less --tabs=1,5 -RFX
+	diff = diff-so-fancy | less --tabs=1,5 -RFX -z-3
+	show = diff-so-fancy | less --tabs=1,5 -RFX -z-3
