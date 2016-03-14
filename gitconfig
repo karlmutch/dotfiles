@@ -45,6 +45,14 @@
 
 [url "git@github.com:"]
 	insteadOf = https://github.com/
+
+[url "ssh://git@stash.geneticfinance.com:7999/"]
+    insteadOf = git+ssh://stash.geneticfinance.com/
+    insteadOf = ssh://stash.geneticfinance.com/
+    insteadOf = https://stash.geneticfinance.com/
+    insteadOf = http://stash.geneticfinance.com/
+    insteadOf = git://stash.geneticfinance.com/
+
 [fetch]
 	prune = true
 [color "diff-highlight"]
