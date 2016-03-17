@@ -34,6 +34,7 @@
     dbs = diff --stat --color dev...HEAD
     db = diff --color dev...HEAD
     bclean = "!f() { git branch --merged ${1-dev} | grep -v " ${1-dev}$" | xargs -r git branch -d; }; f"
+    allmodules = "submodule foreach git pull origin master"
 
 [filter "lfs"]
     required = true
