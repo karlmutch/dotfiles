@@ -34,6 +34,7 @@
     dbs = diff --stat --color dev...HEAD
     db = diff --color dev...HEAD
     bclean = "!f() { git branch --merged ${1-dev} | grep -v " ${1-dev}$" | xargs -r git branch -d; }; f"
+    allmodules = "submodule foreach git pull origin master"
 
 [filter "lfs"]
     required = true
@@ -43,8 +44,16 @@
 [url "git@github.com:"]
 	insteadOf = https://github.com/
 
+[url "ssh://git@stash.geneticfinance.com:7999/"]
+    insteadOf = git+ssh://stash.geneticfinance.com/
+    insteadOf = ssh://stash.geneticfinance.com/
+    insteadOf = https://stash.geneticfinance.com/
+    insteadOf = http://stash.geneticfinance.com/
+    insteadOf = git://stash.geneticfinance.com/
+
 [fetch]
 	prune = true
+
 [color "diff-highlight"]
 	oldNormal = red bold
 	oldHighlight = red bold 52
