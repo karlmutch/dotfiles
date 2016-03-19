@@ -39,12 +39,10 @@
     required = true
     clean = git-lfs clean %f
     smudge = git-lfs smudge %f
-[github]
-    user = karlmutch
-    token = f904796a2a7bf7c63596501db3ae27ff28b3857a
 
 [url "git@github.com:"]
 	insteadOf = https://github.com/
+
 [fetch]
 	prune = true
 [color "diff-highlight"]
