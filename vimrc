@@ -363,7 +363,7 @@ hi link goNiceOperator goOperator
 hi! link Conceal Operator
 setlocal conceallevel=2
 
-
+let g:SOURCEGRAPH_AUTO = "false"
 
 " tagbar settings                                                                  
 let g:tagbar_type_go = {
