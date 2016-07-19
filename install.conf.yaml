@@ -7,6 +7,9 @@
     - ["mkdir -p ~/bin"]
     - [touch ~/.vim/viminfo]
     - [git submodule update --init --recursive, Installing submodules]
+    - ["mkdir -p ~/tmp/go/bin"]
+    - ["mkdir -p ~/tmp/go/src"]
+    - ["cd ~/tmp/go && GOPATH=~/tmp/go && export GOPATH && go get github.com/GeertJohan/gomatrix && cp bin/gomatrix ~/bin/gomatrix"]
 
 - link:
     ~/.dotfiles: ''

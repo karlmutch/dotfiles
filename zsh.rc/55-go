@@ -1,0 +1,5 @@
+#export GOBIN=$HOME/.go/bin
+export GOPATH=$HOME/dc
+export PATH=$HOME/dc/bin:$PATH
+export GORACE="halt_on_error=1 history_size=7"
+export TRASH_CACHE=/var/trash-cache
