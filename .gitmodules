@@ -184,9 +184,6 @@
 [submodule "vim/bundle/Dockerfile.vim"]
 	path = vim/bundle/Dockerfile.vim
 	url = https://github.com/ekalinin/Dockerfile.vim.git
-[submodule "LS_COLORS"]
-	path = LS_COLORS
-	url = https://github.com/trapd00r/LS_COLORS
 [submodule "vim/bundle/vim-haskellConcealPlus"]
 	path = vim/bundle/vim-haskellConcealPlus
 	url = https://github.com/enomsg/vim-haskellConcealPlus
