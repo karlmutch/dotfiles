@@ -5,11 +5,12 @@
     - ["mkdir -p ~/.config/sublime-text-2/Packages/User"]
     - ["mkdir -p ~/.config"]
     - ["mkdir -p ~/bin"]
+    - ["mkdir -p ~/.vim/viminfo"]
     - [touch ~/.vim/viminfo]
     - [git submodule update --init --recursive, Installing submodules]
     - ["mkdir -p ~/tmp/go/bin"]
     - ["mkdir -p ~/tmp/go/src"]
-    - ["cd ~/tmp/go && GOPATH=~/tmp/go && export GOPATH && go get github.com/GeertJohan/gomatrix && cp bin/gomatrix ~/bin/gomatrix"]
+    - ["cd ~/tmp/go && GOPATH=~/tmp/go && export GOPATH && GOROOT=~/go && export GOROOT && go get github.com/GeertJohan/gomatrix && cp bin/gomatrix ~/bin/gomatrix"]
 
 - link:
     ~/.dotfiles: ''
