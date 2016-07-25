@@ -2,7 +2,7 @@ Personal Profile Setup
 ======================
 
 # dotfiles
-git clone https://github.com/karlmutch/dotfiles.git --recursive
+git clone https://github.com/karlmutch/dotfiles-private.git ~/dotfiles --recursive
 
 git submodule update --recursive
 
