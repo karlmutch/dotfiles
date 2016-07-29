@@ -154,6 +154,7 @@ done
 if [[ -n $TMUX_PANE ]]; then
 else
     if [[ "$OSX" != "1" ]]; then
-        tmux attach -t base || tmux new -s base
+        tmux new-session -s base \; new-window "tmux set-option -ga terminal-overrides \",$TERM:Tc\"; tmux detach"
+        tmux attach -t base
     fi
 fi
