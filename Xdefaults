@@ -85,9 +85,9 @@ Eclipse*spacing:0
 
 URxvt*dynamicColors:    true
 URxvt*cursorBlink:      true
-URxvt.termName: rxvt-unicode-256color
-URxvt.geometry: 160x72
-URxvt*scrollBar_right: false
+URxvt.termName:         rxvt-unicode-256color
+URxvt.geometry:         160x72
+URxvt*scrollBar_right:  false
 
 URxvt*skipBuiltinGlyphs: true
 
@@ -98,8 +98,8 @@ URxvt*scrollBar:        false
 URxvt*loginShell:       true
 URxvt*jumpScroll:       true
 URxvt*multiScroll:      true
-URxvt*urgentOnBell:      true
-URxvt*cutchars:           BACKSLASH '"'&()*,;<=>?@[]^{|}'"'
+URxvt*urgentOnBell:     true
+URxvt*cutchars:         BACKSLASH '"'&()*,;<=>?@[]^{|}'"'
 
 URxvt.iso14755: false
 URxvt.iso14755_52: false
@@ -107,8 +107,6 @@ URxvt.iso14755_52: false
 URxvt*borderLess: false
 URxvt*externalBorder:     2
 URxvt*borderColor:     #333333
-
-rxvt.termName: rxvt-unicode-256color
 
 !urxvt*colorIT: rgb:e4/e4/e4
 !urxvt*colorBD: rgb:82/a4/d3
@@ -181,17 +179,17 @@ URxvt*letterSpace: 0
 !       xft:octicons:size=13:antialias=true, \
 !
 *font: \
-       xft:PragmataPro:size=13:antialias=true
+       xft:PragmataPro:size=18:antialias=true
 !       xft:DejaVu Sans Mono for Powerline:size=13
 
 *boldFont: \
-       xft:PragmataPro:size=13:antialias=true
+       xft:PragmataPro:size=18:antialias=true
 !       xft:DejaVu Sans Mono for Powerline:size=13
 
 *italicFont: \
-       xft:PragmataPro:size=13:italic:antialias=true
+       xft:PragmataPro:size=18:italic:antialias=true
 !       xft:DejaVu Sans Mono for Powerline:size=13
 
 *boldItalicFont: \
-       xft:PragmataPro:size=13:italic:antialias=true
+       xft:PragmataPro:size=18:italic:antialias=true
 !       xft:DejaVu Sans Mono for Powerline:size=13
