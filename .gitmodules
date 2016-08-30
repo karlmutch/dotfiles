@@ -214,9 +214,6 @@
 [submodule "diff-so-fancy"]
 	path = diff-so-fancy
 	url = https://github.com/so-fancy/diff-so-fancy.git
-[submodule "vim/bundle/sourcegraph-vim"]
-	path = vim/bundle/sourcegraph-vim
-	url = https://github.com/sourcegraph/sourcegraph-vim.git
 [submodule "LS_COLORS"]
 	path = LS_COLORS
 	url = https://github.com/trapd00r/LS_COLORS
