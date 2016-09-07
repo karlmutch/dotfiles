@@ -87,7 +87,7 @@ match NonText '^[	 ]\+'
 hi NonText  guifg=#c2bfa5 guibg=#c2bfa5 gui=NONE ctermfg=234 ctermbg=black cterm=NONE
 hi clear SpecialKey
 hi link SpecialKey NonText
-    
+
 autocmd FileType go hi NonText guifg=#c2bfa5 guibg=#c2bfa5 gui=NONE ctermfg=234 ctermbg=black cterm=NONE
 autocmd FileType go match NonText '^[	 ]\+'
 
@@ -210,22 +210,40 @@ let g:airline_right_alt_sep = ''
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols = {}
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['go'] = ''
 
+set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
+
+"let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': ['go'] }
+let g:syntastic_go_gometalinter_args = '' .
+        \ '--tests ' .
+        \ '--disable-all ' .
+        \ '--enable=deadcode ' .
+        \ '--enable=vet ' .
+        \ '--enable=vetshadow ' .
+        \ '--enable=dupl ' .
+        \ '--enable=gocyclo ' .
+        \ '--enable=ineffassign ' .
+        \ '--enable=golint'
+let g:syntastic_go_checkers = ['gometalinter']
 
 let g:syntastic_c_include_dirs = ['/home/kmutch/darkcycle-sdk/cpp']
 let g:syntastic_c_check_header = 1
 
 let g:syntastic_loc_list_height = 5
-let g:syntastic_always_populate_loc_list = 0
+let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_enable_highlighting=1
 
 let g:syntastic_style_warning_symbol='!'
 let g:syntastic_style_error_symbol = '⚡'
 let g:syntastic_error_symbol = '✗'
 let g:syntastic_warning_symbol = '⚠'
+
+let g:go_list_type = "quickfix"
 
 " Set a dark color for syntastic sign background
 highlight SyntasticErrorSign ctermbg=NONE ctermfg=red guibg=#2a343a guifg=red
@@ -327,11 +345,7 @@ let g:go_bin_path = expand("~/.go")
 
 " go-vim settings
 let g:go_fmt_command = "goimports"
-"let g:go_fmt_command = "go fmt"
-
-"let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
-"let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
-let g:syntastic_go_checkers = ['gometalint']
+"let g:go_fmt_command = "gofmt"
 
 " Enable syntax highting on everything
 let g:go_highlight_functions = 1
