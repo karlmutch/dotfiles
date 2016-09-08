@@ -20,6 +20,17 @@ alias sublime='/opt/sublime_text/sublime_text'
 
 pcurl () { curl $1  2> /dev/null |  python -m json.tool | pygmentize -l json }
 
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
+# Syntax: "repeat [X] [command]"
+function repeat()      
+{
+    local i max
+    max=$1; shift;
+    for ((i=1; i <= max ; i++)); do  # --> C-like syntax
+        eval "$@";
+        done
+}
 
 # dfc (sudo apt-get install dfc)
 if hash dfc 2>/dev/null; then
