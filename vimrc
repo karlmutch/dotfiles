@@ -218,6 +218,7 @@ set statusline+=%*
 let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': ['go'] }
 let g:syntastic_go_gometalinter_args = '' .
         \ '--tests ' .
+        \ '--exclude="declaration of err shadows declaration" ' .
         \ '--disable-all ' .
         \ '--enable=deadcode ' .
         \ '--enable=vet ' .
