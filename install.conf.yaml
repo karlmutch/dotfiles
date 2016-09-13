@@ -85,6 +85,9 @@
     ~/.lnav/formats/installed/generic_log.json:
         create: true
         path: lnav/formats/installed/generic_log.json
+    ~/.lnav/formats/installed/logxi.json:
+        create: true
+        path: lnav/formats/installed/logxi.json
     ~/.clang-format:   clang-format
     ~/bin/diff-so-fancy:   diff-so-fancy/diff-so-fancy
     ~/bin/diff-highlight:   diff-so-fancy/third_party/diff-highlight/diff-highlight

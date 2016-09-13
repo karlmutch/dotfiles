@@ -1,0 +1,30 @@
+{
+    "logxi" : {
+        "title" : "DC JSON Log",
+        "description" : "An log format configuration for DarkCycle JSON logs",
+        "json" : true,
+        "file-pattern" : "dcmaster.log.*",
+        "level-field" : "_l",
+        "level": {
+            "error" : "ERR",
+            "warning" : "WRN",
+            "info" : "INF",
+            "debug" : "DBG",
+            "trace" : "TRC"
+        },
+        "timestamp-field" : "_t",
+        "timestamp-format" : "%Y-%m-%dT%H:%M:%S%z",
+        "body-field" : "_m",
+        "line-format" : [
+            { "field" : "_t" },
+            " [",
+            { "field" : "_l" },
+            "] (",
+            { "field" : "_fn", "align" : "right", "max-width" : 15 },
+            ":",
+            { "field" : "_ln" },
+            ") | ",
+            { "field" : "_m" }
+        ]
+    }
+}
