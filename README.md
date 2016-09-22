@@ -4,7 +4,7 @@ Personal Profile Setup
 # dotfiles
 git clone https://github.com/karlmutch/dotfiles-private.git ~/dotfiles --recursive
 
-cd ~/dotbot
+cd ~/dotfiles
 
 git submodule foreach git pull origin master
 
