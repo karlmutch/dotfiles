@@ -225,8 +225,7 @@ let g:syntastic_go_gometalinter_args = '' .
         \ '--enable=vetshadow ' .
         \ '--enable=dupl ' .
         \ '--enable=gocyclo ' .
-        \ '--enable=ineffassign ' .
-        \ '--enable=golint'
+        \ '--enable=ineffassign '
 let g:syntastic_go_checkers = ['gometalinter']
 
 let g:syntastic_c_include_dirs = ['/home/kmutch/darkcycle-sdk/cpp']
