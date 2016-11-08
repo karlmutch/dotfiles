@@ -115,7 +115,7 @@ GLOBALRC=~/.zsh.rc
 startfiles=`\ls -1 $GLOBALRC/* | xargs -n 1 basename | sort | uniq`
 if [[ -d "$LOCALRC" ]]
 then
-startfiles=${startfiles}`\ls -1 $LOCALRC/* $GLOBALRC/* | xargs -n 1 basename | sort | uniq`
+startfiles=`\ls -1 $LOCALRC/* $GLOBALRC/* | xargs -n 1 basename | sort | uniq`
 fi
 
 for i in `echo $startfiles`
@@ -123,7 +123,9 @@ do
         if [[ -e $LOCALRC/$i ]]
         then
                 source $LOCALRC/$i
-        else
+        fi
+        if [[ -e $GLOBALRC/$i ]]
+        then
                 source $GLOBALRC/$i
         fi
 done
@@ -158,3 +160,6 @@ else
         tmux attach -t base
     fi
 fi
+
+# added by travis gem
+[ -f /home/kmutch/.travis/travis.sh ] && source /home/kmutch/.travis/travis.sh
