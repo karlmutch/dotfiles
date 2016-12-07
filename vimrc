@@ -491,5 +491,7 @@ if filereadable(hostfile)
         exe 'source ' . hostfile
     endif
 
+source ~/.vim/autoload/SyntaxAttr.vim
+source ~/.vim/colors/nofrils-knm.vim
 
 set viminfo+='1000,f1,\"512,:32,%

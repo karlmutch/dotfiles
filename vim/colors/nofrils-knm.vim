@@ -17,12 +17,12 @@ if !exists("g:nofrils_strbackgrounds") " {{{
 endif " }}}
 
 " Baseline {{{
-hi Normal		term=NONE	cterm=NONE	ctermfg=255	ctermbg=black	gui=NONE	guifg=#FFFFFF	guibg=#262626
+hi Normal		term=NONE	cterm=NONE	ctermfg=15	ctermbg=black	gui=NONE	guifg=#FFFFFF	guibg=#262626
 " }}}
 
 " Faded {{{
 "hi ColorColumn		term=NONE	cterm=NONE	ctermfg=0	ctermbg=240	gui=NONE	guifg=#000000	guibg=#585858
-hi Comment		term=NONE	cterm=NONE	ctermfg=243	ctermbg=NONE	gui=NONE	guifg=#585858	guibg=NONE
+hi Comment		term=NONE	cterm=NONE	ctermfg=238	ctermbg=NONE	gui=NONE	guifg=#585858	guibg=NONE
 "hi FoldColumn		term=NONE	cterm=NONE	ctermfg=0	ctermbg=240	gui=NONE	guifg=#000000	guibg=#585858
 "hi Folded		term=NONE	cterm=NONE	ctermfg=240	ctermbg=NONE	gui=NONE	guifg=#585858	guibg=NONE
 hi LineNr		term=NONE	cterm=NONE	ctermfg=8	ctermbg=NONE	gui=NONE	guifg=NONE	guibg=#000000
@@ -99,7 +99,7 @@ hi Delimiter		term=NONE	cterm=NONE	ctermfg=NONE	ctermbg=NONE	gui=NONE	guifg=NONE
 hi Directive		term=NONE	cterm=NONE	ctermfg=NONE	ctermbg=NONE	gui=NONE	guifg=NONE	guibg=NONE
 hi Exception		term=NONE	cterm=NONE	ctermfg=NONE	ctermbg=NONE	gui=NONE	guifg=NONE	guibg=NONE
 hi Float		term=NONE	cterm=NONE	ctermfg=NONE	ctermbg=NONE	gui=NONE	guifg=NONE	guibg=NONE
-hi Format		term=NONE	cterm=NONE	ctermfg=NONE	ctermbg=NONE	gui=NONE	guifg=NONE	guibg=NONE
+hi Format		term=NONE	cterm=NONE	ctermfg=243	ctermbg=NONE	gui=NONE	guifg=NONE	guibg=NONE
 hi Function		term=NONE	cterm=NONE	ctermfg=NONE	ctermbg=NONE	gui=NONE	guifg=NONE	guibg=NONE
 hi Identifier		term=NONE	cterm=NONE	ctermfg=NONE	ctermbg=NONE	gui=NONE	guifg=NONE	guibg=NONE
 hi Ignore		term=NONE	cterm=NONE	ctermfg=NONE	ctermbg=NONE	gui=NONE	guifg=NONE	guibg=NONE
@@ -117,7 +117,7 @@ hi SpecialComment       term=NONE	cterm=NONE	ctermfg=NONE	ctermbg=NONE	gui=NONE	
 hi Special		term=NONE	cterm=NONE	ctermfg=NONE	ctermbg=NONE	gui=NONE	guifg=NONE	guibg=NONE
 hi Statement		term=NONE	cterm=NONE	ctermfg=NONE	ctermbg=NONE	gui=NONE	guifg=NONE	guibg=NONE
 hi StorageClass		term=NONE	cterm=NONE	ctermfg=NONE	ctermbg=NONE	gui=NONE	guifg=NONE	guibg=NONE
-hi String		term=NONE	cterm=NONE	ctermfg=253	ctermbg=NONE	gui=NONE	guifg=NONE	guibg=NONE
+hi String		term=NONE	cterm=NONE	ctermfg=243	ctermbg=NONE	gui=NONE	guifg=NONE	guibg=NONE
 hi Structure		term=NONE	cterm=NONE	ctermfg=NONE	ctermbg=NONE	gui=NONE	guifg=NONE	guibg=NONE
 hi Tag		        term=NONE	cterm=NONE	ctermfg=NONE	ctermbg=NONE	gui=NONE	guifg=NONE	guibg=NONE
 hi Title		term=NONE	cterm=NONE	ctermfg=NONE	ctermbg=NONE	gui=NONE	guifg=NONE	guibg=NONE
@@ -126,6 +126,8 @@ hi Type		        term=NONE	cterm=NONE	ctermfg=NONE	ctermbg=NONE	gui=NONE	guifg=N
 hi Underlined		term=NONE	cterm=NONE	ctermfg=NONE	ctermbg=NONE	gui=NONE	guifg=NONE	guibg=NONE
 
 hi goNiceOperator		term=NONE	cterm=NONE	ctermfg=NONE	ctermbg=NONE	gui=NONE	guifg=NONE	guibg=NONE
+hi goFormatSpecifier	term=NONE	cterm=NONE	ctermfg=243	ctermbg=NONE	gui=NONE	guifg=NONE	guibg=NONE
+
 hi cBlock		term=NONE	cterm=NONE	ctermfg=NONE	ctermbg=NONE	gui=NONE	guifg=NONE	guibg=NONE
 
 hi rainbow_r0 ctermfg=NONE guifg=NONE
@@ -138,6 +140,8 @@ hi rainbow_r5 ctermfg=NONE guifg=NONE
 
 " Optional Syntax Features {{{
 if g:nofrils_strbackgrounds
-    hi String		term=NONE	cterm=NONE	ctermfg=NONE	ctermbg=233	gui=NONE	guifg=NONE	guibg=#121212
+    hi String		term=NONE	cterm=NONE	ctermfg=NONE	ctermbg=234	gui=NONE	guifg=NONE	guibg=#121212
+    hi Format		term=NONE	cterm=NONE	ctermfg=NONE	ctermbg=234	gui=NONE	guifg=NONE	guibg=#121212
+    hi goFormatSpecifier	term=NONE	cterm=NONE	ctermfg=NONE	ctermbg=234	gui=NONE	guifg=NONE	guibg=#121212
 end
 " }}}
