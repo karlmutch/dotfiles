@@ -217,3 +217,9 @@
 [submodule "LS_COLORS"]
 	path = LS_COLORS
 	url = https://github.com/trapd00r/LS_COLORS
+[submodule "oh-my-zsh-custom/plugins/zsh-autosuggestions"]
+	path = oh-my-zsh-custom/plugins/zsh-autosuggestions
+	url = git://github.com/zsh-users/zsh-autosuggestions
+[submodule "vim/bundle/bufferhint"]
+	path = vim/bundle/bufferhint
+	url = https://github.com/bsdelf/bufferhint
