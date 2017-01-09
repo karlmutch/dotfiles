@@ -346,6 +346,7 @@ let g:go_bin_path = expand("~/.go")
 " go-vim settings
 let g:go_fmt_command = "goimports"
 "let g:go_fmt_command = "gofmt"
+autocmd FileType go silent exe "GoGuruScope " .  go#package#ImportPath(expand('%:p:h')) . "..."
 
 " Enable syntax highting on everything
 let g:go_highlight_functions = 1
