@@ -1,6 +1,3 @@
-# Place any aliases into this file
-#
-
 function _run_pager {
     ${=PAGER} "$@"
 }
@@ -55,4 +52,17 @@ man() {
     LESS_TERMCAP_ue=$(printf "\e[0m") \
     LESS_TERMCAP_us=$(printf "\e[1;92m") \
     man "$@"
+}
+
+dcbin() {
+tmux new-window
+tmux send-keys 'cd dc' 'C-m' 'cd bin' 'C-m' 'export LOGXI_FORMAT=happy,maxcol=1024' 'C-m'
+tmux split-window
+tmux send-keys 'cd dc' 'C-m' 'cd bin' 'C-m' 'export LOGXI_FORMAT=happy,maxcol=1024' 'C-m'
+tmux split-window
+tmux send-keys 'cd dc' 'C-m' 'cd bin' 'C-m' 'export LOGXI_FORMAT=happy,maxcol=1024' 'C-m'
+tmux split-window
+tmux send-keys 'cd dc' 'C-m' 'cd bin' 'C-m' 'export LOGXI_FORMAT=happy,maxcol=1024' 'C-m'
+tmux split-window
+tmux send-keys 'cd dc' 'C-m' 'cd bin' 'C-m' 'export LOGXI_FORMAT=happy,maxcol=1024' 'C-m'
 }

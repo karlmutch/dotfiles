@@ -117,6 +117,10 @@ URxvt.keysym.C-Up:     perl:font-size:increase
 URxvt.keysym.C-Down:   perl:font-size:decrease
 URxvt.keysym.C-S-Up:   perl:font-size:incglobal
 URxvt.keysym.C-S-Down: perl:font-size:decglobal
+URxvt.keysym.C-plus:     perl:font-size:increase
+URxvt.keysym.C-minus:   perl:font-size:decrease
+URxvt.keysym.C-equal:   perl:font-size:incglobal
+URxvt.keysym.C-underscore: perl:font-size:decglobal
 
 URxvt.perl-ext-common: font-size,default,clipboard,matcher,keyboard-select
 URxvt.keysym.M-u:     perl:url-select:select_next
