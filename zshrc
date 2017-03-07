@@ -95,7 +95,10 @@ export HISTTIMEFORMAT='%F %T  '
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(profiles git git-flow golang colored-man history per-directory-history dirhistory dirpersist docker docker-compose zsh-syntax-highlighting sudo autoenv)
+#
+# dirhistory needs alt-right alt-left checked
+#
+plugins=(profiles git git-flow golang colored-man-pages history per-directory-history zsh-autosuggestions dirhistory dirpersist docker docker-compose zsh-syntax-highlighting autoenv)
 autoload -U compinit && compinit
 
 # User configuration

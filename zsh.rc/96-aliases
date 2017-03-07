@@ -1,10 +1,8 @@
-# Place any aliases into this file
-#
-
 function _run_pager {
     ${=PAGER} "$@"
 }
 
+export LOGXI_FORMAT=happy,maxcol=1024
 export PAGER='less +g -RSC'
 READNULLCMD='_run_pager'
 
@@ -54,4 +52,30 @@ man() {
     LESS_TERMCAP_ue=$(printf "\e[0m") \
     LESS_TERMCAP_us=$(printf "\e[1;92m") \
     man "$@"
+}
+
+dcbin() {
+tmux new-window
+tmux set pane-border-status bottom
+tmux send-keys 'cd ~/github_dc' 'C-m' 'cd bin' 'C-m' 'export LOGXI_FORMAT=happy,maxcol=1024' 'C-m' './master -loglevel=debug' 'C-m'
+tmux split-window
+tmux send-keys 'cd ~/github_dc' 'C-m' 'cd bin' 'C-m' 'export LOGXI_FORMAT=happy,maxcol=1024' 'C-m' 'mkdir -p /tmp/console' 'C-m' './console -loglevel=debug' 'C-m'
+tmux split-window
+tmux send-keys 'cd ~/github_dc' 'C-m' 'cd bin' 'C-m' 'export LOGXI_FORMAT=happy,maxcol=1024' 'C-m' './dataserver -loglevel=trace -fileserverbindaddr=0.0.0.0:9020 -serveraddr=0.0.0.0:9021 -datadirs ~/dataserver' 'C-m'
+tmux split-window
+tmux send-keys 'cd ~/github_dc' 'C-m' 'cd bin' 'C-m' 'export LOGXI_FORMAT=happy,maxcol=1024' 'C-m' './proxy -loglevel=debug -datamountedonclient=false' 'C-m'
+tmux split-window
+tmux send-keys 'cd ~/github_dc' 'C-m' 'cd bin' 'C-m' 'export LOGXI_FORMAT=happy,maxcol=1024' 'C-m' 'mkdir -p /tmp/client' 'C-m' './client -loglevel=debug -corestouse=1 -isproxydatamounted=false  -basedirpath=/tmp/client' 'C-m'
+tmux select-layout even-vertical
+sleep 10
+tmux split-window
+tmux select-layout even-vertical
+tmux send-keys 'cd ~/gofer' 'C-m' 'cd bin' 'C-m' 'export LOGXI_FORMAT=happy,maxcol=1024' 'C-m' './gofer -container gofer_cpu.tar -org 1 -password de85f523dcfcfdb10e50aa47f284a8c0 -user karl.mutch@sentient.ai -vars wus=5,duration=30 -loglevel=debug  -service ./gofer_service.tar' 'C-m'
+tmux resize-pane -t 1 -D 5
+tmux resize-pane -t 4 -U 10
+tmux resize-pane -t 5 -U 5
+tmux set pane-border-format "#{?pane_active,#[fg=colour9],#[fg=green,bold,italics]} \"#{pane_title}\"#[default]"
+tmux previous-window
+tmux set -g pane-border-status off
+tmux next-window
 }
