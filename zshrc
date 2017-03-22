@@ -98,12 +98,12 @@ export HISTTIMEFORMAT='%F %T  '
 #
 # dirhistory needs alt-right alt-left checked
 #
-plugins=(profiles git git-flow golang colored-man-pages history per-directory-history zsh-autosuggestions dirhistory dirpersist docker docker-compose zsh-syntax-highlighting)
+plugins=(profiles git git-flow golang colored-man-pages history per-directory-history zsh-autosuggestions dirhistory dirpersist docker docker-compose zsh-syntax-highlighting autoenv)
 autoload -U compinit && compinit
 
 # User configuration
 
-export PATH="$HOME/bin:/usr/local/bin":$PATH:"/usr/bin:/usr/local/sbin:/usr/sbin"
+export PATH="$HOME/bin:/usr/local/bin":$PATH:"/usr/bin:/usr/local/sbin:/usr/sbin":$HOME/.local/bin
 export MANPATH="/usr/local/man:$MANPATH:$HOME/man"
 
 source $ZSH/oh-my-zsh.sh
