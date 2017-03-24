@@ -4,3 +4,5 @@ export LESSOPEN='|~/.lessfilter %s'
 export PATH=$HOME/bin:$PATH:/usr/lib/llvm-3.6/bin
 export PLAN9=/usr/local/plan9
 export PATH=$PATH:$PLAN9/bin
+export LOGXI_FORMAT=happy,maxcol=256
+LOGXI=*=INF
