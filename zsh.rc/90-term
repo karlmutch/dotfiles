@@ -6,4 +6,13 @@ then
     fi
 fi
 
+if [[ "$RaspberryPi" = "1" ]]
+then
+    if [[ "$TERM" = "xterm" ]]
+    then
+      export TERM=rxvt-unicode-256color
+      export COLORTERM=rxvt-unicode-256color
+    fi
+fi
+
 eval $( dircolors -b ~/.ls_colors )
