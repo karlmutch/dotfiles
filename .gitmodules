@@ -223,3 +223,6 @@
 [submodule "vim/bundle/bufferhint"]
 	path = vim/bundle/bufferhint
 	url = https://github.com/bsdelf/bufferhint
+[submodule "autoenv"]
+	path = autoenv
+	url = git://github.com/kennethreitz/autoenv
