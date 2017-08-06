@@ -226,3 +226,6 @@
 [submodule "autoenv"]
 	path = autoenv
 	url = git://github.com/kennethreitz/autoenv
+[submodule "vim/bundle/vim-plugin-autosess"]
+	path = vim/bundle/vim-plugin-autosess
+	url = https://github.com/powerman/vim-plugin-autosess.git

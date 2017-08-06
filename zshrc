@@ -5,6 +5,10 @@ export ZSH_CUSTOM=$HOME/.oh-my-zsh-custom
 export GOOGLE_APPLICATION_CREDENTIALS=$HOME/.ssh/google-app-auth.json
 export GOOGLE_FIREBASE_CREDENTIALS=$HOME/.ssh/google-firebase-auth.json
 
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+export LC_CTYPE=en_US.UTF-8
+
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
