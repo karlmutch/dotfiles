@@ -358,6 +358,9 @@ let g:go_highlight_build_constraints = 1
 
 let g:go_auto_type_info = 1
 
+set foldmethod=syntax
+set foldlevelstart=3
+
 " go-def settings
 let g:godef_split=2
 let g:godef_same_file_in_same_window=1
@@ -494,5 +497,31 @@ if filereadable(hostfile)
 
 source ~/.vim/autoload/SyntaxAttr.vim
 source ~/.vim/colors/nofrils-knm.vim
+
+au BufWinLeave * mkview
+au BufWinEnter * silent loadview
+
+function! MyFoldText() " {{{
+    let line = getline(v:foldstart)
+
+    " so that it works when relativenumber has been set
+    if (&relativenumber)
+        let nucolwidth = &fdc + &relativenumber * &numberwidth
+    else
+        let nucolwidth = &fdc + &number * &numberwidth
+    endif
+
+    let windowwidth = winwidth(0) - nucolwidth - 7
+    let foldedlinecount = v:foldend - v:foldstart
+
+    " expand tabs into spaces
+    let onetab = strpart('          ', 0, &tabstop)
+    let line = substitute(line, '\t', onetab, 'g')
+
+    let line = strpart(line, 0, windowwidth - 2 -len(foldedlinecount))
+    let fillcharcount = windowwidth - len(line) - len(foldedlinecount)
+    return line . ' …' . repeat(" ",fillcharcount) . foldedlinecount . ' … '
+endfunction " }}}
+set foldtext=MyFoldText()
 
 set viminfo+='1000,f1,\"512,:32,%
