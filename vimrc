@@ -358,9 +358,6 @@ let g:go_highlight_build_constraints = 1
 
 let g:go_auto_type_info = 1
 
-set foldmethod=syntax
-set foldlevelstart=3
-
 " go-def settings
 let g:godef_split=2
 let g:godef_same_file_in_same_window=1
@@ -498,8 +495,18 @@ if filereadable(hostfile)
 source ~/.vim/autoload/SyntaxAttr.vim
 source ~/.vim/colors/nofrils-knm.vim
 
-au BufWinLeave * mkview
-au BufWinEnter * silent loadview
+set foldmethod=syntax
+set foldlevelstart=20
+
+augroup AutoSaveFolds
+  autocmd!
+  autocmd BufWinLeave *.* mkview!
+  autocmd BufWinEnter *.* silent loadview
+augroup END
+
+set viewoptions-=options
+"set viewoptions=cursor,folds,slash,unix
+let g:skipview_files = ['*\.vim']
 
 function! MyFoldText() " {{{
     let line = getline(v:foldstart)
@@ -511,7 +518,7 @@ function! MyFoldText() " {{{
         let nucolwidth = &fdc + &number * &numberwidth
     endif
 
-    let windowwidth = winwidth(0) - nucolwidth - 7
+    let windowwidth = winwidth(0) - nucolwidth - 6
     let foldedlinecount = v:foldend - v:foldstart
 
     " expand tabs into spaces
@@ -520,7 +527,7 @@ function! MyFoldText() " {{{
 
     let line = strpart(line, 0, windowwidth - 2 -len(foldedlinecount))
     let fillcharcount = windowwidth - len(line) - len(foldedlinecount)
-    return line . ' …' . repeat(" ",fillcharcount) . foldedlinecount . ' … '
+    return line . ' …' . repeat(" ",fillcharcount) . foldedlinecount . ' …'
 endfunction " }}}
 set foldtext=MyFoldText()
 
