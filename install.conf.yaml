@@ -48,8 +48,6 @@
     ~/.fonts:       fonts/
     ~/.oh-my-zsh:   oh-my-zsh/
     ~/.oh-my-zsh-custom:   oh-my-zsh-custom/
-    ~/.oh-my-zsh-custom/plugins/autoenv:   oh-my-zsh/plugins/autoenv
-    ~/.zsh.rc.local/autoenv.sh autoenv/activate.sh
     ~/.powerline:   powerline-develop/
     ~/.icons:       icons/
     ~/.tmux:        tmux/
