@@ -228,8 +228,8 @@ let g:syntastic_go_gometalinter_args = '' .
         \ '--enable=ineffassign '
 let g:syntastic_go_checkers = ['gometalinter']
 
-let g:syntastic_c_include_dirs = ['/home/kmutch/darkcycle-sdk/cpp']
-let g:syntastic_c_check_header = 1
+"let g:syntastic_c_include_dirs = ['/home/kmutch/darkcycle-sdk/cpp']
+"let g:syntastic_c_check_header = 1
 
 let g:syntastic_loc_list_height = 5
 let g:syntastic_always_populate_loc_list = 1
@@ -346,7 +346,7 @@ let g:go_bin_path = expand("~/.go")
 " go-vim settings
 "let g:go_fmt_command = "goimports"
 let g:go_fmt_command = "gofmt"
-autocmd FileType go silent exe "GoGuruScope " .  go#package#ImportPath(expand('%:p:h')) . "..."
+"autocmd FileType go silent exe "GoGuruScope " .  go#package#ImportPath(expand('%:p:h')) . "..."
 
 " Enable syntax highting on everything
 let g:go_highlight_functions = 1
