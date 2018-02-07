@@ -40,6 +40,7 @@ fi
 if hash exa 2>/dev/null; then
    alias exl="exa --long -T "
    alias exs="exa -abhHlS --group-directories-first --sort=modified --git "
+   alias ex="exa -abhHlS --group-directories-first --sort=modified --git "
 fi
 
 man() {
