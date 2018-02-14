@@ -1,6 +1,9 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 export ZSH_CUSTOM=$HOME/.oh-my-zsh-custom
+#
+# Used later to change the customizations that cost a lot on OSX
+OS=$(uname -s)
 
 export GOOGLE_APPLICATION_CREDENTIALS=$HOME/.ssh/google-app-auth.json
 export GOOGLE_FIREBASE_CREDENTIALS=$HOME/.ssh/google-firebase-auth.json
@@ -16,7 +19,16 @@ export LC_CTYPE=en_US.UTF-8
 #ZSH_THEME="robbyrussell"
 #ZSH_THEME="peepcode"
 ZSH_THEME="powerlevel9k/powerlevel9k"
+<<<<<<< Updated upstream
 POWERLEVEL9K_MODE='awesome-patched'
+=======
+#POWERLEVEL9K_MODE='awesome-patched'
+case "$OS" in
+    Darwin*) POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir) ;;
+    *) POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context vcs dir) ;;
+esac
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status history)
+>>>>>>> Stashed changes
 
 # Limit to the last two folders
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=3
