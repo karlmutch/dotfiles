@@ -214,9 +214,6 @@
 [submodule "diff-so-fancy"]
 	path = diff-so-fancy
 	url = https://github.com/so-fancy/diff-so-fancy.git
-[submodule "LS_COLORS"]
-	path = LS_COLORS
-	url = https://github.com/trapd00r/LS_COLORS
 [submodule "oh-my-zsh-custom/plugins/zsh-autosuggestions"]
 	path = oh-my-zsh-custom/plugins/zsh-autosuggestions
 	url = git://github.com/zsh-users/zsh-autosuggestions

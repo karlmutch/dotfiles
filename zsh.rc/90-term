@@ -6,4 +6,8 @@ then
     fi
 fi
 
-eval $( dircolors -b ~/.ls_colors )
+OS=$(uname -s)
+case "$OS" in
+    Darwin*) ;;
+    *) eval $( dircolors -b ~/.ls_colors ) ;;
+esac
