@@ -174,30 +174,30 @@ URxvt*letterSpace: 0
 !URxvt.boldFont:URxvtxft:PragmataPro:size=9:bold
 !URxvt.italicFont:italicFontxft:PragmataPro:size=9:italic
 !URxvt.boldItalicFont:boldItalicFontxft:PragmataPro:size=9:bold:italic
+!
 !       xft:PragmataPro:size=13:antialias=true, \
 !       xft:DejaVu Sans Mono for Powerline:size=13
-
 !       xft:Iosevka:size=13:antialias=true, \
 !       xft:IcoMoon-Free:size=13:antialias=true, \
 !       xft:FontAwesome:size=13:antialias=true, \
 !       xft:octicons:size=13:antialias=true, \
 !
 *font: \
-       xft:PragmataPro Mono:size=13
+       xft:PragmataPro Mono:size=13:italic:antialias=true:style=Regular
 !       xft:Iosevka Term:size=13:regular:antialias=true
 !       xft:DejaVu Sans Mono for Powerline:size=13
 
 *boldFont: \
-       xft:PragmataPro Mono:size=13
+       xft:PragmataPro Mono:size=13:italic:antialias=true:style=Regular
 !       xft:Iosevka Term:size=13:medium:antialias=true
 !       xft:DejaVu Sans Mono for Powerline:size=13
 
 *italicFont: \
-       xft:PragmataPro Mono:size=13:italic
+       xft:PragmataPro Mono:size=13:italic:antialias=true:style=Regular
 !       xft:Iosevka Term:size=13:italic:antialias=true
 !       xft:DejaVu Sans Mono for Powerline:size=13
 
 *boldItalicFont: \
-       xft:PragmataPro Mono:size=13:italic
+       xft:PragmataPro Mono:size=13:italic:antialias=true:style=Regular
 !       xft:Iosevka Term:size=13:medium italic:antialias=true
 !       xft:DejaVu Sans Mono for Powerline:size=13

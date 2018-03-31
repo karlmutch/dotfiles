@@ -40,6 +40,7 @@ fi
 if hash exa 2>/dev/null; then
    alias exl="exa --long -T "
    alias exs="exa -abhHlS --group-directories-first --sort=modified --git "
+   alias ex="exa -abhHlS --group-directories-first --sort=modified --git "
 fi
 
 man() {
@@ -65,7 +66,7 @@ tmux send-keys 'cd ~/dc' 'C-m' 'cd bin' 'C-m' 'export LOGXI_FORMAT=happy,maxcol=
 tmux split-window
 tmux send-keys 'cd ~/dc' 'C-m' 'cd bin' 'C-m' 'export LOGXI_FORMAT=happy,maxcol=1024' 'C-m' './proxy -loglevel=trace -datamountedonclient=false 2>&1 | tee /tmp/proxy.log' 'C-m'
 tmux split-window
-tmux send-keys 'cd ~/dc' 'C-m' 'cd bin' 'C-m' 'export LOGXI_FORMAT=happy,maxcol=1024' 'C-m' 'mkdir -p /tmp/client' 'C-m' './client -loglevel=debug -corestouse=1 -isproxydatamounted=false  -basedirpath=/tmp/client 2>&1 | tee /tmp/client.log' 'C-m'
+tmux send-keys 'cd ~/dc' 'C-m' 'cd bin' 'C-m' 'export LOGXI_FORMAT=happy,maxcol=1024' 'C-m' 'mkdir -p /tmp/client' 'C-m' 'sudo ./client -loglevel=debug -corestouse=1 -isproxydatamounted=false  -basedirpath=/tmp/client 2>&1 | tee /tmp/client.log' 'C-m'
 tmux select-layout even-vertical
 sleep 10
 tmux split-window

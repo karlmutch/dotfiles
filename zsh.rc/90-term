@@ -6,6 +6,7 @@ then
     fi
 fi
 
+<<<<<<< HEAD
 if [[ "$RaspberryPi" = "1" ]]
     if [[ "$COLORTERM" = "rxvt-xpm" ]]
     then
@@ -21,3 +22,10 @@ then
 fi
 
 eval $( dircolors -b ~/.ls_colors )
+=======
+OS=$(uname -s)
+case "$OS" in
+    Darwin*) ;;
+    *) eval $( dircolors -b ~/.ls_colors ) ;;
+esac
+>>>>>>> e191c81d7e9708db09f3de519906ebd911f07b6b

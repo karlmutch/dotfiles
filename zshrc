@@ -1,6 +1,16 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 export ZSH_CUSTOM=$HOME/.oh-my-zsh-custom
+#
+# Used later to change the customizations that cost a lot on OSX
+OS=$(uname -s)
+
+export GOOGLE_APPLICATION_CREDENTIALS=$HOME/.ssh/google-app-auth.json
+export GOOGLE_FIREBASE_CREDENTIALS=$HOME/.ssh/google-firebase-auth.json
+
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+export LC_CTYPE=en_US.UTF-8
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -9,8 +19,11 @@ export ZSH_CUSTOM=$HOME/.oh-my-zsh-custom
 #ZSH_THEME="robbyrussell"
 #ZSH_THEME="peepcode"
 ZSH_THEME="powerlevel9k/powerlevel9k"
-#POWERLEVEL9K_MODE='awesome-patched'
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context vcs dir)
+POWERLEVEL9K_MODE='awesome-patched'
+case "$OS" in
+    Darwin*) POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir) ;;
+    *) POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context vcs dir) ;;
+esac
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status history)
 
 # Limit to the last two folders
@@ -18,6 +31,8 @@ POWERLEVEL9K_SHORTEN_DIR_LENGTH=3
 
 POWERLEVEL9K_DIR_DEFAULT_FOREGROUND='010'
 POWERLEVEL9K_DIR_DEFAULT_BACKGROUND='017'
+POWERLEVEL9K_FOLDER_ICON=""
+POWERLEVEL9K_HOME_SUB_ICON="$(print_icon "HOME_ICON")"
 
 # enable the vcs segment in general
 POWERLEVEL9K_SHOW_CHANGESET=false
@@ -36,8 +51,14 @@ POWERLEVEL9K_DIR_HOME_BACKGROUND='017'
 POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND='010'
 POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND='010'
 
-POWERLEVEL9K_RIGHT_SEGMENT_SEPARATOR=$''
+POWERLEVEL9K_COMMAND_EXECUTION_TIME_BACKGROUND='245'
+POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND='black'
+
+#POWERLEVEL9K_RIGHT_SEGMENT_SEPARATOR=$''
 #
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context vcs dir dir_writable)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status background_jobs command_execution_time load)
+
 # VI-Mode
 # general activation
 #bindkey -v
@@ -98,12 +119,12 @@ export HISTTIMEFORMAT='%F %T  '
 #
 # dirhistory needs alt-right alt-left checked
 #
-plugins=(profiles git git-flow golang colored-man-pages history per-directory-history zsh-autosuggestions dirhistory dirpersist docker docker-compose zsh-syntax-highlighting)
+plugins=(profiles git git-flow golang colored-man-pages history per-directory-history zsh-autosuggestions dirhistory dirpersist docker docker-compose zsh-syntax-highlighting z)
 autoload -U compinit && compinit
 
 # User configuration
 
-export PATH="$HOME/bin:/usr/local/bin":$PATH:"/usr/bin:/usr/local/sbin:/usr/sbin":$HOME/.local/bin
+export PATH="$HOME/upspin/bin:$HOME/bin:/usr/local/bin":$PATH:"/usr/bin:/usr/local/sbin:/usr/sbin":$HOME/.local/bin
 export MANPATH="/usr/local/man:$MANPATH:$HOME/man"
 
 source $ZSH/oh-my-zsh.sh

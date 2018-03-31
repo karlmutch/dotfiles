@@ -214,15 +214,18 @@
 [submodule "diff-so-fancy"]
 	path = diff-so-fancy
 	url = https://github.com/so-fancy/diff-so-fancy.git
-[submodule "LS_COLORS"]
-	path = LS_COLORS
-	url = https://github.com/trapd00r/LS_COLORS
 [submodule "oh-my-zsh-custom/plugins/zsh-autosuggestions"]
 	path = oh-my-zsh-custom/plugins/zsh-autosuggestions
 	url = git://github.com/zsh-users/zsh-autosuggestions
 [submodule "vim/bundle/bufferhint"]
 	path = vim/bundle/bufferhint
 	url = https://github.com/bsdelf/bufferhint
+[submodule "vim/bundle/vim-plugin-autosess"]
+	path = vim/bundle/vim-plugin-autosess
+	url = https://github.com/powerman/vim-plugin-autosess.git
 [submodule "autoenv"]
 	path = autoenv
-	url = git://github.com/kennethreitz/autoenv
+	url = git://github.com/kennethreitz/autoenv.git
+[submodule "oh-my-zsh-custom/plugins/zsh-history-substring-search"]
+	path = oh-my-zsh-custom/plugins/zsh-history-substring-search
+	url = https://github.com/zsh-users/zsh-history-substring-search

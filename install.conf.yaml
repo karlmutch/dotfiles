@@ -6,6 +6,7 @@
     - ["mkdir -p ~/.config/sublime-text-3/Packages/User"]
     - ["mkdir -p ~/.config/sublime-text-3/Installed Packages"]
     - ["mkdir -p ~/.config"]
+    - ["mkdir -p ~/.zsh.rc.local"]
     - ["mkdir -p ~/bin"]
     - [git submodule update --init --recursive, Installing submodules]
     - ["mkdir -p ~/tmp/go/bin"]
@@ -47,7 +48,6 @@
     ~/.fonts:       fonts/
     ~/.oh-my-zsh:   oh-my-zsh/
     ~/.oh-my-zsh-custom:   oh-my-zsh-custom/
-    ~/.oh-my-zsh-custom/plugins/autoenv:   oh-my-zsh/plugins/autoenv
     ~/.powerline:   powerline-develop/
     ~/.icons:       icons/
     ~/.tmux:        tmux/
