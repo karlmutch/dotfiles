@@ -7,6 +7,11 @@ then
 fi
 
 if [[ "$RaspberryPi" = "1" ]]
+    if [[ "$COLORTERM" = "rxvt-xpm" ]]
+    then
+        export TERM=rxvt-unicode-256color
+        export COLORTERM=rxvt-unicode-256color
+    fi
 then
     if [[ "$TERM" = "xterm" ]]
     then
