@@ -6,26 +6,14 @@ then
     fi
 fi
 
-<<<<<<< HEAD
-if [[ "$RaspberryPi" = "1" ]]
-    if [[ "$COLORTERM" = "rxvt-xpm" ]]
-    then
-        export TERM=rxvt-unicode-256color
-        export COLORTERM=rxvt-unicode-256color
-    fi
-then
-    if [[ "$TERM" = "xterm" ]]
-    then
-      export TERM=rxvt-unicode-256color
-      export COLORTERM=rxvt-unicode-256color
-    fi
-fi
+CPU=$(uname -m)
+case "$CPU" in
+    armv7l*) export TERM=xterm-termite ;;
+    *) ;;
+esac
 
-eval $( dircolors -b ~/.ls_colors )
-=======
 OS=$(uname -s)
 case "$OS" in
     Darwin*) ;;
-    *) eval $( dircolors -b ~/.ls_colors ) ;;
+    *) ;;
 esac
->>>>>>> e191c81d7e9708db09f3de519906ebd911f07b6b

@@ -19,7 +19,7 @@ export LC_CTYPE=en_US.UTF-8
 #ZSH_THEME="robbyrussell"
 #ZSH_THEME="peepcode"
 ZSH_THEME="powerlevel9k/powerlevel9k"
-POWERLEVEL9K_MODE='awesome-patched'
+#POWERLEVEL9K_MODE='awesome-patched'
 case "$OS" in
     Darwin*) POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir) ;;
     *) POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context vcs dir) ;;
@@ -127,8 +127,6 @@ autoload -U compinit && compinit
 export PATH="$HOME/upspin/bin:$HOME/bin:/usr/local/bin":$PATH:"/usr/bin:/usr/local/sbin:/usr/sbin":$HOME/.local/bin
 export MANPATH="/usr/local/man:$MANPATH:$HOME/man"
 
-source $ZSH/oh-my-zsh.sh
-
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
@@ -154,6 +152,7 @@ do
         fi
 done
 
+source $ZSH/oh-my-zsh.sh
 
 # else
 #   export EDITOR='mvim'
