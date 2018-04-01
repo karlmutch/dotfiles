@@ -22,7 +22,7 @@ hi Normal		term=NONE	cterm=NONE	ctermfg=15	ctermbg=black	gui=NONE	guifg=#FFFFFF	
 
 " Faded {{{
 "hi ColorColumn		term=NONE	cterm=NONE	ctermfg=0	ctermbg=240	gui=NONE	guifg=#000000	guibg=#585858
-hi Comment		term=NONE	cterm=NONE	ctermfg=238	ctermbg=NONE	gui=NONE	guifg=#585858	guibg=NONE
+hi Comment		term=NONE	cterm=NONE	ctermfg=241	ctermbg=NONE	gui=NONE	guifg=#585858	guibg=NONE
 hi FoldColumn	term=NONE	cterm=NONE	ctermfg=0	ctermbg=240	gui=NONE	guifg=#000000	guibg=#585858
 hi Folded		term=NONE	cterm=NONE	ctermfg=225	ctermbg=NONE	gui=NONE	guifg=#585858	guibg=NONE
 hi LineNr		term=NONE	cterm=NONE	ctermfg=8	ctermbg=NONE	gui=NONE	guifg=NONE	guibg=#000000
@@ -117,7 +117,7 @@ hi SpecialComment       term=NONE	cterm=NONE	ctermfg=NONE	ctermbg=NONE	gui=NONE	
 hi Special		term=NONE	cterm=NONE	ctermfg=NONE	ctermbg=NONE	gui=NONE	guifg=NONE	guibg=NONE
 hi Statement		term=NONE	cterm=NONE	ctermfg=NONE	ctermbg=NONE	gui=NONE	guifg=NONE	guibg=NONE
 hi StorageClass		term=NONE	cterm=NONE	ctermfg=NONE	ctermbg=NONE	gui=NONE	guifg=NONE	guibg=NONE
-hi String		term=NONE	cterm=NONE	ctermfg=243	ctermbg=NONE	gui=NONE	guifg=NONE	guibg=NONE
+hi String		term=NONE	cterm=NONE	ctermfg=245	ctermbg=NONE	gui=NONE	guifg=NONE	guibg=NONE
 hi Structure		term=NONE	cterm=NONE	ctermfg=NONE	ctermbg=NONE	gui=NONE	guifg=NONE	guibg=NONE
 hi Tag		        term=NONE	cterm=NONE	ctermfg=NONE	ctermbg=NONE	gui=NONE	guifg=NONE	guibg=NONE
 hi Title		term=NONE	cterm=NONE	ctermfg=NONE	ctermbg=NONE	gui=NONE	guifg=NONE	guibg=NONE

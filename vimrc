@@ -495,6 +495,8 @@ if filereadable(hostfile)
 source ~/.vim/autoload/SyntaxAttr.vim
 source ~/.vim/colors/nofrils-knm.vim
 
+hi Comment ctermfg=241 guifg=DarkCyan
+
 set foldmethod=syntax
 set foldlevelstart=20
 

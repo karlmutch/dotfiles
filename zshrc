@@ -32,7 +32,7 @@ POWERLEVEL9K_SHORTEN_DIR_LENGTH=3
 POWERLEVEL9K_DIR_DEFAULT_FOREGROUND='010'
 POWERLEVEL9K_DIR_DEFAULT_BACKGROUND='017'
 POWERLEVEL9K_FOLDER_ICON=""
-POWERLEVEL9K_HOME_SUB_ICON="$(print_icon "HOME_ICON")"
+#POWERLEVEL9K_HOME_SUB_ICON="$(print_icon "HOME_ICON")"
 
 # enable the vcs segment in general
 POWERLEVEL9K_SHOW_CHANGESET=false
@@ -124,7 +124,7 @@ autoload -U compinit && compinit
 
 # User configuration
 
-export PATH="$HOME/upspin/bin:$HOME/bin:/usr/local/bin":$PATH:"/usr/bin:/usr/local/sbin:/usr/sbin":$HOME/.local/bin
+export PATH="$HOME/.cargo/bin:$HOME/upspin/bin:$HOME/bin:/usr/local/bin":$PATH:"/usr/bin:/usr/local/sbin:/usr/sbin":$HOME/.local/bin
 export MANPATH="/usr/local/man:$MANPATH:$HOME/man"
 
 # You may need to manually set your language environment
@@ -134,13 +134,21 @@ export MANPATH="/usr/local/man:$MANPATH:$HOME/man"
 LOCALRC=~/.zsh.rc.local
 GLOBALRC=~/.zsh.rc
 
-startfiles=`\ls -1 $GLOBALRC/* | xargs -n 1 basename | sort | uniq`
+# Scan the rc directories for files to be run during shell initilization supressing
+# errors and messages due to their being no files
+#
+setopt +o nomatch
+startfiles=`\ls -1 $GLOBALRC/* | xargs -n 1 basename 2> /dev/null || true`
 if [[ -d "$LOCALRC" ]]
 then
-startfiles=`\ls -1 $LOCALRC/* $GLOBALRC/* | xargs -n 1 basename | sort | uniq`
+startfiles+=`\ls -1 $LOCALRC/* 2>/dev/null| xargs -n 1 basename 2>/dev/null || true`
 fi
 
-for i in `echo $startfiles`
+IFS=$'\n' sorted=($(sort <<<"${startfiles[*]}" | uniq))
+unset IFS
+setopt -o nomatch
+
+for i in `echo $sorted`
 do
         if [[ -e $LOCALRC/$i ]]
         then

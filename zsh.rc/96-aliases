@@ -7,8 +7,6 @@ export PAGER='less +g -RSC'
 READNULLCMD='_run_pager'
 
 alias dtree='tree -sChd --du'
-alias ls='ls --color -alcrth'
-alias lss='ls --color -alcrth | sort -k 5 -h'
 
 # Vim because of the autoenv feature of zsh we have is being set to use a viminfo
 # using command line options rather than the .vimrc so that it can be modified
@@ -38,9 +36,10 @@ fi
 
 # exa from https://github.com/ogham/exa/releases/download/v0.3.0/exa-linux-x86_64.zip
 if hash exa 2>/dev/null; then
-   alias exl="exa --long -T "
-   alias exs="exa -abhHlS --group-directories-first --sort=modified --git "
-   alias ex="exa -abhHlS --group-directories-first --sort=modified --git "
+    alias ls='exa'
+    alias exl="exa --long -T "
+    alias exs="exa -ahHl --group-directories-first --sort=modified --git "
+    alias ex="exa -ahHl --group-directories-first --sort=modified --git "
 fi
 
 man() {

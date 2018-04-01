@@ -160,9 +160,6 @@
 [submodule "vim/bundle/git-flow-format"]
 	path = vim/bundle/git-flow-format
 	url = https://github.com/vim-scripts/git-flow-format
-[submodule "zsh-autoenv"]
-	path = zsh-autoenv
-	url = https://github.com/Tarrasch/zsh-autoenv
 [submodule "vim/bundle/vim-diminactive"]
 	path = vim/bundle/vim-diminactive
 	url = https://github.com/blueyed/vim-diminactive
@@ -223,9 +220,6 @@
 [submodule "vim/bundle/vim-plugin-autosess"]
 	path = vim/bundle/vim-plugin-autosess
 	url = https://github.com/powerman/vim-plugin-autosess.git
-[submodule "autoenv"]
-	path = autoenv
-	url = git://github.com/kennethreitz/autoenv.git
 [submodule "oh-my-zsh-custom/plugins/zsh-history-substring-search"]
 	path = oh-my-zsh-custom/plugins/zsh-history-substring-search
 	url = https://github.com/zsh-users/zsh-history-substring-search
