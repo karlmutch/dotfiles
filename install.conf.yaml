@@ -105,4 +105,5 @@
     - ["chmod +x ~/bin/diff-highlight"]
     - ["cd ~/tmp/go && GOPATH=~/tmp/go && export GOPATH && GOROOT=~/go && export GOROOT && go get github.com/GeertJohan/gomatrix && cp bin/gomatrix ~/bin/gomatrix"]
     - ["cd ~/tmp/go && GOPATH=~/tmp/go && export GOPATH && GOROOT=~/go && export GOROOT && go get github.com/erning/gorun && cp bin/gorun ~/bin/gorun"]
+    - ["cd ~/tmp/go && GOPATH=~/tmp/go && export GOPATH && GOROOT=~/go && export GOROOT && go get github.com/direnv/direnv && cp bin/direnv ~/bin/direnv"]
 
