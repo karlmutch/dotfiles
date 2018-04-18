@@ -163,7 +163,7 @@ endif
 set encoding=utf-8
 
 set mouse+=a
-if &term =~ '^screen' || &term =~ '^rxvt'
+if &term =~ '^screen' || &term =~ '^rxvt' || &term =~ '^xterm'
     " tmux knows the extended mouse mode
     set ttymouse=xterm2
 endif
@@ -341,12 +341,12 @@ autocmd FileType go setlocal shiftwidth=4
 autocmd FileType go setlocal tabstop=4
 " autocmd FileType qf wincmd J
 
-let g:go_bin_path = expand("~/.go")
+let g:go_bin_path = expand("~/go/bin")
 
 " go-vim settings
-"let g:go_fmt_command = "goimports"
-let g:go_fmt_command = "gofmt"
-"autocmd FileType go silent exe "GoGuruScope " .  go#package#ImportPath(expand('%:p:h')) . "..."
+let g:go_fmt_command = "goimports"
+"let g:go_fmt_command = "gofmt"
+autocmd FileType go silent exe "GoGuruScope " .  go#package#ImportPath(expand('%:p:h')) . "..."
 
 " Enable syntax highting on everything
 let g:go_highlight_functions = 1
@@ -500,11 +500,11 @@ hi Comment ctermfg=241 guifg=DarkCyan
 set foldmethod=syntax
 set foldlevelstart=20
 
-augroup AutoSaveFolds
-  autocmd!
-  autocmd BufWinLeave *.* mkview!
-  autocmd BufWinEnter *.* silent loadview
-augroup END
+"augroup AutoSaveFolds
+"  autocmd!
+"  autocmd BufWinLeave *.* mkview!
+"  autocmd BufWinEnter *.* silent loadview
+"augroup END
 
 set viewoptions-=options
 "set viewoptions=cursor,folds,slash,unix

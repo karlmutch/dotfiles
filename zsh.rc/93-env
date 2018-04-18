@@ -1,4 +1,4 @@
-export PATH=$PATH:~/.go
+export PATH=$PATH:~/go/bin
 export LESS=-Xr
 export LESSOPEN='|~/.lessfilter %s'
 export PATH=$HOME/bin:$PATH:/usr/lib/llvm-3.6/bin
