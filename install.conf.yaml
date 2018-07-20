@@ -94,6 +94,12 @@
     ~/.clang-format:   clang-format
     ~/bin/diff-so-fancy:   diff-so-fancy/diff-so-fancy
     ~/bin/diff-highlight:   diff-so-fancy/third_party/diff-highlight/diff-highlight
+    ~/bin/256colors2.pl: bin/256colors2.pl
+    ~/bin/show-all-256-colors.py: bin/show-all-256-colors.py
+    ~/bin/showppa.sh: bin/showppa.sh
+    ~/bin/k8s-cmds.sh: bin/k8s-cmds.sh
+    ~/bin/write-mime-multipart: bin/write-mime-multipart
+    ~/bin/k8s-logs.sh: bin/k8s-logs.sh
 
 - shell:
     - [fc-cache -fv ~/.fonts]
