@@ -56,8 +56,15 @@ POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND='black'
 
 #POWERLEVEL9K_RIGHT_SEGMENT_SEPARATOR=$''
 #
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context vcs dir dir_writable)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status background_jobs command_execution_time load)
+case "$OS" in
+    Darwin*) POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir) ; 
+             POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status history)
+    ;;
+    *) 
+        POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context vcs dir dir_writable);
+        POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status background_jobs command_execution_time load)
+    ;;
+esac
 
 # VI-Mode
 # general activation
@@ -191,6 +198,7 @@ else
         tmux attach -t base
     fi
 fi
+eval "$(direnv hook zsh)"
 
 # added by travis gem
 [ -f /home/kmutch/.travis/travis.sh ] && source /home/kmutch/.travis/travis.sh
