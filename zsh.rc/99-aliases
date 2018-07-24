@@ -1,0 +1,38 @@
+# Place any aliases into this file
+#
+
+function _run_pager {
+    ${=PAGER} "$@"
+}
+
+OS=$(uname -s)
+
+export PAGER='less +g -RSC'
+READNULLCMD='_run_pager'
+
+alias dtree='tree -sChd --du'
+
+case "$OS" in
+    Darwin*) ;;
+    *) alias ls='ls -h --color';;
+esac
+
+# Vim because of the autoenv feature of zsh we have is being set to use a viminfo
+# using command line options rather than the .vimrc so that it can be modified
+# by autoenv .env files if so desired
+alias vim='vim -i ~/.vim/viminfo'
+
+alias sublime='/opt/sublime_text/sublime_text'
+
+pcurl () { curl $1  2> /dev/null |  python -m json.tool | pygmentize -l json }
+
+
+# dfc (sudo apt-get install dfc)
+if hash dfc 2>/dev/null; then
+   alias df="dfc -f"
+fi
+
+# exa from https://github.com/ogham/exa/releases/download/v0.3.0/exa-linux-x86_64.zip
+if hash exa 2>/dev/null; then
+   alias exs="exa --long -T "
+fi

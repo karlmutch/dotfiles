@@ -1,5 +1,9 @@
 [options]
+<<<<<<< HEAD
 font                = PragmataPro Mono 12
+=======
+font                = PragmataPro Mono 14
+>>>>>>> e9ddc57eadabfdb0e84803d62e03955a5cdcd171
 scroll_on_output    = false
 scroll_on_keystroke = true
 audible_bell        = false
@@ -12,7 +16,7 @@ urgent_on_bell = true
 scrollback_lines = 1000
 search_wrap = true
 #icon_name = terminal
-geometry = 1024x800
+geometry = 800x600
 
 # "system", "on" or "off"
 cursor_blink = system

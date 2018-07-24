@@ -8,15 +8,13 @@
     - ["mkdir -p ~/.config"]
     - ["mkdir -p ~/.zsh.rc.local"]
     - ["mkdir -p ~/bin"]
-    - [git submodule update --init --recursive, Installing submodules]
     - ["mkdir -p ~/tmp/go/bin"]
     - ["mkdir -p ~/tmp/go/src"]
     - ["mkdir -p ~/.config/sublime-text-3/Packages"]
-    - ["cd ~/tmp/go && GOPATH=~/tmp/go && export GOPATH && GOROOT=~/go && export GOROOT && go get github.com/GeertJohan/gomatrix && cp bin/gomatrix ~/bin/gomatrix"]
+    - [git submodule update --init --recursive, Installing submodules]
 
 - link:
     ~/.dotfiles: ''
-    ~/.ls_colors:   LS_COLORS/LS_COLORS
     ~/.tmux.conf:   tmux.conf
     ~/.psqlrc:      psqlrc
     ~/.grc:         grc
@@ -24,7 +22,7 @@
     ~/.lessfilter:  lessfilter
     ~/.zshrc:       zshrc
     ~/.zsh.rc: zsh.rc
-    ~/.zsh-autoenv: zsh-autoenv
+    ~/.direnvrc: direnv.rc
     ~/.zsh-configuration: zsh-configuration
     ~/.zsh-completions: zsh-completions
     ~/.config/nvim: vim
@@ -95,15 +93,22 @@
         path: lnav/formats/installed/logxi.json
     ~/.clang-format:   clang-format
     ~/bin/diff-so-fancy:   diff-so-fancy/diff-so-fancy
-    ~/bin/diff-highlight:   diff-so-fancy/third_party/diff-highlight/diff-highlight
+    ~/bin/256colors2.pl: bin/256colors2.pl
+    ~/bin/show-all-256-colors.py: bin/show-all-256-colors.py
+    ~/bin/showppa.sh: bin/showppa.sh
+    ~/bin/k8s-cmds.sh: bin/k8s-cmds.sh
+    ~/bin/write-mime-multipart: bin/write-mime-multipart
+    ~/bin/k8s-logs.sh: bin/k8s-logs.sh
+    ~/bin/k8s-rm-pip-builds.sh: bin/k8s-rm-pip-builds.sh
 
 - shell:
     - [fc-cache -fv ~/.fonts]
     - [apm install vim-mode ex-mode pigments project-manager git-control merge-conflicts clipboard-history minimap minimap-git-diff script linter file-icons flashy-syntax fonts go-oracle go-plus go-runtime language-ansible language-docker language-thrift last-cursor-position block-travel block-cursor]
     - [chmod +x ~/.lessfilter]
-    - [eval $( dircolors -b ~/.ls_colors )]
     - [~/.fzf/install]
     - ["rm -f ~/.zcompdump"]
     - ["chmod +x ~/bin/diff-so-fancy"]
-    - ["chmod +x ~/bin/diff-highlight"]
+    - ["cd ~/tmp/go && GOPATH=~/tmp/go && export GOPATH && GOROOT=~/go && export GOROOT && go get github.com/GeertJohan/gomatrix && cp bin/gomatrix ~/bin/gomatrix"]
+    - ["cd ~/tmp/go && GOPATH=~/tmp/go && export GOPATH && GOROOT=~/go && export GOROOT && go get github.com/erning/gorun && cp bin/gorun ~/bin/gorun"]
+    - ["cd ~/tmp/go && GOPATH=~/tmp/go && export GOPATH && GOROOT=~/go && export GOROOT && go get github.com/direnv/direnv && cp bin/direnv ~/bin/direnv"]
 

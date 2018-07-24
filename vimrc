@@ -163,7 +163,7 @@ endif
 set encoding=utf-8
 
 set mouse+=a
-if &term =~ '^screen' || &term =~ '^rxvt'
+if &term =~ '^screen' || &term =~ '^rxvt' || &term =~ '^xterm'
     " tmux knows the extended mouse mode
     set ttymouse=xterm2
 endif
@@ -341,12 +341,11 @@ autocmd FileType go setlocal shiftwidth=4
 autocmd FileType go setlocal tabstop=4
 " autocmd FileType qf wincmd J
 
-let g:go_bin_path = expand("~/.go")
+let g:go_bin_path = expand("~/go/bin")
 
 " go-vim settings
-"let g:go_fmt_command = "goimports"
-let g:go_fmt_command = "gofmt"
-"autocmd FileType go silent exe "GoGuruScope " .  go#package#ImportPath(expand('%:p:h')) . "..."
+let g:go_fmt_command = "goimports"
+"let g:go_fmt_command = "gofmt"
 
 " Enable syntax highting on everything
 let g:go_highlight_functions = 1
@@ -365,6 +364,37 @@ let g:godef_same_file_in_same_window=1
 if !exists("g:go_conceal")
   let g:go_conceal = 1
 endif
+
+let g:go_build_tags = "NO_CUDA"
+
+" from https://gist.github.com/tyru/984296
+" Substitute a:from => a:to by string.
+" To substitute by pattern, use substitute() instead.
+function! s:substring(str, from, to)
+  if a:str ==# '' || a:from ==# ''
+      return a:str
+  endif
+  let str = a:str
+  let idx = stridx(str, a:from)
+  while idx !=# -1
+      let left  = idx ==# 0 ? '' : str[: idx - 1]
+      let right = str[idx + strlen(a:from) :]
+      let str = left . a:to . right
+      let idx = stridx(str, a:from)
+  endwhile
+  return str
+endfunction
+
+function! s:chomp(string)
+  return substitute(a:string, '\n\+$', '', '')
+endfunction
+
+function! s:go_guru_scope_from_git_root()
+" chomp because get rev-parse returns line with newline at the end
+  return s:chomp(s:substring(system("git rev-parse --show-toplevel"),$GOPATH . "/src/","")) . "/..."
+endfunction
+
+au FileType go silent exe "GoGuruScope " . s:go_guru_scope_from_git_root()
 
 " UTF-8 Based concealment of common operators
 if g:go_conceal != 0
@@ -495,14 +525,16 @@ if filereadable(hostfile)
 source ~/.vim/autoload/SyntaxAttr.vim
 source ~/.vim/colors/nofrils-knm.vim
 
+hi Comment ctermfg=241 guifg=DarkCyan
+
 set foldmethod=syntax
 set foldlevelstart=20
 
-augroup AutoSaveFolds
-  autocmd!
-  autocmd BufWinLeave *.* mkview!
-  autocmd BufWinEnter *.* silent loadview
-augroup END
+"augroup AutoSaveFolds
+"  autocmd!
+"  autocmd BufWinLeave *.* mkview!
+"  autocmd BufWinEnter *.* silent loadview
+"augroup END
 
 set viewoptions-=options
 "set viewoptions=cursor,folds,slash,unix

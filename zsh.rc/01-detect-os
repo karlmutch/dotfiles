@@ -1,3 +1,10 @@
+if [[ `lsb_release -c -s` == 'jessie' ]]
+then
+    export RaspberryPi=1
+else
+    export RaspberryPi=
+fi
+
 if [[ `uname` == 'Linux' ]]
 then
         export LINUX=1
@@ -11,6 +18,12 @@ then
         export OSX=1
 else
         export OSX=
+fi
+
+if grep -qE "(Microsoft|WSL)" /proc/version &> /dev/null ; then
+    export UbuntuWindows=1
+else
+    export UbuntuWindows=
 fi
 
 # Detect Macports GNU userland installation
