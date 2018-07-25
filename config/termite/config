@@ -1,9 +1,5 @@
 [options]
-<<<<<<< HEAD
-font                = PragmataPro Mono 12
-=======
 font                = PragmataPro Mono 14
->>>>>>> e9ddc57eadabfdb0e84803d62e03955a5cdcd171
 scroll_on_output    = false
 scroll_on_keystroke = true
 audible_bell        = false
