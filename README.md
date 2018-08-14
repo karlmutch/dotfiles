@@ -8,7 +8,13 @@ public repository containing scripts etc to configure a development machine
 to give it a number of development and operations tools useful for a developer doing
 Go and cloud based development.
 
-Setting up the account 
+Prerequisties
+---
+
+Github functionality will be automatically configured with the user details found in the gitconfig file.  Using this repo will probably mean that you first fork or copy everything in it in which case this file should be modified to match your github access details.  This also means that before using the installation instructions you will need to take one of your public keys from the machine being configured and add it to your github account, see https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/, so that you can access the repositories needed during installation.  Installation can complete without this however you will be prompted for your user name and github password when using the git clone command and the install.sh script will not successfully install some of the binary tools from 3rd party github repositories.
+
+Setting up the account
+---
 # dotfiles
 ```
 git clone https://github.com/karlmutch/dotfiles-private.git ~/.dotfiles --recursive ;
