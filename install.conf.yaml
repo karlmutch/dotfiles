@@ -118,8 +118,8 @@
     - [~/.fzf/install]
     - ["rm -f ~/.zcompdump"]
     - ["chmod +x ~/bin/diff-so-fancy"]
-    - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin ~/go/bin/go install github.com/GeertJohan/gomatrix"]
-    - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin ~/go/bin/go install github.com/erning/gorun"]
-    - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin ~/go/bin/go install github.com/direnv/direnv"]
-    - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin ~/go/bin/go install github.com/cjbassi/gotop"]
+    - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin ~/go/bin/go -f -u get github.com/GeertJohan/gomatrix"]
+    - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin ~/go/bin/go -f -u get github.com/erning/gorun"]
+    - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin ~/go/bin/go -f -u get github.com/direnv/direnv"]
+    - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin ~/go/bin/go -f -u get github.com/cjbassi/gotop"]
 

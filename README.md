@@ -11,7 +11,11 @@ Go and cloud based development.
 Prerequisties
 ---
 
+To determine if you are already setup for github access the command 'ssh -T git@github.com' can be used to test access.  If this command is not able to autheticate your account then the following instructions need to be applied.
+
 Github functionality will be automatically configured with the user details found in the gitconfig file.  Using this repo will probably mean that you first fork or copy everything in it in which case this file should be modified to match your github access details.  This also means that before using the installation instructions you will need to take one of your public keys from the machine being configured and add it to your github account, see https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/, so that you can access the repositories needed during installation.  Installation can complete without this however you will be prompted for your user name and github password when using the git clone command and the install.sh script will not successfully install some of the binary tools from 3rd party github repositories.
+
+If you have used the Devboot package from github.com/karlmutch/DevBoot to provision your machine the github SSH keys will likely be already deployed to github for you.
 
 Setting up the account
 ---
