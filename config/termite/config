@@ -1,12 +1,13 @@
 [options]
-font                = PragmataPro Mono 14
+font                = PragmataProMonoW20\-Regular 15
+#font                = PragmataPro Mono 14
 scroll_on_output    = false
 scroll_on_keystroke = true
 audible_bell        = false
 allow_bold          = false
 #mouse_autohide      = true
 dynamic_title       = true
-clickable_url       = true
+clickable_url       = false
 
 urgent_on_bell = true
 scrollback_lines = 1000

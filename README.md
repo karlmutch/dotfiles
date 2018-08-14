@@ -25,3 +25,10 @@ Within vim use :GoInstallBinaries to load the tooling for the vim-go package fro
 Updating the referenced open source can be done using the following command:
 
 ```git submodule foreach git pull origin master```
+
+Font management can be a little complex, here are some commands that might help:
+
+To get the version from a font file
+```
+fc-query -f '%{fontversion}\n' filename.ttf| perl -E 'printf "%.3f\n", <>/65536.0'
+```
