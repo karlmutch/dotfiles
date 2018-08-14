@@ -68,6 +68,9 @@
     ~/.config/powerline:
         create: true
         path: config/powerline
+    ~/.config/neofetch:
+        create: true
+        path: config/neofetch
     ~/.config/htop:
         create: true
         path: config/htop
