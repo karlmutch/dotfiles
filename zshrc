@@ -198,6 +198,12 @@ else
         tmux attach -t base
     fi
 fi
+
+# If Windows
+if [[ "$UbuntuWindows" == "1" ]] ; then
+  unsetopt BG_NICE
+fi
+
 eval "$(direnv hook zsh)"
 
 # added by travis gem

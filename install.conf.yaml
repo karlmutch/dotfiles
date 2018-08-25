@@ -2,11 +2,11 @@
 
 - shell:
     - ["mkdir -p ~/.local/share ~/.go ~/.vim_temp/backup ~/.vim_temp/swap ~/.lnav/formats/installed"]
+    - ["mkdir -p ~/.config/ranger"]
     - ["mkdir -p ~/.config/sublime-text-2/Packages/User"]
     - ["mkdir -p ~/.config/sublime-text-3/Packages/User"]
     - ["mkdir -p '~/.config/sublime-text-3/Installed Packages'"]
     - ["mkdir -p '~/.config/sublime-text-3/Packages/Colorsublime - Themes'"]
-    - ["mkdir -p ~/.config"]
     - ["mkdir -p ~/.terminfo/x"]
     - ["mkdir -p ~/.zsh.rc.local"]
     - ["mkdir -p ~/bin"]
