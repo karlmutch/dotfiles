@@ -29,17 +29,19 @@ function repeat()
         done
 }
 
+rehash
+
 # dfc (sudo apt-get install dfc)
-if hash dfc 2>/dev/null; then
+if hash which dfc 2>/dev/null; then
    alias df="dfc -f"
 fi
 
 # exa from https://github.com/ogham/exa/releases/download/v0.3.0/exa-linux-x86_64.zip
-if hash exa 2>/dev/null; then
-    alias ls='exa'
-    alias exl="exa --long -T "
-    alias exs="exa -ahHl --group-directories-first --sort=modified --git "
-    alias ex="exa -ahHl --group-directories-first --sort=modified --git "
+if hash which exa 2>/dev/null 1>&2 ; then
+   alias ls='exa'
+   alias exl="exa --long -T "
+   alias exs="exa -ahHl --group-directories-first --sort=modified --git "
+   alias ex="exa -ahHl --group-directories-first --sort=modified --git "
 fi
 
 man() {
