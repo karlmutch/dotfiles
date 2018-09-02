@@ -6,6 +6,8 @@ export LOGXI_FORMAT=happy,maxcol=1024
 export PAGER='less +g -RSC'
 READNULLCMD='_run_pager'
 
+alias cat='ccat --bg=dark -G Plaintext=teal -G Punctuation=darkgeen -G Keyword=lightgray -G Comment=faint'
+
 alias dtree='tree -sChd --du'
 
 # Vim because of the autoenv feature of zsh we have is being set to use a viminfo
