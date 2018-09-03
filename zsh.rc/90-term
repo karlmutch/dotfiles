@@ -6,9 +6,9 @@ then
     fi
 fi
 
-if [[ "$UbuntuWindows" == "1" ]]
+if [[ "$UbuntuWindows" == "1" || "$Linux" == "1" || "$UbuntuLinux" == "1" ]]
 then
-    export TERM=xterm-256color
+    export TERM=xterm-termite
 fi
 
 CPU=$(uname -m)

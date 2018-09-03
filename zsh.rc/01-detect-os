@@ -1,7 +1,14 @@
 if [[ `uname` == 'Linux' ]]
 then
-        export LINUX=1
-        export GNU_USERLAND=1
+    export LINUX=1
+    export GNU_USERLAND=1
+
+    if [[ `lsb_release -i -s` == 'Ubuntu' ]]
+    then
+        export UbuntuLinux=1
+    else
+        export UbuntuLinux
+    fi
 else
         export LINUX=
 fi
@@ -36,4 +43,4 @@ if grep -qE "(Microsoft|WSL)" /proc/version &> /dev/null ; then
     export UbuntuWindows=1
 else
     export UbuntuWindows=
-fi
+fi 
