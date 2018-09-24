@@ -42,6 +42,7 @@
     ~/.Xdefaults:   Xdefaults
     ~/.gitconfig:   gitconfig
     ~/.minttyrc:    minttyrc
+    ~/.sift.conf:   sift.conf
     ~/.mc:          mc/
     ~/.urxvt:       urxvt/
     ~/.fonts:       fonts/

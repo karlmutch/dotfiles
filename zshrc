@@ -134,6 +134,10 @@ autoload -U compinit && compinit
 export PATH="$HOME/.cargo/bin:$HOME/upspin/bin:$HOME/bin:/usr/local/bin":$PATH:"/usr/bin:/usr/local/sbin:/usr/sbin":$HOME/.local/bin
 export MANPATH="/usr/local/man:$MANPATH:$HOME/man"
 
+rehash
+
+zstyle ':completion:*' rehash true
+
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 

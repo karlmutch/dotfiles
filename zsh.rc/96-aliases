@@ -31,15 +31,13 @@ function repeat()
         done
 }
 
-rehash
-
 # dfc (sudo apt-get install dfc)
-if hash which dfc 2>/dev/null; then
+if type dfc >/dev/null 2>/dev/null; then
    alias df="dfc -f"
 fi
 
 # exa from https://github.com/ogham/exa/releases/download/v0.3.0/exa-linux-x86_64.zip
-if hash which exa 2>/dev/null 1>&2 ; then
+if type exa >/dev/null 2>/dev/null; then
    alias ls="exa "
    alias ex="exa --sort=modified "
    alias exl="exa --long -T "
