@@ -191,14 +191,6 @@ source $ZSH/oh-my-zsh.sh
 #
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-if [[ -n $TMUX_PANE ]]; then
-else
-    if [[ "$OSX" != "1" ]]; then
-        tmux new-session -s base \; new-window "tmux set-option -ga terminal-overrides \",$TERM:Tc\"; tmux detach"
-        tmux attach -t base
-    fi
-fi
-
 # If Windows
 if [[ "$UbuntuWindows" == "1" ]] ; then
   unsetopt BG_NICE
@@ -206,5 +198,14 @@ fi
 
 eval "$(direnv hook zsh)"
 
+
 # added by travis gem
 [ -f /home/kmutch/.travis/travis.sh ] && source /home/kmutch/.travis/travis.sh
+
+if [[ -n $TMUX_PANE ]]; then
+else
+    if [[ "$OSX" != "1" ]]; then
+        tmux new-session -s base \; new-window "tmux set-option -ga terminal-overrides \",$TERM:Tc\"; tmux detach"
+        tmux attach -t base
+    fi
+fi

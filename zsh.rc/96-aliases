@@ -40,7 +40,8 @@ fi
 
 # exa from https://github.com/ogham/exa/releases/download/v0.3.0/exa-linux-x86_64.zip
 if hash which exa 2>/dev/null 1>&2 ; then
-   alias ls='exa'
+   alias ls="exa "
+   alias ex="exa --sort=modified "
    alias exl="exa --long -T "
    alias exs="exa -ahHl --group-directories-first --sort=modified --git "
    alias ex="exa -ahHl --group-directories-first --sort=modified --git "

@@ -42,3 +42,8 @@ alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[
 
 # Print each PATH entry on a separate line
 alias path='echo -e ${PATH//:/\\n}'
+
+alias bigdirs='du --max-depth=1 2> /dev/null | sort -n -r | head -n20'
+alias cls='clear'
+
+alias k='kubectl $@'
