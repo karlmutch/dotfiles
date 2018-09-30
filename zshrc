@@ -202,6 +202,8 @@ fi
 
 eval "$(direnv hook zsh)"
 
+# Remove an oh-my-zsh alias to allow the go lang based grv git client to be used
+unalias grv
 
 # added by travis gem
 [ -f /home/kmutch/.travis/travis.sh ] && source /home/kmutch/.travis/travis.sh
