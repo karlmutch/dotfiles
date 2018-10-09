@@ -1,3 +1,5 @@
 #export GOBIN=$HOME/.go/bin
+export GOROOT=$HOME/go
+export PATH=$GOROOT/bin:$PATH
 export GORACE="halt_on_error=1 history_size=7"
 export TRASH_CACHE=~/.trash-cache
