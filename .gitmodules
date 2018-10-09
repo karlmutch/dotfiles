@@ -232,3 +232,9 @@
 [submodule "tmux/plugins/tmux-cpu"]
 	path = tmux/plugins/tmux-cpu
 	url = git://github.com/tmux-plugins/tmux-cpu.git
+[submodule "tmux-plugin-cpu"]
+	path = tmux-plugin-cpu
+	url = git://github.com/pwittchen/tmux-plugin-cpu.git
+[submodule "tmux-plugin-ram"]
+	path = tmux-plugin-ram
+	url = git://github.com/pwittchen/tmux-plugin-ram.git

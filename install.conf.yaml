@@ -10,6 +10,7 @@
     - ["mkdir -p ~/.terminfo/x"]
     - ["mkdir -p ~/.zsh.rc.local"]
     - ["mkdir -p ~/bin"]
+    - ["touch ~/.z"]
     - ["mkdir -p ~/tmp/go/bin"]
     - ["mkdir -p ~/tmp/go/src"]
     - [git submodule update --init --recursive, Installing submodules]
