@@ -229,3 +229,6 @@
 [submodule "tmux/plugins/tmux-battery"]
 	path = tmux/plugins/tmux-battery
 	url = git://github.com/tmux-plugins/tmux-battery.git
+[submodule "tmux/plugins/tmux-cpu"]
+	path = tmux/plugins/tmux-cpu
+	url = git://github.com/tmux-plugins/tmux-cpu.git
