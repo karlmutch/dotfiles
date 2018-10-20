@@ -1,6 +1,5 @@
 [options]
-#font                = PragmataProMonoW20\-Regular 15
-font                = PragmataPro Mono 14
+font                = monospace 14
 scroll_on_output    = false
 scroll_on_keystroke = true
 audible_bell        = false
