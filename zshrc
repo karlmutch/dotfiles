@@ -126,7 +126,11 @@ export HISTTIMEFORMAT='%F %T  '
 #
 # dirhistory needs alt-right alt-left checked
 #
-plugins=(profiles git git-flow golang colored-man-pages history per-directory-history zsh-autosuggestions dirhistory dirpersist docker docker-compose zsh-syntax-highlighting z)
+ZSH_TMUX_AUTOSTART=true
+
+plugins=(profiles
+         dirhistory dirpersist git git-flow git-extras history per-directory-history tmux golang
+         colored-man-pages zsh-autosuggestions docker docker-compose zsh-syntax-highlighting z)
 autoload -U compinit && compinit
 
 # User configuration
@@ -208,10 +212,12 @@ unalias grv
 # added by travis gem
 [ -f /home/kmutch/.travis/travis.sh ] && source /home/kmutch/.travis/travis.sh
 
-if [[ -n $TMUX_PANE ]]; then
-else
-    if [[ "$OSX" != "1" ]]; then
-        tmux new-session -s base \; new-window "tmux set-option -ga terminal-overrides \",$TERM:Tc\"; tmux detach"
-        tmux attach -t base
-    fi
-fi
+# tmux support now done using the oh-my-zsh tmux plugin
+#
+#if [[ -n $TMUX_PANE ]]; then
+#else
+#    if [[ "$OSX" != "1" ]]; then
+#        tmux new-session -s base \; new-window "tmux set-option -ga terminal-overrides \",$TERM:Tc\"; tmux detach"
+#        tmux attach -t base
+#    fi
+#fi
