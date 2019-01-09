@@ -138,5 +138,6 @@
     - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin ~/go/bin/go get -f -u github.com/gulyasm/jsonui"]
     - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin ~/go/bin/go get -f -u github.com/zricethezav/gitleaks"]
     - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin ~/go/bin/go get -f -u github.com/cjbassi/gotop"]
+    - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin ~/go/bin/go get -f -u github.com/karlmutch/gister"]
     - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin ~/go/bin/go get -f -u github.com/skanehira/docui"]
     - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin GO111MODULE=on ~/go/bin/go get -f -u github.com/pulumi/kubespy"]
