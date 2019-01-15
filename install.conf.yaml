@@ -1,3 +1,7 @@
+- defaults:
+    link:
+      relink: true
+
 - clean: ['~']
 
 - shell:
@@ -11,8 +15,6 @@
     - ["mkdir -p ~/.zsh.rc.local"]
     - ["mkdir -p ~/bin"]
     - ["touch ~/.z"]
-    - ["mkdir -p ~/tmp/go/bin"]
-    - ["mkdir -p ~/tmp/go/src"]
     - [git submodule update --init --recursive, Installing submodules]
 
 - link:
@@ -35,7 +37,6 @@
     ~/.config/sublime-text-3/Packages/User/Preferences.sublime-settings: config/sublime-text-3/Packages/User/Preferences.sublime-settings
     ~/.config/sublime-text-3/Installed Packages/Package Control.sublime-package: config/sublime-text-3/Installed Packages/Package Control.sublime-package
     ~/.config/sublime-text-3/Packages/Colorsublime-Plugin: config/sublime-text-3/Packages/Colorsublime-Plugin
-    ~/.config/sublime-text-3/Packages/Colorsublime - Themes/Sunburst.tmTheme: config/sublime-text-3/Packages/Colorsublime - Themes/Sunburst.tmTheme
     ~/.config/sublime-text-3/Packages/GitGutter: config/sublime-text-3/Packages/GitGutter
     ~/.multitailrc: multitailrc
     ~/.multitailrc: multitailrc
@@ -114,16 +115,16 @@
 
 - shell:
     - [fc-cache -fv ~/.fonts]
-    - [apm install vim-mode ex-mode pigments project-manager git-control merge-conflicts clipboard-history minimap minimap-git-diff script linter file-icons flashy-syntax fonts go-oracle go-plus go-runtime language-ansible language-docker language-thrift last-cursor-position block-travel block-cursor]
     - [chmod +x ~/.lessfilter]
     - ["wget https://raw.githubusercontent.com/thestinger/termite/master/termite.terminfo -O ~/.terminfo/x/termite.terminfo && cd ~/.terminfo/x && tic -x termite.terminfo"]
     - [~/.fzf/install]
     - ["rm -f ~/.zcompdump"]
     - ["chmod +x ~/bin/diff-so-fancy"]
+    - ["mkdir -p ~/tmp/go/bin"]
+    - ["mkdir -p ~/tmp/go/src"]
     - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin ~/go/bin/go get -f -u github.com/GeertJohan/gomatrix"]
     - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin ~/go/bin/go get -f -u github.com/erning/gorun"]
     - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin ~/go/bin/go get -f -u github.com/direnv/direnv"]
-    - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin ~/go/bin/go get -f -u github.com/cjbassi/gotop"]
     - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin ~/go/bin/go get -f -u github.com/uber-common/cpustat"]
     - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin ~/go/bin/go get -f -u github.com/jingweno/ccat"]
     - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin ~/go/bin/go get -f -u github.com/jesseduffield/lazygit"]
@@ -131,13 +132,17 @@
     - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin ~/go/bin/go get -f -u github.com/variadico/noti/cmd/noti"]
     - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin ~/go/bin/go get -f -u github.com/simeji/jid/cmd/jid"]
     - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin ~/go/bin/go get -f -u github.com/tomnomnom/gron"]
-    - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin ~/go/bin/go get -f -u github.com/yittg/ving"]
     - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin ~/go/bin/go get -f -u github.com/orisano/dlayer"]
     - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin ~/go/bin/go get -f -u github.com/mhausenblas/kubed-sh"]
     - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin ~/go/bin/go get -f -u github.com/DrakeW/corgi"]
     - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin ~/go/bin/go get -f -u github.com/gulyasm/jsonui"]
     - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin ~/go/bin/go get -f -u github.com/zricethezav/gitleaks"]
-    - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin ~/go/bin/go get -f -u github.com/cjbassi/gotop"]
     - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin ~/go/bin/go get -f -u github.com/karlmutch/gister"]
     - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin ~/go/bin/go get -f -u github.com/skanehira/docui"]
-    - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin GO111MODULE=on ~/go/bin/go get -f -u github.com/pulumi/kubespy"]
+    - ["rm -rf ~/tmp/go"]
+    - ["mkdir -p ~/tmp/go/bin"]
+    - ["mkdir -p ~/tmp/go/src"]
+    - ["cd ~/tmp/go && unset GOPATH && unset GOROOT && unset GOBIN=~/bin && GO111MODULE=on"]
+    - ["cd ~/tmp/go && git clone git@github.com:pulumi/kubespy && cd kubespy && ~/go/bin/go install"]
+    - ["cd ~/tmp/go && git clone git@github.com:cjbassi/gotop && cd gotop && ~/go/bin/go install"]
+    - ["cd ~/tmp/go && git clone git@github.com:yittg/ving && cd ving && ~/go/bin/go install"]
