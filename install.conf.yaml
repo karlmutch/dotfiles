@@ -142,7 +142,7 @@
     - ["rm -rf ~/tmp/go"]
     - ["mkdir -p ~/tmp/go/bin"]
     - ["mkdir -p ~/tmp/go/src"]
-    - ["cd ~/tmp/go && unset GOPATH && unset GOROOT && unset GOBIN=~/bin && GO111MODULE=on"]
+    - ["cd ~/tmp/go && unset GOPATH && unset GOROOT && unset GOBIN && GO111MODULE=on"]
     - ["cd ~/tmp/go && git clone git@github.com:pulumi/kubespy && cd kubespy && ~/go/bin/go install"]
     - ["cd ~/tmp/go && git clone git@github.com:cjbassi/gotop && cd gotop && ~/go/bin/go install"]
     - ["cd ~/tmp/go && git clone git@github.com:yittg/ving && cd ving && ~/go/bin/go install"]
