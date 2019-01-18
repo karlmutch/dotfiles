@@ -5,7 +5,7 @@
 - clean: ['~']
 
 - shell:
-    - ["mkdir -p ~/.local/share ~/.go ~/.vim_temp/backup ~/.vim_temp/swap ~/.lnav/formats/installed"]
+    - ["mkdir -p ~/.local/share ~/.go ~/.vim/undodir ~/.vim_temp/backup ~/.vim_temp/swap ~/.lnav/formats/installed"]
     - ["mkdir -p ~/.config/ranger"]
     - ["mkdir -p ~/.config/sublime-text-2/Packages/User"]
     - ["mkdir -p ~/.config/sublime-text-3/Packages/User"]
@@ -138,6 +138,7 @@
     - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin ~/go/bin/go get -f -u github.com/gulyasm/jsonui"]
     - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin ~/go/bin/go get -f -u github.com/zricethezav/gitleaks"]
     - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin ~/go/bin/go get -f -u github.com/karlmutch/gister"]
+    - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin ~/go/bin/go get -f -u github.com/karlmutch/rotate"]
     - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin ~/go/bin/go get -f -u github.com/skanehira/docui"]
     - ["rm -rf ~/tmp/go"]
     - ["mkdir -p ~/tmp/go/bin"]
