@@ -6,7 +6,7 @@ export LOGXI_FORMAT=happy,maxcol=1024
 export PAGER='less +g -RSC'
 READNULLCMD='_run_pager'
 
-alias cat='ccat --bg=dark -G Plaintext=teal -G Punctuation=darkgeen -G Keyword=lightgray -G Comment=faint'
+alias ccat='ccat --bg=dark -G Plaintext=teal -G Punctuation=darkgeen -G Keyword=lightgray -G Comment=faint'
 
 alias dtree='tree -sChd --du'
 

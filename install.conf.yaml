@@ -5,7 +5,7 @@
 - clean: ['~']
 
 - shell:
-    - ["mkdir -p ~/.local/share ~/.go ~/.vim/undodir ~/.vim_temp/backup ~/.vim_temp/swap ~/.lnav/formats/installed"]
+    - ["mkdir -p ~/.local/share ~/.go ~/.vim_temp/backup ~/.vim_temp/swap ~/.lnav/formats/installed"]
     - ["mkdir -p ~/.config/ranger"]
     - ["mkdir -p ~/.config/sublime-text-2/Packages/User"]
     - ["mkdir -p ~/.config/sublime-text-3/Packages/User"]
@@ -18,7 +18,6 @@
     - [git submodule update --init --recursive, Installing submodules]
 
 - link:
-    ~/.dotfiles: ''
     ~/.tmux.conf:   tmux.conf
     ~/.psqlrc:      psqlrc
     ~/.grc:         grc
@@ -29,11 +28,10 @@
     ~/.direnvrc: direnv.rc
     ~/.zsh-configuration: zsh-configuration
     ~/.zsh-completions: zsh-completions
-    ~/.config/nvim: vim
-    ~/.config/nvim/init.vim: vimrc
     ~/.vim: vim/
     ~/.vimrc: vimrc
-    ~/.vimrc: vimrc
+    ~/.config/nvim: vim
+    ~/.config/nvim/init.vim: vimrc
     ~/.config/sublime-text-3/Packages/User/Preferences.sublime-settings: config/sublime-text-3/Packages/User/Preferences.sublime-settings
     ~/.config/sublime-text-3/Installed Packages/Package Control.sublime-package: config/sublime-text-3/Installed Packages/Package Control.sublime-package
     ~/.config/sublime-text-3/Packages/Colorsublime-Plugin: config/sublime-text-3/Packages/Colorsublime-Plugin
@@ -120,7 +118,7 @@
     - [~/.fzf/install]
     - ["rm -f ~/.zcompdump"]
     - ["chmod +x ~/bin/diff-so-fancy"]
-    - ["mkdir -p ~/tmp/go/bin"]
+    - ["mkdir -p ~/tmp/go/bin ~/.vim/undodir"]
     - ["mkdir -p ~/tmp/go/src"]
     - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin ~/go/bin/go get -f -u github.com/GeertJohan/gomatrix"]
     - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin ~/go/bin/go get -f -u github.com/erning/gorun"]
