@@ -59,7 +59,7 @@
 	process = git-lfs filter-process
 
 [url "git@github.com:"]
-	insteadOf = https://github.com/
+    insteadOf = https://github.com/
 
 [url "ssh://git@stash.geneticfinance.com:7999/"]
     insteadOf = git+ssh://stash.geneticfinance.com/
