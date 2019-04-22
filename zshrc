@@ -145,8 +145,8 @@ plugins=(profiles
 autoload -U compinit && compinit
 
 # User configuration
-
-export PATH="$HOME/.cargo/bin:$HOME/upspin/bin:$HOME/bin:/usr/local/bin":$PATH:"/usr/bin:/usr/local/sbin:/usr/sbin":$HOME/.local/bin
+export SNAP=/snap
+export PATH="$SNAP/bin:$HOME/.cargo/bin:$HOME/upspin/bin:$HOME/bin:/usr/local/bin":$PATH:"/usr/bin:/usr/local/sbin:/usr/sbin":$HOME/.local/bin
 export MANPATH="/usr/local/man:$MANPATH:$HOME/man"
 
 rehash
