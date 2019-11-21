@@ -218,17 +218,11 @@ set statusline+=%*
 
 "let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': ['go'] }
-let g:syntastic_go_gometalinter_args = '' .
-        \ '--tests ' .
-        \ '--exclude="declaration of err shadows declaration" ' .
-        \ '--disable-all ' .
-        \ '--enable=deadcode ' .
-        \ '--enable=vet ' .
-        \ '--enable=vetshadow ' .
-        \ '--enable=dupl ' .
-        \ '--enable=gocyclo ' .
-        \ '--enable=ineffassign '
-let g:syntastic_go_checkers = ['gometalinter']
+let g:syntastic_go_golangci_lint_args = '' .
+        \ '--enable-all ' .
+        \ '--build-tags NO_CUDA ' .
+        \ '--fast '
+let g:syntastic_go_checkers = ['golangci-lint']
 
 "let g:syntastic_c_include_dirs = ['/home/kmutch/darkcycle-sdk/cpp']
 "let g:syntastic_c_check_header = 1
@@ -358,7 +352,11 @@ let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 
 let g:go_auto_type_info = 1
-let g:go_info_mode = "guru"
+let g:go_debug_mode = "gopls"
+let g:go_info_mode = "gopls"
+
+let g:go_metalinter_command = "golangci-lint run --build-tags NO_CUDA "
+let g:go_metalinter_autosave = 1
 
 " go-def settings
 let g:godef_split=2
