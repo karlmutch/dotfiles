@@ -215,6 +215,14 @@ if [[ "$UbuntuWindows" == "1" ]] ; then
   unsetopt BG_NICE
 fi
 
+if [[ "$UbuntuLinux" == "1" ]] ; then
+    type kubectl
+    if [[ $? -eq 0 ]] ;  then
+        shell_type=${SHELL##*/}
+        source <(kubectl completion $shell_type)
+    fi
+fi
+
 eval "$(direnv hook zsh)"
 
 # Remove an oh-my-zsh alias to allow the go lang based grv git client to be used
