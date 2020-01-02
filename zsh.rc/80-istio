@@ -1,1 +1,2 @@
-export PATH=$PATH:~/istio-0.4.0/bin
+export ISTIO_DIR=~/istio-1.4.2
+export PATH=$PATH:$ISTIO_DIR/bin
