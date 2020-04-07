@@ -302,7 +302,7 @@ let NERDTreeQuitOnOpen = 1
 " Highlight currently open buffer in NERDTree
 "autocmd BufEnter * call rc:syncTree()
 
-autocmd VimEnter * TagbarToggle
+"autocmd VimEnter * TagbarToggle
 "autocmd VimEnter * call DWM_AutoEnter()
 "autocmd VimEnter * NERDTreeFocusToggle
 "autocmd VimEnter * NERDTreeFocusToggle

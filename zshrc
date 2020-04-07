@@ -190,6 +190,9 @@ done
 
 source $ZSH/oh-my-zsh.sh
 
+source <(fly completion --shell zsh) || true
+source <(kubectl completion --shell zsh) || true
+
 # else
 #   export EDITOR='mvim'
 # fi
