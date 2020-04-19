@@ -239,8 +239,6 @@ let g:syntastic_style_error_symbol = '⚡'
 let g:syntastic_error_symbol = '✗'
 let g:syntastic_warning_symbol = '⚠'
 
-let g:go_list_type = "quickfix"
-
 " Set a dark color for syntastic sign background
 highlight SyntasticErrorSign ctermbg=NONE ctermfg=red guibg=#2a343a guifg=red
 highlight SyntasticWarningSign ctermbg=NONE ctermfg=red guibg=#2a343a guifg=red
@@ -336,6 +334,10 @@ autocmd FileType go setlocal softtabstop=4
 autocmd FileType go setlocal shiftwidth=4
 autocmd FileType go setlocal tabstop=4
 " autocmd FileType qf wincmd J
+
+let g:go_list_type = "quickfix"
+let g:go_def_mode='gopls'
+let g:go_info_mode='gopls'
 
 let g:go_bin_path = expand("~/go/bin")
 
