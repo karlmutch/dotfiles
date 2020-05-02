@@ -139,9 +139,6 @@
 [submodule "vim/bundle/grep.vim"]
 	path = vim/bundle/grep.vim
 	url = https://github.com/joeytwiddle/grep.vim
-[submodule "vim/bundle/csapprox"]
-	path = vim/bundle/csapprox
-	url = https://github.com/godlygeek/csapprox
 [submodule "vim/bundle/YankRing.vim"]
 	path = vim/bundle/YankRing.vim
 	url = https://github.com/vim-scripts/YankRing.vim
@@ -160,9 +157,6 @@
 [submodule "vim/bundle/git-flow-format"]
 	path = vim/bundle/git-flow-format
 	url = https://github.com/vim-scripts/git-flow-format
-[submodule "vim/bundle/vim-diminactive"]
-	path = vim/bundle/vim-diminactive
-	url = https://github.com/blueyed/vim-diminactive
 [submodule "vim/bundle/vim-peekaboo"]
 	path = vim/bundle/vim-peekaboo
 	url = https://github.com/junegunn/vim-peekaboo
@@ -238,3 +232,9 @@
 [submodule "tmux-plugin-ram"]
 	path = tmux-plugin-ram
 	url = git://github.com/pwittchen/tmux-plugin-ram.git
+[submodule "vim/bundle/vim-dminactive"]
+	path = vim/bundle/vim-dminactive
+	url = https://github.com/blueyed/vim-diminactive
+[submodule "vim/bundle/neocomplete.vim"]
+	path = vim/bundle/neocomplete.vim
+	url = https://github.com/Shougo/neocomplete.vim

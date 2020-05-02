@@ -107,9 +107,6 @@ autocmd WinEnter * setlocal cursorline
 autocmd WinLeave * setlocal nocursorline
 highlight CursorLine guibg=#303000 ctermbg=234 ctermfg=NONE cterm=none term=none
 
-" Inactive window background
-hi ColorColumn ctermbg=234 guibg=#eee8d5
-
 highlight ExtraWhitespace ctermbg=blue
 
 hi Comment ctermfg=DarkGrey guifg=DarkGrey
@@ -139,6 +136,12 @@ let g:GitShade_ColorGradient = "black_to_grey"
 let g:GitShade_ColorWhat = "bg"
 let g:GitShade_Colors_For_CTerm_256 = [ 0, 232, 233, 234, 235, 236, 237, 238, 239 ]
 let g:GitShade_Linear = 1
+
+" GitGutter setting
+highlight SignColumn ctermbg=Black
+
+let g:diminactive_use_colorcolumn = 1
+let g:diminactive_use_syntax = 1
 
 " For regular expressions turn magic on
 set magic
@@ -176,9 +179,6 @@ set rtp+=~/.fzf
 " Always show statusline
 set laststatus=2
 
-let g:airline_powerline_fonts=1
-let g:airline#extensions#tabline#enabled = 1
-
 hi Cursor               ctermfg=green         ctermbg=green
 hi iCursor              ctermfg=red         ctermbg=red
 
@@ -204,10 +204,35 @@ else
     let &t_EI = "\<Esc>]50;CursorShape=0\x7" " Block in normal mode
 endif
 
+if &term =~ "xterm\\|rxvt"
+  " use insert mode color
+  let &t_SI = "\<Esc>]12;yellow\x7"
+  " use command mode cursor otherwise
+  let &t_EI = "\<Esc>]12;lime\x7"
+  silent !echo -ne "\033]12;red\007"
+  " reset cursor when vim exits
+  autocmd VimLeave * silent !echo -ne "\033]112\007"
+  " use \003]12;gray\007 for gnome-terminal and rxvt up to version 9.21
+endif
+
+let g:airline_powerline_fonts=1
+let g:airline#extensions#tabline#enabled = 1
+
 let g:airline_left_sep = ''
 let g:airline_left_alt_sep = ''
 let g:airline_right_sep = ''
 let g:airline_right_alt_sep = ''
+
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.paste = '∥'
+let g:airline_symbols.spell = 'Ꞩ'
+
 
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols = {}
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['go'] = ''
@@ -229,7 +254,7 @@ let g:syntastic_go_checkers = ['golangci-lint']
 
 let g:syntastic_loc_list_height = 5
 let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 0
+let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_enable_highlighting=1
@@ -246,6 +271,8 @@ highlight SyntasticStyleWarningSign ctermbg=NONE ctermfg=142 guibg=#2a343a guifg
 highlight SyntasticStyleErrorSign ctermbg=NONE ctermfg=142 guibg=#2a343a guifg=#ad9909
 
 let g:colortuner_enabled = 1
+let g:colortuner_vivid_mode = 0
+
 let g:rainbow_active = 1
 
 if ! has('gui_running')
@@ -256,6 +283,22 @@ if ! has('gui_running')
         au InsertLeave * set timeoutlen=10
     augroup END
 endif
+
+"set omnifunc=syntaxcomplete#Complete
+"call deoplete#custom#option('omni_patterns', { 'go': '[^. *\t]\.\w*' })
+let g:deoplete#enable_at_startup = 1
+let g:neocomplete#enable_at_startup = 1
+
+" Set minimum syntax keyword length.
+"let NeoCompleteAutoCompletionLength = 10
+"let g:neocomplete#sources#syntax#min_keyword_length = 10
+let g:neocomplete#auto_completion_start_length = 10
+"let g:neocomplete#disable_auto_complete = 0
+"let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
+"" <TAB>: completion for neocomplete.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 
 "python from powerline.vim import setup as powerline_setup
 "python powerline_setup()
@@ -295,6 +338,8 @@ call NERDTreeHighlightFile('coffee', 'Red', 'none', 'red', '#151515')
 call NERDTreeHighlightFile('js', 'Red', 'none', '#ffa500', '#151515')
 call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#151515')
 
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
 let NERDTreeQuitOnOpen = 1
 
 " Highlight currently open buffer in NERDTree
@@ -307,18 +352,17 @@ let NERDTreeQuitOnOpen = 1
 let g:nerdtree_tabs_open_on_console_startup=0
 let g:NERDTreeHijackNetrw=1
 "let g:nerdtree_tabs_smart_startup_focus=2
-let g:NERDTreeWinPos = "right"
+let g:NERDTreeWinPos = "topleft"
 
 " Store the bookmarks file
 let NERDTreeBookmarksFile=expand("$HOME/.vim-NERDTreeBookmarks")
 " Show the bookmarks table on startup
 let NERDTreeShowBookmarks=1
-"
 
 let g:goldenview__enable_default_mapping = 0
 let g:goldenview__enable_at_startup = 0
 
-nmap <F3> :NERDTreeToggle<CR>
+nmap <F3> :NERDTreeToggle %<CR>
 nmap <F5> :make<CR>:copen<CR>
 
 nnoremap <silent> <F2>m :Unite -buffer-name=recent -winheight=10 file_mru<cr>
@@ -335,7 +379,7 @@ autocmd FileType go setlocal shiftwidth=4
 autocmd FileType go setlocal tabstop=4
 " autocmd FileType qf wincmd J
 
-let g:go_list_type = "quickfix"
+let g:go_list_type = "locationlist"
 let g:go_def_mode='gopls'
 let g:go_info_mode='gopls'
 
@@ -344,6 +388,7 @@ let g:go_bin_path = expand("~/go/bin")
 " go-vim settings
 let g:go_fmt_command = "goimports"
 "let g:go_fmt_command = "gofmt"
+let g:go_autodetect_gopath = 1
 
 " Enable syntax highting on everything
 let g:go_highlight_functions = 1
@@ -356,6 +401,11 @@ let g:go_highlight_build_constraints = 1
 let g:go_auto_type_info = 1
 let g:go_debug_mode = "gopls"
 let g:go_info_mode = "gopls"
+
+let g:go_def_mode = 'gopls'
+let g:go_info_mode = 'gopls'
+let g:go_def_mapping_enabled = 1
+let g:go_code_completion_enabled = 1
 
 let g:go_metalinter_command = "golangci-lint run --build-tags NO_CUDA "
 let g:go_metalinter_autosave = 1
@@ -414,7 +464,7 @@ setlocal conceallevel=2
 
 let g:SOURCEGRAPH_AUTO = "false"
 
-" tagbar settings                                                                  
+" tagbar settings
 let g:tagbar_type_go = {
     \ 'ctagstype' : 'go',
     \ 'kinds'     : [
@@ -444,7 +494,6 @@ let g:tagbar_type_go = {
 \ } 
 
 
-let g:netrw_liststyle = 3
 autocmd BufReadPost,FileReadPost,BufNewFile * call system("tmux rename-window % " . expand("%:t"))
 autocmd BufEnter * let &titlestring = ' ' . expand("%:t")
 set title
@@ -527,9 +576,17 @@ if filereadable(hostfile)
     endif
 
 source ~/.vim/autoload/SyntaxAttr.vim
-source ~/.vim/colors/nofrils-knm.vim
+"
+"" This is only necessary if you use "set termguicolors".
+"set termguicolors
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
-hi Comment ctermfg=241 guifg=DarkCyan
+" fixes glitch? in colors when using vim with tmux
+set background=dark
+"let g:nofrils_strbackgrounds = 1
+"colorscheme nofrils-knm
+colorscheme nofrils-knm
 
 set foldmethod=syntax
 set foldlevelstart=20
