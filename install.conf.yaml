@@ -145,6 +145,7 @@
     - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin ~/go/bin/go get -f -u github.com/gabeduke/kubectl-iexec"]
     - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin ~/go/bin/go get -f -u github.com/ueokande/logbook"]
     - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin ~/go/bin/go get -f -u github.com/jesseduffield/lazydocker"]
+    - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin ~/go/bin/go get -f -u github.com/wallix/awless"]
     - ["rm -rf ~/tmp/go"]
     - ["mkdir -p ~/tmp/go/bin"]
     - ["mkdir -p ~/tmp/go/src"]
