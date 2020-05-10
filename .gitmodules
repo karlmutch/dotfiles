@@ -238,3 +238,6 @@
 [submodule "vim/bundle/neocomplete.vim"]
 	path = vim/bundle/neocomplete.vim
 	url = https://github.com/Shougo/neocomplete.vim
+[submodule "vim/bundle/vim-colortemplate"]
+	path = vim/bundle/vim-colortemplate
+	url = https://github.com/lifepillar/vim-colortemplate.git

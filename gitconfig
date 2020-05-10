@@ -7,7 +7,7 @@
     algorithm = patience
 
 [core]
-    editor = /usr/bin/vim
+    editor = vim
     pager = less -RFX -z-3
 
 [push]
