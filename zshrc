@@ -88,6 +88,10 @@ esac
 #bindkey '^h' backward-delete-char
 #bindkey '^w' backward-kill-word
 #bindkey '^r' history-incremental-search-backward
+# Shift ->
+bindkey "^[[1;2C" forward-word
+# Shift <-
+bindkey "^[[1;2D" backward-word
 #
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 ZSH_HIGHLIGHT_PATTERNS=('rm -rf *' 'fg=white,bold,bg=red')
