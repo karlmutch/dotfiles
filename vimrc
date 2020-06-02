@@ -297,8 +297,8 @@ let g:neocomplete#auto_completion_start_length = 10
 "let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
 "" <TAB>: completion for neocomplete.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
-inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+"inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+"inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 
 "python from powerline.vim import setup as powerline_setup
 "python powerline_setup()
