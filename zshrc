@@ -153,7 +153,7 @@ export SNAP=/snap
 export PATH="$SNAP/bin:$HOME/.cargo/bin:$HOME/upspin/bin:$HOME/bin:/usr/local/bin":$PATH:"/usr/bin:/usr/local/sbin:/usr/sbin":$HOME/.local/bin
 export MANPATH="/usr/local/man:$MANPATH:$HOME/man"
 
-export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+export PATH="$HOME/.pyenv/bin:${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
 rehash
 
@@ -219,6 +219,20 @@ export EDITOR='vim'
 #. /usr/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
 #
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Allow paths to be used to cd avoiding the need to enter 'cd[space]'
+setopt AUTO_CD
+
+chpwd() exa -gaF
+
+# Multi process friendly history appending
+setopt APPEND_HISTORY
+
+# 
+setopt SHARE_HISTORY
+
+# Only respecxt explicit exit commands for the shell termination
+setopt IGNORE_EOF
 
 # If Windows
 if [[ "$UbuntuWindows" == "1" ]] ; then
