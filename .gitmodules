@@ -241,3 +241,6 @@
 [submodule "vim/bundle/vim-colortemplate"]
 	path = vim/bundle/vim-colortemplate
 	url = https://github.com/lifepillar/vim-colortemplate.git
+[submodule "oh-my-zsh-custom/themes/powerlevel10k"]
+	path = oh-my-zsh-custom/themes/powerlevel10k
+	url = https://github.com/romkatv/powerlevel10k.git

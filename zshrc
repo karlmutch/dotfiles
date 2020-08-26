@@ -18,7 +18,8 @@ export LC_CTYPE=en_US.UTF-8
 # time that oh-my-zsh is loaded.
 #ZSH_THEME="robbyrussell"
 #ZSH_THEME="peepcode"
-ZSH_THEME="powerlevel9k/powerlevel9k"
+#ZSH_THEME="powerlevel9k/powerlevel9k"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 #POWERLEVEL9K_MODE='awesome-patched'
 POWERLEVEL9K_MODE='nerdfont-complete'
 # Limit to the last two folders
@@ -36,6 +37,7 @@ POWERLEVEL9K_SHOW_CHANGESET=false
 # # just show the 6 first characters of changeset
 # POWERLEVEL9K_CHANGESET_HASH_LENGTH=6
 
+POWERLEVEL9K_KUBECONTEXT_BACKGROUND='004'
 #POWERLEVEL9K_VCS_FOREGROUND='000'
 POWERLEVEL9K_VCS_BACKGROUND='022'
 #POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='028'
@@ -64,6 +66,8 @@ POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND='010'
 POWERLEVEL9K_COMMAND_EXECUTION_TIME_BACKGROUND='245'
 POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND='black'
 
+typeset -g POWERLEVEL9K_KUBECONTEXT_SHOW_ON_COMMAND='kubectl|helm|kubens|kubectx|oc|istioctl|kogito|k9s|helmfile'
+
 #POWERLEVEL9K_RIGHT_SEGMENT_SEPARATOR=$''
 #
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status history time)
@@ -72,7 +76,7 @@ case "$OS" in
              POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status history)
     ;;
     *) 
-        POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context vcs dir dir_writable);
+        POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context vcs dir dir_writable kubecontext);
         POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status background_jobs command_execution_time load history disk_usage time)
     ;;
 esac
@@ -95,6 +99,7 @@ bindkey "^[[1;2D" backward-word
 #
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 ZSH_HIGHLIGHT_PATTERNS=('rm -rf *' 'fg=white,bold,bg=red')
+
 #
 export HISTCONTROL="ignoredups;ignorespace"
 export HISTIGNORE="ls:cd:cd -:pwd:exit:date::"

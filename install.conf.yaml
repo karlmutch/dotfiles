@@ -7,10 +7,6 @@
 - shell:
     - ["mkdir -p ~/.local/share ~/.go ~/.vim_temp/backup ~/.vim_temp/swap ~/.lnav/formats/installed"]
     - ["mkdir -p ~/.config/ranger"]
-    - ["mkdir -p ~/.config/sublime-text-2/Packages/User"]
-    - ["mkdir -p ~/.config/sublime-text-3/Packages/User"]
-    - ["mkdir -p '~/.config/sublime-text-3/Installed Packages'"]
-    - ["mkdir -p '~/.config/sublime-text-3/Packages/Colorsublime - Themes'"]
     - ["mkdir -p ~/.terminfo/x"]
     - ["mkdir -p ~/.zsh.rc.local"]
     - ["mkdir -p ~/bin"]
@@ -32,10 +28,6 @@
     ~/.vimrc: vimrc
     ~/.config/nvim: vim
     ~/.config/nvim/init.vim: vimrc
-    ~/.config/sublime-text-3/Packages/User/Preferences.sublime-settings: config/sublime-text-3/Packages/User/Preferences.sublime-settings
-    ~/.config/sublime-text-3/Installed Packages/Package Control.sublime-package: config/sublime-text-3/Installed Packages/Package Control.sublime-package
-    ~/.config/sublime-text-3/Packages/Colorsublime-Plugin: config/sublime-text-3/Packages/Colorsublime-Plugin
-    ~/.config/sublime-text-3/Packages/GitGutter: config/sublime-text-3/Packages/GitGutter
     ~/.multitailrc: multitailrc
     ~/.multitailrc: multitailrc
     ~/.dir_colors:  dir_colors
@@ -150,5 +142,5 @@
     - ["mkdir -p ~/tmp/go/bin"]
     - ["mkdir -p ~/tmp/go/src"]
     - ["cd ~/tmp/go && unset GOPATH && unset GOROOT && unset GOBIN && GO111MODULE=on"]
-    - ["cd ~/tmp/go && GOPATH=`pwd` go get github.com/cjbassi/gotop && cp bin/gotop ~/bin/gotop"]
+    - ["cd ~/tmp/go && GOPATH=`pwd` go get github.com/xxxserxxx/gotop/cmd/gotop && cp bin/gotop ~/bin/gotop"]
     - ["cd ~/tmp/go && GOPATH=`pwd` go get github.com/bradleyjkemp/grpc-tools && GOPATH=`pwd` go install github.com/bradleyjkemp/grpc-tools/..."]
