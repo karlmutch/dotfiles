@@ -290,18 +290,11 @@ endif
 "set omnifunc=syntaxcomplete#Complete
 "call deoplete#custom#option('omni_patterns', { 'go': '[^. *\t]\.\w*' })
 let g:deoplete#enable_at_startup = 1
-let g:neocomplete#enable_at_startup = 1
 
 " Set minimum syntax keyword length.
-"let NeoCompleteAutoCompletionLength = 10
-"let g:neocomplete#sources#syntax#min_keyword_length = 10
-let g:neocomplete#auto_completion_start_length = 10
-"let g:neocomplete#disable_auto_complete = 0
 "let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
 "" <TAB>: completion for neocomplete.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-"inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
-"inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 
 "python from powerline.vim import setup as powerline_setup
 "python powerline_setup()
