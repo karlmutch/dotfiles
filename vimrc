@@ -403,7 +403,7 @@ let g:go_info_mode = 'gopls'
 let g:go_def_mapping_enabled = 1
 let g:go_code_completion_enabled = 1
 
-let g:go_metalinter_command = "golangci-lint run --build-tags NO_CUDA "
+let g:go_metalinter_command = "golangci-lint run --allow-parallel-runners --tests --build-tags NO_CUDA "
 let g:go_metalinter_autosave = 1
 let g:go_jump_to_error = 0
 
