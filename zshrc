@@ -66,7 +66,7 @@ POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND='010'
 POWERLEVEL9K_COMMAND_EXECUTION_TIME_BACKGROUND='245'
 POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND='black'
 
-typeset -g POWERLEVEL9K_KUBECONTEXT_SHOW_ON_COMMAND='kubectl|helm|kubens|kubectx|oc|istioctl|kogito|k9s|helmfile'
+typeset -g POWERLEVEL9K_KUBECONTEXT_SHOW_ON_COMMAND='kubectl|helm|kubens|kubectx|oc|istioctl|kogito|k9s|helmfile|kind'
 
 #POWERLEVEL9K_RIGHT_SEGMENT_SEPARATOR=$''
 #
@@ -158,7 +158,7 @@ export SNAP=/snap
 export PATH="$SNAP/bin:$HOME/.cargo/bin:$HOME/upspin/bin:$HOME/bin:/usr/local/bin":$PATH:"/usr/bin:/usr/local/sbin:/usr/sbin":$HOME/.local/bin
 export MANPATH="/usr/local/man:$MANPATH:$HOME/man"
 
-export PATH="$HOME/.pyenv/bin:${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+export PATH="$HOME/.arkade/bin/:$HOME/.pyenv/bin:${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
 rehash
 

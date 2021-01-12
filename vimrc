@@ -243,11 +243,11 @@ set statusline+=%*
 
 "let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': ['go'] }
-let g:syntastic_go_golangci_lint_args = '' .
-        \ '--enable-all ' .
-        \ '--build-tags NO_CUDA ' .
-        \ '--fast '
-let g:syntastic_go_checkers = ['golangci-lint']
+"let g:syntastic_go_golangci_lint_args = '' .
+"        \ '--enable-all ' .
+"        \ '--build-tags NO_CUDA ' .
+"        \ '--fast '
+"let g:syntastic_go_checkers = ['golangci-lint']
 
 "let g:syntastic_c_include_dirs = ['/home/kmutch/darkcycle-sdk/cpp']
 "let g:syntastic_c_check_header = 1
