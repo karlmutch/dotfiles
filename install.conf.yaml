@@ -15,6 +15,7 @@
 
 - link:
     ~/.tmux.conf:   tmux.conf
+    ~/.ripgreprc:   ripgreprc
     ~/.psqlrc:      psqlrc
     ~/.grc:         grc
     ~/.fzf:         fzf

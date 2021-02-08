@@ -34,7 +34,7 @@ Within vim use :GoInstallBinaries to load the tooling for the vim-go package fro
 
 Updating the referenced open source can be done using the following command:
 
-```git submodule foreach git pull origin master```
+```git submodule update --init --recursive --remote```
 
 Font management can be a little complex, here are some commands that might help:
 

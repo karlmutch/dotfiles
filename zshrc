@@ -160,6 +160,8 @@ export MANPATH="/usr/local/man:$MANPATH:$HOME/man"
 
 export PATH="$HOME/.arkade/bin/:$HOME/.pyenv/bin:${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
+export RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
+
 rehash
 
 zstyle ':completion:*' rehash true
