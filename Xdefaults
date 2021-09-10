@@ -178,13 +178,13 @@ URxvt*letterSpace: 0
 !
 
 *font: \
-       xft:Iosevka Term:size=13:regular:antialias=true
+       xft:Iosevka Term:size=18:regular:antialias=true
 
 *boldFont: \
-       xft:Iosevka Term:size=13:medium:antialias=true
+       xft:Iosevka Term:size=18:medium:antialias=true
 
 *italicFont: \
-       xft:Iosevka Term:size=13:italic:antialias=true
+       xft:Iosevka Term:size=18:italic:antialias=true
 
 *boldItalicFont: \
-       xft:Iosevka Term:size=13:medium italic:antialias=true
+       xft:Iosevka Term:size=18:medium italic:antialias=true

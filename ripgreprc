@@ -1,6 +1,7 @@
 # Using glob patterns to include/exclude files or folders
 --glob=!git/*
 --glob=!vendor/*
+--glob=!reports/*
 --glob=!examples/aws/aws/dist/*
 
 # Don't let ripgrep vomit really long lines to my terminal, and show a preview.

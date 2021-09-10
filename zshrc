@@ -201,8 +201,9 @@ done
 
 source $ZSH/oh-my-zsh.sh
 
-source <(fly completion --shell zsh) || true
+# source <(fly completion --shell zsh) || true
 source <(kubectl completion zsh) || true
+source <(eksctl completion zsh) || true
 
 export EDITOR='vim'
 # else
