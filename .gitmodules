@@ -245,3 +245,6 @@
 [submodule "oh-my-zsh-custom/themes/powerlevel10k"]
 	path = oh-my-zsh-custom/themes/powerlevel10k
 	url = https://github.com/romkatv/powerlevel10k.git
+[submodule "vim/bundle/vim-cue"]
+	path = vim/bundle/vim-cue
+	url = https://github.com/jjo/vim-cue

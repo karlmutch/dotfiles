@@ -50,6 +50,9 @@ set wildignore+=*.swp,*~,._*
 set undofile
 set undodir=~/.vim/undodir
 
+filetype plugin on
+
+
 " Filetypes {
 
         filetype plugin indent on                       " Turn on plugins

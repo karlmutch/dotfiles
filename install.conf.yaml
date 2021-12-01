@@ -76,6 +76,9 @@
         path: config/ranger/colorschemes
     ~/.config/ranger/rc.conf: config/ranger/rc.conf
     ~/.config/ranger/scope.sh: config/ranger/scope.sh
+    ~/.config/kitty:
+        create: true
+        path: config/kitty
     ~/.atom/snippets.cson:
         create: true
         path: atom/snippets.cson
