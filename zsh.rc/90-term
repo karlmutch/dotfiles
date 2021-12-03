@@ -8,9 +8,13 @@ then
     fi
 fi
 
-if [[ "$UbuntuWindows" == "1" || "$Linux" == "1" || "$UbuntuLinux" == "1" ]]
+if [[ "$Name" == "Razer" ]]
 then
-    export TERM=xterm-termite
+else
+    if [[ "$UbuntuWindows" == "1" || "$Linux" == "1" || "$UbuntuLinux" == "1" ]]
+    then
+        export TERM=xterm-termite
+    fi
 fi
 
 CPU=$(uname -m)
