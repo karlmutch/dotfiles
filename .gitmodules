@@ -31,9 +31,6 @@
 [submodule "vim/bundle/vim-better-whitespace"]
 	path = vim/bundle/vim-better-whitespace
 	url = https://github.com/ntpeters/vim-better-whitespace.git
-[submodule "vim/bundle/gundo.vim"]
-	path = vim/bundle/gundo.vim
-	url = http://github.com/sjl/gundo.vim.git
 [submodule "vim/bundle/delimitMate"]
 	path = vim/bundle/delimitMate
 	url = https://github.com/Raimondi/delimitMate.git
@@ -248,3 +245,9 @@
 [submodule "vim/bundle/vim-cue"]
 	path = vim/bundle/vim-cue
 	url = https://github.com/jjo/vim-cue
+[submodule "vim/bundle/blamer"]
+	path = vim/bundle/blamer
+	url = https://github.com/APZelos/blamer.nvim
+[submodule "vim/bundle/gundo.vim"]
+	path = vim/bundle/gundo.vim
+	url = https://github.com/sjl/gundo.vim.git
