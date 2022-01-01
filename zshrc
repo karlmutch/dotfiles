@@ -17,6 +17,9 @@ export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
 
+# Allow gpg2 to retrieve the password for gpg keys used to verify checkins
+export GPG_TTY=$(tty)
+
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -153,14 +156,9 @@ export HISTTIMEFORMAT='%F %T  '
 #
 ZSH_TMUX_AUTOSTART=true
 
-plugins=(profiles
-         dirhistory dirpersist git git-flow git-extras history per-directory-history tmux golang
-         colored-man-pages zsh-autosuggestions docker docker-compose zsh-syntax-highlighting z)
-autoload -U compinit && compinit
-
 # User configuration
 export SNAP=/snap
-export PATH="$SNAP/bin:$HOME/.cargo/bin:$HOME/upspin/bin:$HOME/bin:/usr/local/bin":$PATH:"/usr/bin:/usr/local/sbin:/usr/sbin":$HOME/.local/bin
+export PATH="/usr/local/bin:$SNAP/bin:$HOME/.cargo/bin:$HOME/upspin/bin:$HOME/bin":$PATH:"/usr/bin:/usr/local/sbin:/usr/sbin":$HOME/.local/bin
 export MANPATH="/usr/local/man:$MANPATH:$HOME/man"
 
 export PATH="$HOME/.arkade/bin/:$HOME/.pyenv/bin:${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
@@ -168,6 +166,11 @@ export PATH="$HOME/.arkade/bin/:$HOME/.pyenv/bin:${KREW_ROOT:-$HOME/.krew}/bin:$
 export RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
 
 rehash
+
+plugins=(profiles
+         dirhistory dirpersist git git-flow git-extras history per-directory-history tmux golang
+         colored-man-pages zsh-autosuggestions docker docker-compose zsh-syntax-highlighting z)
+autoload -U compinit && compinit
 
 zstyle ':completion:*' rehash true
 

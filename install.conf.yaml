@@ -33,7 +33,6 @@
     ~/.multitailrc: multitailrc
     ~/.dir_colors:  dir_colors
     ~/.Xdefaults:   Xdefaults
-    ~/.gitconfig:   gitconfig
     ~/.minttyrc:    minttyrc
     ~/.sift.conf:   sift.conf
     ~/.mc:          mc/
@@ -44,6 +43,9 @@
     ~/.powerline:   powerline-develop/
     ~/.icons:       icons/
     ~/.tmux:        tmux/
+    ~/.config/git:
+        create: true
+        path: config/git
     ~/.config/gtk-3.0:
         create: true
         path: config/gtk-3.0
@@ -122,7 +124,7 @@
     - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin ~/go/bin/go get -f -u github.com/uber-common/cpustat"]
     - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin ~/go/bin/go get -f -u github.com/jingweno/ccat"]
     - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin ~/go/bin/go get -f -u github.com/jesseduffield/lazygit"]
-    - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin ~/go/bin/go get -f -u github.com/dtan4/k8stail"]
+    - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin ~/go/bin/go install github.com/dtan4/k8stail"]
     - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin ~/go/bin/go get -f -u github.com/variadico/noti/cmd/noti"]
     - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin ~/go/bin/go get -f -u github.com/simeji/jid/cmd/jid"]
     - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin ~/go/bin/go get -f -u github.com/tomnomnom/gron"]
@@ -130,22 +132,23 @@
     - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin ~/go/bin/go get -f -u github.com/mhausenblas/kubed-sh"]
     - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin ~/go/bin/go get -f -u github.com/DrakeW/corgi"]
     - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin ~/go/bin/go get -f -u github.com/gulyasm/jsonui"]
-    - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin ~/go/bin/go get -f -u github.com/zricethezav/gitleaks"]
+    - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin ~/go/bin/go install github.com/zricethezav/gitleaks"]
     - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin ~/go/bin/go get -f -u github.com/karlmutch/gister"]
     - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin ~/go/bin/go get -f -u github.com/karlmutch/rotate"]
     - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin ~/go/bin/go get -f -u github.com/karlmutch/petname"]
     - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin ~/go/bin/go get -f -u github.com/github/hub"]
-    - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin ~/go/bin/go get -f -u sigs.k8s.io/kustomize"]
-    - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin ~/go/bin/go get -f -u github.com/derailed/k9s/cmd"]
-    - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin ~/go/bin/go get -f -u github.com/dpetzold/kube-top/cmd/kube-top"]
-    - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin ~/go/bin/go get -f -u github.com/gabeduke/kubectl-iexec"]
-    - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin ~/go/bin/go get -f -u github.com/ueokande/logbook"]
+    - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin ~/go/bin/go install sigs.k8s.io/kustomize@latest"]
+    - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin ~/go/bin/go get -u github.com/derailed/k9s/cmd@latest"]
+    - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin ~/go/bin/go install github.com/gabeduke/kubectl-iexec"]
+    - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin ~/go/bin/go install github.com/ueokande/logbook"]
     - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin ~/go/bin/go get -f -u github.com/jesseduffield/lazydocker"]
     - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin ~/go/bin/go get -f -u github.com/wallix/awless"]
     - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin ~/go/bin/go get -f -u github.com/oligot/go-mod-upgrade"]
+    - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin ~/go/bin/go install github.com/vladimirvivien/ktop@latest"]
+    - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin ~/go/bin/go install github.com/muesli/gitty@latest"]
     - ["rm -rf ~/tmp/go"]
     - ["mkdir -p ~/tmp/go/bin"]
     - ["mkdir -p ~/tmp/go/src"]
     - ["cd ~/tmp/go && unset GOPATH && unset GOROOT && unset GOBIN && GO111MODULE=on"]
-    - ["cd ~/tmp/go && GOPATH=`pwd` go get github.com/xxxserxxx/gotop/cmd/gotop && cp bin/gotop ~/bin/gotop"]
+    - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin ~/go/bin/go install go install github.com/xxxserxxx/gotop/v4/cmd/gotop@latest"]
     - ["cd ~/tmp/go && GOPATH=`pwd` go get github.com/bradleyjkemp/grpc-tools && GOPATH=`pwd` go install github.com/bradleyjkemp/grpc-tools/..."]

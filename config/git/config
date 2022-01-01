@@ -1,0 +1,119 @@
+[diff]
+    tool = vimdiff
+    algorithm = patience
+
+[core]
+    editor = vim
+    pager = less -RFX -z-3
+
+[push]
+    default = simple
+
+[merge]
+    renamelimit = 2415
+
+[alias]
+
+    gl = log --graph --pretty=format:'%Cred%h%Creset - %Cblue%an%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+    wtf = "! git log --pretty=tformat:\"%C(auto,yellow)%h%C(auto)%d%C(auto,reset) by %C(auto,blue)%cn%C(auto,reset), %C(auto,cyan)%ar%C(auto,reset)%n %s%n\" --stat"
+    s = status --short
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    lg1 = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+    lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
+    up = !git pull --rebase --prune $@ && git submodule update --init --recursive
+    st = status -sb
+    rank = shortlog -sn --no-merges
+    b = "!git for-each-ref --sort='-authordate' --format='%(authordate)%09%(objectname:short)%09%(refname)' refs/heads | sed -e 's-refs/heads/--'"
+    new = !sh -c 'git log $1@{1}..$1@{0} "$@"'
+    find = !sh -c 'git ls-tree -r --name-only HEAD | grep --color $1' -
+    h = !git --no-pager log origin/dev..HEAD --abbrev-commit --pretty=oneline
+    dbs = diff --stat --color dev...HEAD
+    db = diff --color dev...HEAD
+    bclean = "!f() { git branch --merged ${1-dev} | grep -v " ${1-dev}$" | xargs -r git branch -d; }; f"
+    allmodules = "submodule foreach git pull origin master"
+
+    l = log --pretty=oneline -n 20 --graph --abbrev-commit
+    ll = log --pretty=format:'%C(yellow)%h%Creset - %Cblue%an%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+    lll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+
+    s = status -s
+
+    d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
+
+    tags = tag -l
+    branches = for-each-ref --format='%(refname:short) <- %(upstream:short)' refs/heads
+    remotes = remote -v
+
+    aliases = config --get-regexp alias
+
+    contributors = shortlog --summary --numbered
+
+[filter "lfs"]
+    required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+
+[fetch]
+	prune = true
+
+[color]
+    ui = true
+    status = auto
+
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+
+[color "branch"]
+	current = yellow reverse
+	local = yellow
+	remote = green
+
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold # line info
+	old = red # deletions
+	new = green # additions
+
+[color "status"]
+	added = yellow
+	changed = green
+	untracked = cyan
+
+[pager]
+	diff = diff-so-fancy | less --tabs=1,5 -RFX -z-3
+	show = diff-so-fancy | less --tabs=1,5 -RFX -z-3
+
+# URL shorthands
+
+[url "git@github.com:"]
+
+	insteadOf = "gh:"
+	pushInsteadOf = "github:"
+	pushInsteadOf = "git://github.com/"
+
+[url "git://github.com/"]
+
+	insteadOf = "github:"
+
+[url "git@gist.github.com:"]
+
+	insteadOf = "gst:"
+	pushInsteadOf = "gist:"
+	pushInsteadOf = "git://gist.github.com/"
+
+[url "git://gist.github.com/"]
+
+	insteadOf = "gist:"
+
+[pull]
+	rebase = false
+
+[commit]
+	gpgsign = true
+
+[gpg]
+	program = gpg2
