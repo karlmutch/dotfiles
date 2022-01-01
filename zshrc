@@ -1,4 +1,3 @@
-
 #### FIG ENV VARIABLES ####
 # Please make sure this block is at the start of this file.
 [ -s ~/.fig/shell/pre.sh ] && source ~/.fig/shell/pre.sh
@@ -177,7 +176,6 @@ zstyle ':completion:*' rehash true
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
-
 LOCALRC=~/.zsh.rc.local
 GLOBALRC=~/.zsh.rc
 
@@ -208,10 +206,6 @@ do
 done
 
 source $ZSH/oh-my-zsh.sh
-
-# source <(fly completion --shell zsh) || true
-source <(kubectl completion zsh) || true
-source <(eksctl completion zsh) || true
 
 export EDITOR='vim'
 # else
@@ -256,10 +250,34 @@ if [[ "$UbuntuWindows" == "1" ]] ; then
 fi
 
 if [[ "$UbuntuLinux" == "1" ]] ; then
-    type kubectl
+    type kubectl > /dev/null
     if [[ $? -eq 0 ]] ;  then
         shell_type=${SHELL##*/}
         source <(kubectl completion $shell_type)
+    fi
+fi
+
+if [[ "$UbuntuLinux" == "1" ]] ; then
+    type fly > /dev/null
+    if [[ $? -eq 0 ]] ;  then
+        shell_type=${SHELL##*/}
+        source <(fly completion --shell $shell_type)
+    fi
+fi
+
+if [[ "$UbuntuLinux" == "1" ]] ; then
+    type eksctl > /dev/null
+    if [[ $? -eq 0 ]] ;  then
+        shell_type=${SHELL##*/}
+        source <(eksctl completion $shell_type)
+    fi
+fi
+
+if [[ "$UbuntuLinux" == "1" ]] ; then
+    type nerdctl > /dev/null
+    if [[ $? -eq 0 ]] ;  then
+        shell_type=${SHELL##*/}
+        source <(nerdctl completion $shell_type)
     fi
 fi
 
@@ -267,19 +285,6 @@ eval "$(direnv hook zsh)"
 
 # Remove an oh-my-zsh alias to allow the go lang based grv git client to be used
 unalias grv
-
-# added by travis gem
-[ -f /home/kmutch/.travis/travis.sh ] && source /home/kmutch/.travis/travis.sh
-
-# tmux support now done using the oh-my-zsh tmux plugin
-#
-#if [[ -n $TMUX_PANE ]]; then
-#else
-#    if [[ "$OSX" != "1" ]]; then
-#        tmux new-session -s base \; new-window "tmux set-option -ga terminal-overrides \",$TERM:Tc\"; tmux detach"
-#        tmux attach -t base
-#    fi
-#fi
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!

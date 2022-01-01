@@ -1,7 +1,7 @@
 
 # screenfetch informational title when logging in
 if hash screenfetch 2>/dev/null; then
-   screenfetch
+   # screenfetch
 fi
 
 #!/usr/bin/env zsh
