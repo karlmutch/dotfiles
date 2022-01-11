@@ -89,11 +89,11 @@
 
 # URL shorthands
 
-[url "ssh://git@github.com:"]
+[url "git@github.com:"]
 	insteadOf = "gh:"
 	pushInsteadOf = "github:"
+	insteadOf = "github:"
 	pushInsteadOf = "git://github.com/"
-	insteadOf = https://github.com/
     insteadOf = https://github.com/
 
 [url "ssh://git@gitlab.com/"]
@@ -101,9 +101,6 @@
 
 [url "ssh://git@bitbucket.org/"]
     insteadOf = https://bitbucket.org/
-
-[url "git://github.com/"]
-	insteadOf = "github:"
 
 [url "git@gist.github.com:"]
 	insteadOf = "gst:"
