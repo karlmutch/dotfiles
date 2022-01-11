@@ -89,24 +89,28 @@
 
 # URL shorthands
 
-[url "git@github.com:"]
-
+[url "ssh://git@github.com:"]
 	insteadOf = "gh:"
 	pushInsteadOf = "github:"
 	pushInsteadOf = "git://github.com/"
+	insteadOf = https://github.com/
+    insteadOf = https://github.com/
+
+[url "ssh://git@gitlab.com/"]
+    insteadOf = https://gitlab.com/
+
+[url "ssh://git@bitbucket.org/"]
+    insteadOf = https://bitbucket.org/
 
 [url "git://github.com/"]
-
 	insteadOf = "github:"
 
 [url "git@gist.github.com:"]
-
 	insteadOf = "gst:"
 	pushInsteadOf = "gist:"
 	pushInsteadOf = "git://gist.github.com/"
 
 [url "git://gist.github.com/"]
-
 	insteadOf = "gist:"
 
 [pull]
@@ -116,4 +120,13 @@
 	gpgsign = true
 
 [gpg]
-	program = gpg2
+	program = gpg
+
+[user]
+    email = karlmutch@users.noreply.github.com
+    name = Karl Mutch
+    signingkey = CBF2D27C8EBFEB76
+
+[credential "ssh://github.com/"]
+    helper =
+    helper = !/usr/bin/gh auth git-credential
