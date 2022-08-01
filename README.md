@@ -21,7 +21,7 @@ Setting up the account
 ---
 # dotfiles
 ```
-git clone https://github.com/karlmutch/dotfiles.git ~/.dotfiles --recursive ;
+git clone https://github.com/karlmutch/dotfiles.git ~/.dotfiles --recurse-submodules -j8
 
 cd ~/.dotfiles ;
 
