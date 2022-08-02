@@ -17,6 +17,8 @@ Github functionality will be automatically configured with the user details foun
 
 If you have used the Devboot package from github.com/karlmutch/DevBoot to provision your machine the github SSH keys will likely be already deployed to github for you.
 
+If you find that using submodules causes timeouts you might need to use InsteadOf directives to force the https protocol.  This is caused by some corporate firewalls etc.
+
 Setting up the account
 ---
 # dotfiles
