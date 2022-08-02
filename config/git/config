@@ -89,12 +89,11 @@
 
 # URL shorthands
 
-[url "git@github.com:"]
+[url "https://github.com/"]
 	insteadOf = "gh:"
 	pushInsteadOf = "github:"
 	insteadOf = "github:"
-	pushInsteadOf = "git://github.com/"
-    insteadOf = https://github.com/
+	InsteadOf = "git://github.com/"
 
 [url "ssh://git@gitlab.com/"]
     insteadOf = https://gitlab.com/
@@ -122,8 +121,14 @@
 [user]
     email = karlmutch@users.noreply.github.com
     name = Karl Mutch
-    signingkey = CBF2D27C8EBFEB76
+	signingkey = 66164A9B79974CE0
 
 [credential "ssh://github.com/"]
     helper =
     helper = !/usr/bin/gh auth git-credential
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
