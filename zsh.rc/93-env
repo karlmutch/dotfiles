@@ -2,8 +2,9 @@ export PATH=$PATH:~/go/bin
 export LESS=-Xr
 export LESSOPEN='|~/.lessfilter %s'
 export PATH=$HOME/bin:$PATH:/usr/lib/llvm-3.6/bin
-export PATH=~/.local/bin:$PATH
 export PLAN9=/usr/local/plan9
-export PATH=$PATH:$PLAN9/bin
+export PATH=/usr/local/bin:$PATH:$PLAN9/bin
+export PATH=~/.local/bin:$PATH
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib:~/.local/lib
 export LOGXI_FORMAT=happy,maxcol=256
 export LOGXI="*=INF"
