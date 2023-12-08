@@ -166,9 +166,22 @@ export RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
 
 rehash
 
-plugins=(profiles
-         dirhistory dirpersist git git-flow git-extras history per-directory-history tmux golang
-         colored-man-pages zsh-autosuggestions docker docker-compose zsh-syntax-highlighting z)
+if grep -qE "(orbstack)" /proc/version &> /dev/null ; then
+    export OrbStack=1
+else
+    export OrbStack=
+fi
+
+if [[ "$OrbStack" == "1" ]] ; then
+    plugins=(profiles
+             dirhistory dirpersist git git-flow git-extras history per-directory-history golang
+             colored-man-pages zsh-autosuggestions docker docker-compose zsh-syntax-highlighting z)
+else
+    plugins=(profiles
+             dirhistory dirpersist git git-flow git-extras history per-directory-history tmux golang
+             colored-man-pages zsh-autosuggestions docker docker-compose zsh-syntax-highlighting z)
+fi
+
 autoload -U compinit && compinit
 
 zstyle ':completion:*' rehash true

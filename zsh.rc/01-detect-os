@@ -39,6 +39,12 @@ else
 fi
 fi
 
+if grep -qE "(orbstack)" /proc/version &> /dev/null ; then
+    export UbuntuOrbStack=1
+else
+    export UbuntuOrbStack=
+fi 
+
 if grep -qE "(Microsoft|WSL)" /proc/version &> /dev/null ; then
     export UbuntuWindows=1
 else
