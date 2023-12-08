@@ -144,6 +144,7 @@
     - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin ~/go/bin/go install github.com/jesseduffield/lazydocker@latest"]
     - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin ~/go/bin/go install github.com/wallix/awless@latest"]
     - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin ~/go/bin/go install github.com/oligot/go-mod-upgrade@latest"]
+    - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin ~/go/bin/go install github.com/nao1215/gup@latest"]
     - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin ~/go/bin/go install github.com/vladimirvivien/ktop@latest"]
     - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin ~/go/bin/go install github.com/muesli/gitty@latest"]
     - ["rm -rf ~/tmp/go"]
