@@ -113,7 +113,7 @@
 	rebase = false
 
 [commit]
-	gpgsign = true
+	gpgSign = true
 
 [gpg]
 	program = gpg
