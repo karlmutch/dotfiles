@@ -48,3 +48,14 @@ To get the version from a font file
 ```
 fc-query -f '%{fontversion}\n' filename.ttf| perl -E 'printf "%.3f\n", <>/65536.0'
 ```
+
+OrbStack notes
+---
+
+If you wish to access Kubernetes from an OrbStack Linux VM then use the following commands to create a copy of the kube config file inside the Linux VM:
+
+```sh
+mac kubectl config view --raw > $KUBECONFIG
+```
+
+Then modify the contents of the config file to point at host `https://host.orb.internal:26443` rather than 127.0.0.1
