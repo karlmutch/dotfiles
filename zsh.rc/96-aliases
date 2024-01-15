@@ -36,13 +36,14 @@ if type dfc >/dev/null 2>/dev/null; then
    alias df="dfc -f"
 fi
 
-# exa from https://github.com/ogham/exa/releases/download/v0.3.0/exa-linux-x86_64.zip
-if type exa >/dev/null 2>/dev/null; then
-   alias ls="exa "
-   alias ex="exa --sort=modified "
-   alias exl="exa --long -T "
-   alias exs="exa -ahHl --group-directories-first --sort=modified --git "
-   alias ex="exa -ahHl --group-directories-first --sort=modified --git "
+# eza from https://github.com/eza-community/eza/releases/download/v0.17.0/eza_x86_64-unknown-linux-musl.tar.gz
+if type eza >/dev/null 2>/dev/null; then
+   alias exa="eza"
+   alias ls="eza "
+   alias ex="eza --sort=modified "
+   alias exl="eza --long -T "
+   alias exs="eza -ahHl --group-directories-first --sort=modified --git "
+   alias ex="eza -ahHl --group-directories-first --sort=modified --git "
 fi
 
 man() {

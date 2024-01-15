@@ -319,3 +319,15 @@ unset __conda_setup
 # Please make sure this block is at the end of this file.
 [ -s ~/.fig/fig.sh ] && source ~/.fig/fig.sh
 #### END FIG ENV VARIABLES ####
+
+# add Pulumi to the PATH
+export PATH=$PATH:/home/karlmutch/.pulumi/bin
+
+# >>> juliaup initialize >>>
+
+# !! Contents within this block are managed by juliaup !!
+
+path=('/home/karlmutch/.juliaup/bin' $path)
+export PATH
+
+# <<< juliaup initialize <<<
