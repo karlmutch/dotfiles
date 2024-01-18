@@ -29,10 +29,9 @@ export GPG_TTY=$(tty)
 ZSH_THEME="powerlevel10k/powerlevel10k"
 #POWERLEVEL9K_MODE='awesome-patched'
 POWERLEVEL9K_MODE='nerdfont-complete'
-# Limit to the last two folders
-POWERLEVEL9K_SHORTEN_DIR_LENGTH=3
-#POWERLEVEL9K_SHORTEN_STRATEGY="truncate_middle"
-#POWERLEVEL9K_SHORTEN_DIR_LENGTH=4
+POWERLEVEL9K_SHORTEN_STRATEGY="truncate_middle"
+POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
+POWERLEVEL9K_DIR_MAX_LENGTH=6
 
 POWERLEVEL9K_DIR_DEFAULT_FOREGROUND='010'
 POWERLEVEL9K_DIR_DEFAULT_BACKGROUND='017'
@@ -75,6 +74,25 @@ POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND='black'
 
 typeset -g POWERLEVEL9K_KUBECONTEXT_SHOW_ON_COMMAND='kubectl|helm|kubens|kubectx|oc|istioctl|kogito|k9s|helmfile|kind'
 
+POWERLEVEL9K_VCS_SHORTEN_LENGTH=12
+POWERLEVEL9K_VCS_SHORTEN_MIN_LENGTH=12
+POWERLEVEL9K_VCS_SHORTEN_STRATEGY="truncate_middle"
+
+#POWERLEVEL9K_VIRTUALENV_GENERIC_NAMES=()
+#POWERLEVEL9K_VIRTUALENV_SHOW_WITH_PYENV=true
+POWERLEVEL9K_VIRTUALENV_SHOW_PYTHON_VERSION=false
+#POWERLEVEL9K_VIRTUALENV_GENERIC_NAMES=(virtualenv venv .venv env .venv-ci)
+#POWERLEVEL9K_VIRTUALENV_CONTENT_EXPANSION=
+POWERLEVEL9K_VIRTUALENV_VISUAL_IDENTIFIER_EXPANSION=''
+VIRTUAL_ENV_DISABLE_PROMPT=1
+#POWERLEVEL9K_VIRTUALENV_LEFT_DELIMITER=
+#POWERLEVEL9K_VIRTUALENV_RIGHT_DELIMITER=
+
+# Hide `pyenv` segment if its content has no dots ('.').
+#POWERLEVEL9K_PYENV_CONTENT_EXPANSION='${(M)P9K_CONTENT:#*.*}'
+#POWERLEVEL9K_PYENV_CONTENT_EXPANSION='${P9K_CONTENT}${${P9K_PYENV_PYTHON_VERSION:#$P9K_CONTENT}:+ $P9K_PYENV_PYTHON_VERSION}'
+#POWERLEVEL9K_PYENV_VISUAL_IDENTIFIER_EXPANSION='${${(M)P9K_CONTENT:#*.*}:+${P9K_VISUAL_IDENTIFIER// }}'
+
 #POWERLEVEL9K_RIGHT_SEGMENT_SEPARATOR=$''
 #
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status history time)
@@ -84,7 +102,7 @@ case "$OS" in
     ;;
     *) 
         POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context vcs dir dir_writable kubecontext);
-        POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status background_jobs command_execution_time load history disk_usage time)
+        POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status virtualenv background_jobs command_execution_time load history disk_usage timewarrior time)
     ;;
 esac
 
@@ -331,3 +349,10 @@ path=('/home/karlmutch/.juliaup/bin' $path)
 export PATH
 
 # <<< juliaup initialize <<<
+#
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+if command -v pyenv 1>/dev/null 2>&1; then
+    eval "$(pyenv init -)"
+    eval "$(pyenv virtualenv-init -)"
+fi
