@@ -264,7 +264,7 @@ export EDITOR='vim'
 # Allow paths to be used to cd avoiding the need to enter 'cd[space]'
 setopt AUTO_CD
 
-chpwd() exa -gaF
+chpwd() eza -gaF
 
 # Multi process friendly history appending
 setopt APPEND_HISTORY
