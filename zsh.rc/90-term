@@ -13,7 +13,8 @@ then
 else
     if [[ "$UbuntuWindows" == "1" || "$Linux" == "1" || "$UbuntuLinux" == "1" ]]
     then
-        export TERM=xterm-termite
+        export TERM=xterm-256color
+        # export TERM=xterm-termite
     fi
 fi
 

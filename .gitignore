@@ -8,3 +8,4 @@ config/ranger/colorschemes/euphrasia.pyo
 config/ranger/colorschemes/__init__.pyo
 vim/undodir
 .uuid
+.secret-git-config
