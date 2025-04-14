@@ -251,3 +251,6 @@
 [submodule "vim/bundle/gundo.vim"]
 	path = vim/bundle/gundo.vim
 	url = https://github.com/sjl/gundo.vim.git
+[submodule "vim/bundle/vim-ollama"]
+	path = vim/bundle/vim-ollama
+	url = https://github.com/gergap/vim-ollama
