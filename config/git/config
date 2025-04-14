@@ -137,5 +137,8 @@
 [includeIf "gitdir:~/.dotfiles-private/"]
     path = ~/.dotfiles-private/.secret-git-config
 
+[includeIf "gitdir:~/project/src/github.com/karlmutch/DevBoot"]
+    path = ~/project/src/github.com/karlmutch/DevBoot/.secret-git-config
+
 [includeIf "gitdir:~/project/src/github.com/karlmutch-cynch/"]
     path = ~/project/src/github.com/karlmutch-cynch/.gitconfig

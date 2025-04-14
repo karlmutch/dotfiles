@@ -171,10 +171,14 @@ endif
 set encoding=utf-8
 
 set mouse+=a
-if &term =~ '^screen' || &term =~ '^rxvt' || &term =~ '^xterm'
-    " tmux knows the extended mouse mode
-    set ttymouse=xterm2
-endif
+if has("mouse_sgr")
+    set ttymouse=sgr
+else
+    if &term =~ '^screen' || &term =~ '^rxvt' || &term =~ '^xterm'
+        " tmux knows the extended mouse mode
+        set ttymouse=xterm2
+    endif
+end
 
 "set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 set rtp+=~/.fzf
