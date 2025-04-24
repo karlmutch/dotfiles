@@ -195,9 +195,18 @@ if [[ "$OrbStack" == "1" ]] ; then
              dirhistory dirpersist git git-flow git-extras history per-directory-history golang
              colored-man-pages zsh-autosuggestions docker docker-compose zsh-syntax-highlighting z)
 else
-    plugins=(profiles
-             dirhistory dirpersist git git-flow git-extras history per-directory-history tmux golang
-             colored-man-pages zsh-autosuggestions docker docker-compose zsh-syntax-highlighting z)
+    case "$OS" in
+        Darwin*) 
+            plugins=(profiles
+                    dirhistory dirpersist git git-flow git-extras history per-directory-history golang
+                    colored-man-pages zsh-autosuggestions docker docker-compose zsh-syntax-highlighting z)
+        ;;
+        *)
+            plugins=(profiles
+                    dirhistory dirpersist git git-flow git-extras history per-directory-history tmux golang
+                    colored-man-pages zsh-autosuggestions docker docker-compose zsh-syntax-highlighting z)
+        ;;
+    esac
 fi
 
 autoload -U compinit && compinit
@@ -360,6 +369,7 @@ fi
 export PATH=$PATH:$HOME/.pulumi/bin
 eval "$(/data/home/karl/.local/bin/mise activate zsh)"
 
+
 # >>> juliaup initialize >>>
 
 # !! Contents within this block are managed by juliaup !!
@@ -372,3 +382,9 @@ export PATH
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# OPS config
+export OPS_DIR="$HOME/.ops"
+export PATH="$HOME/.ops/bin:$PATH"
+source "$HOME/.ops/scripts/bash_completion.sh"
+autoload bashcompinit

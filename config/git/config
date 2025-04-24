@@ -120,13 +120,13 @@
 
 [credential "ssh://github.com/"]
     helper =
-    helper = !/usr/bin/gh auth git-credential
+    helper = !gh auth git-credential
 [credential "https://github.com"]
 	helper =
-	helper = !/usr/bin/gh auth git-credential
+	helper = !gh auth git-credential
 [credential "https://gist.github.com"]
 	helper =
-	helper = !/usr/bin/gh auth git-credential
+	helper = !gh auth git-credential
 
 [includeIf "gitdir:~/project/src/github.com/karlmutch/"]
     path = ~/project/src/github.com/karlmutch/.gitconfig
@@ -142,3 +142,6 @@
 
 [includeIf "gitdir:~/project/src/github.com/karlmutch-cynch/"]
     path = ~/project/src/github.com/karlmutch-cynch/.gitconfig
+
+[includeIf "gitdir:~/project/src/github.com/karlmutch/"]
+    path = ~/project/src/github.com/karlmutch/.gitconfig
