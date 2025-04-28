@@ -19,6 +19,17 @@ export LC_CTYPE=en_US.UTF-8
 # Allow gpg2 to retrieve the password for gpg keys used to verify checkins
 export GPG_TTY=$(tty)
 
+get_context_fqdn() {
+    local hostname=$(hostname -f)
+    local -a parts=("${(s:.:)hostname}")
+
+    if (( ${#parts[@]} == 5 )) && [[ "${parts[4]}" == "cynch-ai" ]]; then
+        echo "${parts[3]}.${parts[4]}"
+    else
+        echo "${parts[1]}"
+    fi
+}
+
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -45,6 +56,7 @@ POWERLEVEL9K_SHOW_CHANGESET=false
 # # just show the 6 first characters of changeset
 # POWERLEVEL9K_CHANGESET_HASH_LENGTH=6
 
+POWERLEVEL9K_CONTEXT_TEMPLATE="%n@$(get_context_fqdn)"
 POWERLEVEL9K_KUBECONTEXT_BACKGROUND='004'
 #POWERLEVEL9K_VCS_FOREGROUND='000'
 POWERLEVEL9K_VCS_BACKGROUND='022'
