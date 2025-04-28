@@ -49,6 +49,12 @@ To get the version from a font file
 fc-query -f '%{fontversion}\n' filename.ttf| perl -E 'printf "%.3f\n", <>/65536.0'
 ```
 
+Install optional components
+
+```
+gh extension install https://github.com/sarumaj/gh-gr
+``
+
 OrbStack notes
 ---
 
