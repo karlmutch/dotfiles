@@ -113,7 +113,7 @@
 	rebase = false
 
 [commit]
-	gpgSign = true
+	gpgsign = true
 
 [gpg]
 	program = gpg
@@ -145,3 +145,6 @@
 
 [includeIf "gitdir:~/project/src/github.com/karlmutch/"]
     path = ~/project/src/github.com/karlmutch/.gitconfig
+
+[tag]
+	gpgSign = true
