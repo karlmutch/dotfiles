@@ -384,7 +384,9 @@ fi
 
 export PATH=$HOME/go/bin:$PATH:$HOME/.pulumi/bin
 
+if [[ -e $HOME/.local/bin/mise ]]; then
 eval "$(/data/home/karl/.local/bin/mise activate zsh)"
+fi
 
 # >>> juliaup initialize >>>
 
@@ -399,9 +401,17 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+if [[ -d "$HOME/.ops" ]]; then
 # OPS config
 export OPS_DIR="$HOME/.ops"
 export PATH="$HOME/.ops/bin:$PATH"
 source "$HOME/.ops/scripts/bash_completion.sh"
 autoload bashcompinit
+fi
+
+if whence -p pyenv > /dev/null 2>&1; then
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - zsh)"
+fi
 
