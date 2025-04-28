@@ -53,6 +53,8 @@ Install optional components
 
 ```
 gh extension install https://github.com/sarumaj/gh-gr
+gh extension install dlvhdr/gh-dash
+gh extension install seachicken/gh-poi
 ``
 
 OrbStack notes

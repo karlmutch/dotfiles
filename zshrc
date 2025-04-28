@@ -195,23 +195,25 @@ fi
 if [[ "$OrbStack" == "1" ]] ; then
     plugins=(profiles
              dirhistory dirpersist git git-flow git-extras history per-directory-history golang
-             colored-man-pages zsh-autosuggestions docker docker-compose zsh-syntax-highlighting z)
+             colored-man-pages zsh-autosuggestions docker docker-compose zsh-syntax-highlighting)
 else
     case "$OS" in
         Darwin*) 
             plugins=(profiles
                     dirhistory dirpersist git git-flow git-extras history per-directory-history golang
-                    colored-man-pages zsh-autosuggestions docker docker-compose zsh-syntax-highlighting z)
+                    colored-man-pages zsh-autosuggestions docker docker-compose zsh-syntax-highlighting)
         ;;
         *)
             plugins=(profiles
                     dirhistory dirpersist git git-flow git-extras history per-directory-history tmux golang
-                    colored-man-pages zsh-autosuggestions docker docker-compose zsh-syntax-highlighting z)
+                    colored-man-pages zsh-autosuggestions docker docker-compose zsh-syntax-highlighting)
         ;;
     esac
 fi
 
 autoload -U compinit && compinit
+
+eval "$(zoxide init zsh)"
 
 zstyle ':completion:*' rehash true
 
