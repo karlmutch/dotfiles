@@ -598,4 +598,6 @@ function! MyFoldText() " {{{
 endfunction " }}}
 set foldtext=MyFoldText()
 
+set relativenumber
+
 set viminfo+='1000,f1,\"512,:32,%

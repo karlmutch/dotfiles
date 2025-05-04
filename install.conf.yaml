@@ -14,7 +14,7 @@
     - [git submodule update --init --recursive, Installing submodules]
 
 - link:
-    ~/.local/bin/fd $(which fdfind) 
+    ~/.local/bin/fd $(which fdfind)
     ~/.tmux.conf:   tmux.conf
     ~/.ripgreprc:   ripgreprc
     ~/.psqlrc:      psqlrc
@@ -82,6 +82,9 @@
     ~/.config/kitty:
         create: true
         path: config/kitty
+    ~/.config/karabiner:
+        create: true
+        path: config/karabiner
     ~/.config/aerospace:
         create: true
         path: config/aerospace
