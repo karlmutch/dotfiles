@@ -82,6 +82,9 @@
     ~/.config/kitty:
         create: true
         path: config/kitty
+    ~/.config/aerospace:
+        create: true
+        path: config/aerospace
     ~/.atom/snippets.cson:
         create: true
         path: atom/snippets.cson
