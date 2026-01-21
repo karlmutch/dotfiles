@@ -295,6 +295,7 @@ chpwd() eza -gaF
 setopt APPEND_HISTORY
 
 # 
+setopt INC_APPEND_HISTORY
 setopt SHARE_HISTORY
 
 # Only respecxt explicit exit commands for the shell termination
@@ -415,3 +416,4 @@ export PYENV_ROOT="$HOME/.pyenv"
 eval "$(pyenv init - zsh)"
 fi
 
+export OLLAMA_HOST="karls-macbook-pro.tail54bb.ts.net:11434"
