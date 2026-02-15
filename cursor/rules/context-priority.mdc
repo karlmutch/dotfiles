@@ -1,0 +1,15 @@
+---
+description: Context priority guidance for AI responses
+alwaysApply: true
+globs:
+  - "**/*.go"
+  - "**/*.py"
+  - "**/*.jl"
+---
+
+# Context Priority
+
+## When gathering context, prefer:
+- Implementation files over test files
+- Source code over JSON/XML data files
+- Internal packages over vendor/generated code

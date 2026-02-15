@@ -1,0 +1,281 @@
+---
+description: Go code style guidelines applied globally across all projects
+alwaysApply: true
+globs:
+  - "**/*.go"
+---
+
+You are an expert in Go. Your role is to ensure code is idiomatic, modular, testable, and aligned with contemporary best practices and design patterns.
+
+### General Responsibilities:
+- Guide the development of idiomatic, maintainable, and high-performance Go code.
+- Enforce modular design and separation of concerns through clear package organization.
+- Promote robust observability, and scalable patterns across services.
+
+### Architecture Patterns:
+- Prefer **composition over inheritance**; favor small, purpose-specific interfaces.
+- Ensure that all public functions interact with interfaces, not concrete types, to enhance flexibility and testability.
+
+### Project Structure Guidelines:
+- Use a consistent project layout:
+  - cmd/: application programs with a main
+  - internal/: core application packages containing internal logic (not exposed externally)
+  - pkg/: shared utilities and packages
+- Group code by the domain or feature when it improves clarity and cohesion.
+
+### Development Best Practices:
+- Write **short, focused functions** with a single responsibility.
+- Always **check and handle errors explicitly**, using wrapped errors for traceability ('fmt.Errorf("context: %w", err)').
+- Avoid **global state**.
+- Leverage **Go's context propagation** for request-scoped values, deadlines, and cancellations.
+- Use **goroutines safely**; guard shared state with channels or sync primitives.
+- **Defer closing resources** and handle them carefully to avoid leaks.
+
+### Security and Resilience:
+- Apply **input validation and sanitization** rigorously, especially on inputs from external sources.
+- Use secure defaults for **JWT, cookies**, and configuration settings.
+- Isolate sensitive operations with clear **permission boundaries**.
+- Implement **retries, exponential backoff, and timeouts** on all external calls.
+- Use **circuit breakers and rate limiting** for service protection.
+
+### Testing:
+- Write **unit tests** using table-driven patterns and parallel execution.
+- **Mock external interfaces** cleanly using generated or handwritten mocks.
+- Separate **fast unit tests** from slower integration and E2E tests.
+- Ensure **test coverage** for every exported function, with behavioral checks.
+- Use tools like 'go test -cover' to ensure adequate test coverage.
+
+### Documentation and Standards:
+- Document public functions and packages with **GoDoc-style comments**.
+- Provide concise **READMEs** for services and libraries.
+- Enforce naming consistency and formatting with 'go fmt', 'goimports', and 'golangci-lint'.
+
+### Observability with OpenTelemetry:
+- Use **OpenTelemetry** for distributed tracing, metrics, and structured logging.
+- use the slogctx package for logging.
+- Start and propagate tracing **spans** across all service boundaries (HTTP, gRPC, DB, external APIs).
+- Always attach 'context.Context' to spans, logs, and metric exports.
+- Use **otel.Tracer** for creating spans and **otel.Meter** for collecting metrics.
+- Record important attributes like request parameters, user ID, and error messages in spans.
+- Use **log correlation** by injecting trace IDs into structured logs.
+- Export data to **OpenTelemetry Collector**.
+
+### Tracing and Monitoring Best Practices:
+- Trace all **incoming requests** and propagate context through internal and external calls.
+- Use **middleware** to instrument HTTP and gRPC endpoints automatically.
+- Annotate slow, critical, or error-prone paths with **custom spans**.
+- Monitor application health via key metrics: **request latency, throughput, error rate, resource usage**.
+- Define **SLIs** (e.g., request latency < 300ms) and track them with **Prometheus/Grafana** dashboards.
+- Alert on key conditions (e.g., high 5xx rates, DB errors, Redis timeouts) using a robust alerting pipeline.
+- Avoid excessive **cardinality** in labels and traces; keep observability overhead minimal.
+- Use **log levels** appropriately (info, warn, error) and emit **JSON-formatted logs** for ingestion by observability tools.
+- Include unique **request IDs** and trace context in all logs for correlation.
+
+### Performance:
+- Use **benchmarks** to track performance regressions and identify bottlenecks.
+- Minimize **allocations** and avoid premature optimization; profile before tuning.
+- Instrument key areas (DB, external calls, heavy computation) to monitor runtime behavior.
+
+### Concurrency and Goroutines:
+- Ensure safe use of **goroutines**, and guard shared state with channels or sync primitives.
+- Implement **goroutine cancellation** using context propagation to avoid leaks and deadlocks.
+
+### Tooling and Dependencies:
+- Rely on **stable, minimal third-party libraries**; prefer the standard library where feasible.
+- Use **Go modules** for dependency management and reproducibility.
+- Version-lock dependencies for deterministic builds.
+- Integrate **linting, testing, and security checks** in CI pipelines.
+
+### Key Conventions:
+1. Prioritize **readability, simplicity, and maintainability**.
+2. Design for **change**: isolate business logic.
+3. Emphasize clear **boundaries**.
+4. Ensure all behavior is **observable, testable, and documented**.
+5. **Automate workflows** for testing, building, and deployment.
+
+# Go Style Guide
+
+> **These rules are MANDATORY for all generated Go code. Violations should be corrected immediately.**
+
+## Variable Initialization - CRITICAL
+
+**ALWAYS use short-form initialization (`:=`) inside functions. NEVER use `var` for local variables.**
+
+```go
+// REQUIRED - Always use this form inside functions:
+name := "value"
+count := 0
+items := []string{}
+config := Config{}
+aMap := map[string]string{}
+result, err := someFunction()
+
+// FORBIDDEN - Never write this inside functions:
+var name string = "value"
+var count int = 0
+var items []string = []string{}
+var config Config = Config{}
+var result SomeType
+var aMap map[string]string
+result, err = someFunction()
+```
+
+**Only exceptions for `var`:**
+- Package-level variables (`:=` is not allowed at package level)
+- Zero-value interface declarations where type must be explicit (e.g. `var w io.Writer`)
+
+**Common patterns that MUST use `:=` (frequently violated):**
+
+```go
+// REQUIRED - standard library types:
+b := strings.Builder{}
+buf := bytes.Buffer{}
+
+// REQUIRED - slices (use empty literal, not nil):
+items := []string{}
+bookmarks := []map[string]any{}
+
+// REQUIRED - maps (use empty literal, not nil):
+lookup := map[string]int{}
+
+// REQUIRED - json.Unmarshal targets (use empty literal):
+result := map[string]any{}
+if err := json.Unmarshal(data, &result); err != nil { ... }
+
+// REQUIRED - inline struct types (append {} to close the literal):
+page := struct {
+    Items []string `json:"items"`
+    Next  *string  `json:"next"`
+}{}
+if err := json.Unmarshal(data, &page); err != nil { ... }
+
+// FORBIDDEN - all of the above with var:
+var b strings.Builder
+var items []string
+var result map[string]any
+var page struct { ... }
+```
+
+**When a variable is used across conditional branches**, prefer initialising it with
+`:=` using a zero-value constructor or literal, then conditionally mutate it -- do NOT
+use `var`:
+
+```go
+// REQUIRED - initialise with := then conditionally populate:
+validator := NewValidator(cfg)
+if featureEnabled {
+    _ = validator.Init(ctx)
+}
+
+// REQUIRED - set a default, then override in a branch:
+path := defaultPath
+if useAlternate {
+    path = alternatePath
+}
+
+// FORBIDDEN - do not use var before a conditional block:
+var validator *Validator
+if featureEnabled {
+    validator = NewValidator(cfg)
+    _ = validator.Init(ctx)
+}
+
+// FORBIDDEN:
+var path string
+if useAlternate {
+    path = alternatePath
+} else {
+    path = defaultPath
+}
+```
+
+## Naming returned variables from functions
+
+Always name returned variables from functions.
+
+```go
+// MANDATORY -  Always give returned variables a name
+func aFunction() (err error)
+
+// FORBIDDEN - Never return a variable without giving it a name
+func aFunction() (error) 
+{
+    return nil
+}
+func aFunction() error {
+    return nil
+}
+```
+
+## Never use naked returns
+
+Always specify returned variables.  Always add a return statement to functions that have returned values.
+
+```go
+// MANDATORY - Always use the return with the returned variable names
+func aFunction() (err error) {
+    err = nil
+    return err
+}
+
+// FORBIDDEN - Dont use naked returns that have no variables in the return statement when there are returned variables
+func aFunction() (err error) {
+    err = nil
+    return
+}
+```
+
+## Error Handling
+
+- Always handle errors immediately after the call
+- Use `fmt.Errorf` with `%w` for wrapping errors
+- Prefer early returns over nested if-else
+
+```go
+// Preferred
+if err != nil {
+    return fmt.Errorf("failed to process: %w", err)
+}
+
+// Avoid
+if err == nil {
+    // long block of code
+} else {
+    return err
+}
+```
+
+## Naming
+
+- Use MixedCaps, not underscores
+- Acronyms should be consistent case: `HTTPServer`, `xmlParser`
+- Interface names: single-method interfaces use method name + "er" (`Reader`, `Writer`)
+
+## Struct Initialization
+
+Prefer named fields:
+
+```go
+// Preferred
+client := &http.Client{
+    Timeout: 30 * time.Second,
+}
+
+// Avoid (unless all fields are set in order)
+point := Point{1, 2}
+```
+
+## Imports
+
+- Group standard library, external, and internal imports with blank lines
+- Use goimports or gofmt
+
+## Context
+
+- `context.Context` should be the first parameter
+- Never store context in structs
+
+
+## Logging
+
+Prefer the use of logctx over using fmt print calls.

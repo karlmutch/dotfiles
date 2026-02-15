@@ -10,6 +10,7 @@
     - ["mkdir -p ~/.terminfo/x"]
     - ["mkdir -p ~/.zsh.rc.local"]
     - ["mkdir -p ~/bin"]
+    - ["mkdir -p ~/.cursor"]
     - ["touch ~/.z"]
     - [git submodule update --init --recursive, Installing submodules]
 
@@ -91,6 +92,9 @@
     ~/.config/aerospace:
         create: true
         path: config/aerospace
+    ~/.cursor/rules:
+        create: true
+        path: cursor/rules
     ~/.atom/snippets.cson:
         create: true
         path: atom/snippets.cson
