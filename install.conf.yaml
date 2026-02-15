@@ -14,7 +14,7 @@
     - [git submodule update --init --recursive, Installing submodules]
 
 - link:
-    ~/.local/bin/fd $(which fdfind)
+    ~/.local/bin/fd: $(which fdfind)
     ~/.tmux.conf:   tmux.conf
     ~/.ripgreprc:   ripgreprc
     ~/.psqlrc:      psqlrc
@@ -44,6 +44,9 @@
     ~/.powerline:   powerline-develop/
     ~/.icons:       icons/
     ~/.tmux:        tmux/
+    ~/.config/rio:
+        create: true
+        path: config/rio
     ~/.config/git:
         create: true
         path: config/git
