@@ -10,7 +10,7 @@
     - ["mkdir -p ~/.terminfo/x"]
     - ["mkdir -p ~/.zsh.rc.local"]
     - ["mkdir -p ~/bin"]
-    - ["mkdir -p ~/.cursor"]
+    - ["mkdir -p ~/.cursor/rules"]
     - ["touch ~/.z"]
     - [git submodule update --init --recursive, Installing submodules]
 
@@ -18,6 +18,9 @@
     ~/.local/bin/fd: $(which fdfind)
     ~/.tmux.conf:   tmux.conf
     ~/.ripgreprc:   ripgreprc
+    ~/.cursor/rules/context-priority.mdc: cursor/rules/context-priority.mdc
+    ~/.cursor/rules/go-style.mdc: cursor/rules/go-style.mdc
+    ~/.cursor/rules/go-third-party.mdc: cursor/rules/go-third-party.mdc
     ~/.psqlrc:      psqlrc
     ~/.grc:         grc
     ~/.fzf:         fzf
@@ -92,9 +95,6 @@
     ~/.config/aerospace:
         create: true
         path: config/aerospace
-    ~/.cursor/rules:
-        create: true
-        path: cursor/rules
     ~/.atom/snippets.cson:
         create: true
         path: atom/snippets.cson
@@ -149,7 +149,7 @@
     - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin ~/go/bin/go install github.com/zricethezav/gitleaks@latest"]
     - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin ~/go/bin/go install github.com/karlmutch/gister@latest"]
     - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin ~/go/bin/go install github.com/karlmutch/rotate@latest"]
-    - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin ~/go/bin/go install github.com/karlmutch/petname@latest"]
+    - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin ~/go/bin/go install github.com/karlmutch/petname/cmd/petname@latest"]
     - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin ~/go/bin/go install github.com/github/hub@latest"]
     - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin ~/go/bin/go install sigs.k8s.io/kustomize@latest"]
     - ["cd ~/tmp/go && GOPATH=~/tmp/go GOROOT=~/go GOBIN=~/bin ~/go/bin/go install github.com/derailed/k9s/cmd@latest"]

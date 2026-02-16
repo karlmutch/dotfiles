@@ -136,9 +136,10 @@ bindkey "^[[1;2C" forward-word
 # Shift <-
 bindkey "^[[1;2D" backward-word
 #
-ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
-ZSH_HIGHLIGHT_PATTERNS=('rm -rf *' 'fg=white,bold,bg=red')
-
+if [[ -o interactive ]]; then
+    ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
+    ZSH_HIGHLIGHT_PATTERNS=('rm -rf *' 'fg=white,bold,bg=red')
+fi
 #
 export HISTCONTROL="ignoredups;ignorespace"
 export HISTIGNORE="ls:cd:cd -:pwd:exit:date::"
@@ -261,7 +262,9 @@ do
         fi
 done
 
-source $ZSH/oh-my-zsh.sh
+if [[ -o interactive ]]; then
+    source $ZSH/oh-my-zsh.sh
+fi
 
 export EDITOR='vim'
 # else
@@ -289,7 +292,9 @@ export EDITOR='vim'
 # Allow paths to be used to cd avoiding the need to enter 'cd[space]'
 setopt AUTO_CD
 
-chpwd() eza -gaF
+if [[ -o interactive ]]; then
+    chpwd() eza -gaF
+fi
 
 # Multi process friendly history appending
 setopt APPEND_HISTORY
@@ -338,10 +343,13 @@ if [[ "$UbuntuLinux" == "1" ]] ; then
     fi
 fi
 
-eval "$(direnv hook zsh)"
+if [[ -o interactive ]]; then
+    eval "$(direnv hook zsh)"
+fi
 
 # Remove an oh-my-zsh alias to allow the go lang based grv git client to be used
-unalias grv
+if [ -z ${grv+x} ]; then echo ""; else unalias grv ; fi
+
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
