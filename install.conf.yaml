@@ -10,7 +10,6 @@
     - ["mkdir -p ~/.terminfo/x"]
     - ["mkdir -p ~/.zsh.rc.local"]
     - ["mkdir -p ~/bin"]
-    - ["mkdir -p ~/.cursor/rules"]
     - ["touch ~/.z"]
     - [git submodule update --init --recursive, Installing submodules]
 
@@ -18,9 +17,6 @@
     ~/.local/bin/fd: $(which fdfind)
     ~/.tmux.conf:   tmux.conf
     ~/.ripgreprc:   ripgreprc
-    ~/.cursor/rules/context-priority.mdc: cursor/rules/context-priority.mdc
-    ~/.cursor/rules/go-style.mdc: cursor/rules/go-style.mdc
-    ~/.cursor/rules/go-third-party.mdc: cursor/rules/go-third-party.mdc
     ~/.psqlrc:      psqlrc
     ~/.grc:         grc
     ~/.fzf:         fzf
